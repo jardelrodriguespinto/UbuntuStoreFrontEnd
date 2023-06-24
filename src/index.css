@@ -1,13 +1,226 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
+}
+header{
+    width: 100%; 
+    color: green;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+    background-color: #ffffffe7;
+  }
+  header h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 6s steps(50) forwards;
+    margin-top: 15px;
+    word-break: break-word;
+    align-self: center;
+}
+nav{
+    width: 100%;
+    height: 20%;
+    background-color: rgb(11, 154, 52);
+    position: fixed;
+    top:0;
+}
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+}
+.progress-bar{
+    height: 6px;
+    background-image: linear-gradient(to right,rgb(211, 22, 22), rgb(187, 178, 20));
+    position: absolute;
+    bottom:-4%;
+    align-self: self-start;
+    justify-self: flex-end;
+}
+.ubuntu-store-logo{
+    width: 120px;
+    height: 120px;
+    border-radius: 90px;
+    margin-top: 8px;
+    margin-left: 8px;
+    mix-blend-mode: multiply;
+}
+.baixe-app{
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    background-color: rgba(0, 0, 0, 0.889);
+    color: #fff;
+    width: 160px;
+    border: none;
+    height: 40px;
+    border-radius: 8%;
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.baixe-app p{
+    margin-top: 10px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.baixe-app img{
+    margin-top: 3px;
+    width: 30px;
+    height: 30px;
+}
+header h1{
+    margin-top: 90px;
+    font-size: 20px;
+}
+.seja-parceiro-btn{
+    background-color: rgb(11, 154, 52);
+    border: none;
+    color: #fff;
+    width: 350px;
+    height: 35px;
+    border-radius: 5%;
+    font-size: 1.1em;
+    margin-top: 60px;
+    align-self: center;
+    cursor: pointer;
+}
+.introducao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("./assets/img/alimentos.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+    color: white;
+}
+.introducao span{
+    color:white;
+}
+.primeira-secao{
+    color: black;
+}
+.introducao h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+.introducao p{
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 1.5em;
+    text-align: center;
+    word-wrap: break-word;
+}
+section{
+    line-height: 35px;
+}
+.main-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.main-content p{
+    margin-top: 2%;
+    margin-left: 15px;
+    margin-bottom: 3%;
+    font-size: 30px;
+    word-wrap: break-word;
+    text-align: left;
+    color: black;
+}
+span{
+    color:green;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content-2{
+    background-color: hwb(0 84% 14%);
+}
+.img-refeicao{
+    width: 40%;
+    height: 20%;
+    align-self: center;
+}
+.segunda-secao{
+    background-color: rgb(11, 154, 52);
+    color: white;
+}
+.terceira-secao{
+    color: black
+}
+footer{
+    background-color:rgba(0, 0, 0, 0.7);
+    height: 35vh;
+    width: 100%;    
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+.rodape1{
+    display: flex;
+    justify-content: space-around;
+}
+.rodape1 h4{
+    margin-top: 25px;
+    font-size: 19px;
+}
+.rodape1 p{
+    font-size: 13px;
+}
+.rodape1-content-1 h4{
+    margin-bottom: 4px;
+    margin-left: 1px;
+}
+.rodape1-content-1 p{
+    margin-left: 8px;
+}
+.footer-container-2{
+    width: 100%;
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.889);
+}
+.footer-container-2 p{
+    align-self: center;
+    font-size: 15px;
+}
+.btn{
+    width: 120px;
+}
+.rodape1 .icones{
+    width: 20px;
+}
+.rodape-container{
+    display: flex;
+}
+iframe{
+    margin-top: 10px;
+    width: 320px;
+    height: 120px;
 }
