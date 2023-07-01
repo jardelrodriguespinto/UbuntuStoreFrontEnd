@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logoUbuntuStore from '../assets/img/logo-ubuntu-store.jpeg';
 import teste from '../assets/img/teste.png';
 
@@ -55,14 +55,4 @@ function Header() {
     </div>
   );
 }
-
-function App() {
-  return (
-    <Router>
-      <Header />
-      {/* Restante do conteúdo do seu aplicativo */}
-    </Router>
-  );
-}
-
-export default App;
+export default Header;
