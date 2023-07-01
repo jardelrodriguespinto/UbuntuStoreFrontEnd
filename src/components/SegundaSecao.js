@@ -1,8 +1,8 @@
-import {React} from 'react';
+import React from 'react';
 
 function SegundaSecao(){
     return (
-        <>
+        <div>
         <section className="segunda-secao">
               <h3>Vantagens de ser nosso parceiro</h3>
               <ul>
@@ -15,7 +15,7 @@ function SegundaSecao(){
                   <li>Promoções exclusivas e benefícios para clientes parceiros.</li>
               </ul>
           </section>
-        </>
+        </div>
     );
 }
 

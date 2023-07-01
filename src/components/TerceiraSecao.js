@@ -1,9 +1,9 @@
-import { React } from 'react';
+import  React  from 'react';
 import teste from '../assets/img/teste.png'
 
 function TerceiraSecao(){
     return (
-        <>
+        <div>
           <section className="terceira-secao">
               <p>
                   Baixe agora mesmo nosso aplicativo fácil de usar e personalizado para suas necessidades e desfrute de promoções exclusivas, rastreamento de pedidos em tempo real e suporte ao cliente de qualidade. Venha fazer parte do movimento de mudança social e tecnológica da UbuntuStore e alimente a união entre as pessoas.
@@ -13,7 +13,7 @@ function TerceiraSecao(){
                   <img src={teste} alt=""/>
               </button>
           </section>  
-        </>
+        </div>
     );
 }
 

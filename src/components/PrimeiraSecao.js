@@ -1,12 +1,12 @@
 import '../App.css';
-import  { React } from 'react';
+import  React from 'react';
 import image4 from '../assets/img/image4.jpg'
 import criancaComendo from '../assets/img/crianca-comendo.jpg'
 import image3 from '../assets/img/image3.jpg'
 
 function PrimeiraSecao(){
     return (
-        <>
+        <div>
             <section className="primeira-secao">
               <div className="introducao">
                   <h2> UbuntuStore - Alimente a união, construa a comunidade</h2>
@@ -41,7 +41,7 @@ function PrimeiraSecao(){
               </div>
             <br/>
           </section>
-        </>
+        </div>
     );
 }
 

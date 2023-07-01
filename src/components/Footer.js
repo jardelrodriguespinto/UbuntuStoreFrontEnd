@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React  from 'react';
 import place from '../assets/img/place.png'
 import predio from '../assets/img/predio.png'
 import tellphone from '../assets/img/tellphone.png'
@@ -6,7 +6,7 @@ import teste from '../assets/img/teste.png'
 
 function Footer(){
     return (
-        <>
+        <div>
             <footer>
                 <div className="rodape1">
                     <div className="rodape1-content-1">
@@ -46,7 +46,7 @@ function Footer(){
                     <p>&copy;UbuntuStore - 2023</p>
                 </div>
             </footer>
-        </>
+        </div>
     );
 }
 
