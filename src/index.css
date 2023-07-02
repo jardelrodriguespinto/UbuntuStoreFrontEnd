@@ -10,12 +10,12 @@ body{
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
 }
-header{
+.primeiro-header{
     width: 100%; 
+    height: 20vh; 
     color: green;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 @keyframes typing {
     from {
@@ -25,25 +25,26 @@ header{
         width: 100%;
     }
 }
-header {
+.primeiro-header{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 60vh;
+    height: 45vh;
     background-color: #ffffffe7;
-  }
-  header h1 {
+}
+
+.tituloConhecaUbuntuStore {
     overflow: hidden;
     white-space: nowrap;
     animation: typing 6s steps(50) forwards;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     word-break: break-word;
     align-self: center;
 }
 nav{
     width: 100%;
-    height: 20%;
+    height: 14vh;
     background-color: rgb(11, 154, 52);
     position: fixed;
     top:0;
@@ -67,6 +68,15 @@ nav{
     margin-top: 8px;
     margin-left: 8px;
     mix-blend-mode: multiply;
+}
+.ubuntu-store-logo:hover{
+    width: 120px;
+    height: 120px;
+    border-radius: 90px;
+    margin-top: 8px;
+    margin-left: 8px;
+    mix-blend-mode: multiply;
+    cursor: pointer;
 }
 .baixe-app{
     display: flex;
@@ -92,10 +102,11 @@ nav{
     width: 30px;
     height: 30px;
 }
-header h1{
+.tituloConhecaUbuntuStore{
     margin-top: 90px;
     font-size: 20px;
 }
+
 .seja-parceiro-btn{
     background-color: rgb(11, 154, 52);
     border: none;
@@ -175,9 +186,11 @@ span{
 }
 footer{
     background-color:rgba(0, 0, 0, 0.7);
-    height: 35vh;
+    height: 22vh;
     width: 100%;    
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);  
+    /* position: absolute;
+    bottom: 0; */
 }
 .rodape1{
     display: flex;
