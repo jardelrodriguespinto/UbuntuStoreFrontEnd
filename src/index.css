@@ -1,50 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 body{
     color: #fff;
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
-}
-.primeiro-header{
-    width: 100%; 
-    height: 20vh; 
-    color: green;
-    display: flex;
-    flex-direction: column;
-}
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-.primeiro-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 45vh;
-    background-color: #ffffffe7;
-}
-
-.tituloConhecaUbuntuStore {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 6s steps(50) forwards;
-    /* margin-top: 15px; */
-    word-break: break-word;
-    align-self: center;
+    line-height: 3;
 }
 nav{
     width: 100%;
-    height: 14vh;
+    height: 15vh;
     background-color: rgb(11, 154, 52);
     position: fixed;
     top:0;
@@ -52,14 +22,6 @@ nav{
 .nav-content{
     display: flex;
     justify-content: space-between;
-}
-.progress-bar{
-    height: 6px;
-    background-image: linear-gradient(to right,rgb(211, 22, 22), rgb(187, 178, 20));
-    position: absolute;
-    bottom:-4%;
-    align-self: self-start;
-    justify-self: flex-end;
 }
 .ubuntu-store-logo{
     width: 120px;
@@ -88,12 +50,12 @@ nav{
     height: 40px;
     border-radius: 15px;
     font-size: 1.1em;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-right: 20px;
     cursor: pointer;
 }
 .baixe-app p{
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 7%;
     margin-right: 7%;
 }
@@ -101,23 +63,6 @@ nav{
     margin-top: 3px;
     width: 30px;
     height: 30px;
-}
-.tituloConhecaUbuntuStore{
-    margin-top: 90px;
-    font-size: 20px;
-}
-
-.seja-parceiro-btn{
-    background-color: rgb(11, 154, 52);
-    border: none;
-    color: #fff;
-    width: 350px;
-    height: 35px;
-    border-radius: 15px;
-    font-size: 1.1em;
-    margin-top: 60px;
-    align-self: center;
-    cursor: pointer;
 }
 .introducao{
     display: flex;
@@ -127,11 +72,13 @@ nav{
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("./assets/img/alimentos.jpg");
     background-size: cover;
     width: 100%;
-    height: 70vh;
+    /* margin-top: 129px; */
+    height: 150vh;
     color: white;
+    letter-spacing: 3px;
 }
 .introducao span{
-    color:white;
+    color:yellow;
 }
 .primeira-secao{
     color: black;
@@ -140,6 +87,8 @@ nav{
     text-align: center;
     color: white;
     margin-bottom: 50px;
+    font-size: 45px;
+    
 }
 .introducao p{
     margin-left: 2%;
@@ -155,6 +104,7 @@ section{
     display: flex;
     flex-direction: row;
     width: 100%;
+    
 }
 .main-content p{
     margin-top: 2%;
@@ -165,10 +115,6 @@ section{
     text-align: left;
     color: black;
 }
-span{
-    color:green;
-}
-
 .content-2{
     background-color: hwb(0 84% 14%);
 }
@@ -178,30 +124,68 @@ span{
     align-self: center;
 }
 .segunda-secao{
-    background-color: rgb(11, 154, 52);
-    color: white;
+    display: flex;
+    flex-direction: row;
+    color:black;
+    width: 100%;
+    height: 70vh;
+    align-items: flex-end;
+    justify-content: space-around;
+    letter-spacing: 2px;
+}
+.segunda-secao-content{
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    text-align: justify;
+}
+.segunda-secao-content h2 {
+    color:rgb(11, 154, 52);
+}
+.segunda-secao-content span {
+    color:rgb(11, 154, 52);
+    letter-spacing: 1px;
+    font-size: 25px;
 }
 .terceira-secao{
-    color: black
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgb(206, 205, 205);
+    height: 45vh;
+}
+.baixe-app-texto{
+    color: black;
+    font-family: 'Opens-sans', sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 90px;
+    font-size: 20px;
+}
+.imagens-segunda-secao{
+    mix-blend-mode: darken;
+    width: 250px;
+    height: 250px;
+}
+.btn{
+    align-self: center;
 }
 footer{
     background-color:rgba(0, 0, 0, 0.7);
     height: 22vh;
     width: 100%;    
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);  
-    /* position: absolute;
-    bottom: 0; */
 }
 .rodape1{
     display: flex;
     justify-content: space-around;
 }
 .rodape1 h4{
-    margin-top: 25px;
-    font-size: 19px;
+    margin-top: -10px;
+    font-size: 25px;
 }
 .rodape1 p{
-    font-size: 13px;
+    font-size: 15px;
 }
 .rodape1-content-1 h4{
     margin-bottom: 4px;
@@ -222,17 +206,10 @@ footer{
     align-self: center;
     font-size: 15px;
 }
-.btn{
-    width: 120px;
-}
 .rodape1 .icones{
-    width: 20px;
+    width: 30px;
+    height: 30px;
 }
 .rodape-container{
     display: flex;
-}
-iframe{
-    margin-top: 10px;
-    width: 320px;
-    height: 120px;
 }

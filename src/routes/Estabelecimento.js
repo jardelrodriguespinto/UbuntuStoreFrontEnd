@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import SegundaSecao from '../components/SegundaSecao';
+import PrimeiraSecao from '../components/PrimeiraSecao';
 
 function Estabelecimento() {
   return (
     <div>
-      <Header isHomePage={false}/>
-      <SegundaSecao/>
+      <Header/>
+      <PrimeiraSecao/>
       <Footer />
     </div>
   );

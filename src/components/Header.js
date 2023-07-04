@@ -1,14 +1,12 @@
 import '../index.css';
 import NavBarComScroll from './NavBarComScroll';
-import NavBarPaginaHomeSemScroll from './SegundoHeaderHome';
 
-function Header({isHomePage}) {
+function Header() {
 
   return (
     <div>
       <header>
         <NavBarComScroll/>
-        {isHomePage ? <NavBarPaginaHomeSemScroll/> : null};
       </header>
     </div>
   );
