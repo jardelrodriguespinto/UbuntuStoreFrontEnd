@@ -27,7 +27,7 @@ export function SegundaSecao(){
                     Gerando excelência na entrega.
                 </p>
                 <p>
-                    <span>O que nos difere nas entragas?</span>
+                    <span>O que nos difere nas entregas?</span>
                 </p>
             </div>
             <div className="segunda-secao-content">
