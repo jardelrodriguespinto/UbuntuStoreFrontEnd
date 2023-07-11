@@ -17,15 +17,15 @@ function NavBarComScroll() {
           <div className="nav-content">
             <img className="ubuntu-store-logo" src={logoUbuntuStore} onClick={irParaHome} alt="Logo da empresa UbuntuStore" />
             <nav>
-              {/* <ul className="menus"> */}
-                {/* {menuItems.map((menu, index) => {
+              <ul className="menu"> 
+                {menuItems.map((menu, index) => {
                   return (
                     <li className="menu-items" key={index}>
-                      <a href={menu.url}>{menu.title}</a>
+                      <a className="item" href={menu.url}>{menu.title}</a>
                     </li>
                   );
-                })} */}
-              {/* </ul> */}
+                })}
+              </ul> 
             </nav>           
             <BotaoBaixeApp/>
           </div>
