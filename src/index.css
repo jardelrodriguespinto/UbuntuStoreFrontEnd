@@ -7,29 +7,29 @@
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
 body{
     color: #fff;
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
     line-height: 3;
 }
+
 nav{
     width: 100%;
-    height: 15vh;
+    height: 120px;
     background-color: rgb(11, 154, 52);
-    /* position: fixed; */
-    /* top:0; */
 }
 .nav-content{
     display: flex;
     justify-content: space-evenly;
 }
+
 .ubuntu-store-logo{
     width: 120px;
     height: 120px;
     border-radius: 90px;
     margin-top: 8px;
-    margin-left: 8px;
     mix-blend-mode: multiply;
 }
 .ubuntu-store-logo:hover{
@@ -47,19 +47,17 @@ nav{
     font-weight: bolder;
     background-color: rgba(0, 0, 0, 0.889);
     color: #fff;
-    width: 200px;
+    width: 160px;
     border: none;
     height: 50px;
     border-radius: 15px;
-    font-size: 1.25em;
+    font-size: 1.0em;
     margin-top: 40px;
-    margin-right: 20px;
     cursor: pointer;
 }
 .baixe-app p{
-    margin-top: 10px;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-top: 12px;
+    margin-left: 10px;
 }
 .baixe-app img{
     margin-top: 10px;
@@ -74,8 +72,7 @@ nav{
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("./assets/img/alimentos.jpg");
     background-size: cover;
     width: 100%;
-    /* margin-top: 129px; */
-    height: 100vh;
+    height: 800px;
     color: white;
     letter-spacing: 3px;
 }
@@ -88,18 +85,17 @@ nav{
 .introducao h2{
     text-align: center;
     color: white;
-    margin-bottom: 50px;
     font-size: 45px;
-    
 }
+
 .introducao p{
     margin-left: 2%;
-    margin-right: 2%;
     font-size: 1.5em;
     text-align: center;
     word-wrap: break-word;
 }
-section{
+
+section {
     line-height: 35px;
 }
 .main-content{
@@ -117,120 +113,135 @@ section{
     text-align: left;
     color: black;
 }
-.menu{
+.menu {
     margin-top: 15px;
-    margin-left: 450px;
     display: flex;
     flex-direction: row;
-    width: 850px;
+    width: 1000px;
     justify-content: space-evenly;
     align-content: center;
     font-size: 35px;
 }
+
 .menu-items{
     list-style-type: none;
 }
+
 .item{
     text-decoration: none;
     color: white;
     font-family: "Roboto Mono", sans-serif;
-    margin-right: 18px;
 }
+
 .content-2{
     background-color: hwb(0 80% 20%);
 }
-.img-refeicao{
+
+.img-refeicao {
     width: 40%;
     height: 20%;
     align-self: center;
 }
-.segunda-secao{
-    display: flex;
-    flex-direction: row;
-    color:black;
-    width: 100%;
-    height: 60vh;
-    align-items: flex-end;
-    justify-content: space-around;
-    letter-spacing: 2px;
+
+.segunda-secao {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  justify-content: center; /* Centraliza horizontalmente os conteúdos */
 }
-.segunda-secao-content{
-    display: flex;
-    margin-left: 50px;
-    flex-direction: column;
-    text-align: justify;
+
+.segunda-secao-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza verticalmente os conteúdos */
+  text-align: justify;
 }
+
 .segunda-secao-content h2 {
-    color:rgb(11, 154, 52);
+  color: rgb(11, 154, 52);
 }
+
 .segunda-secao-content span {
-    color:rgb(11, 154, 52);
-    letter-spacing: 1px;
-    font-size: 25px;
+  color: rgb(11, 154, 52);
+  letter-spacing: 1px;
+  font-size: 25px;
 }
-.terceira-secao{
+
+.terceira-secao {
     display: flex;
     text-align: center;
+    justify-content: center;
     flex-direction: column;
     background-color: rgb(174, 171, 171);
-    height: 45vh;
+    height: 550px;
 }
+
 .baixe-app-texto{
     color: black;
     font-family: 'Opens-sans', sans-serif;
     text-align: center;
-    letter-spacing: 2px;
-    margin-top: 180px;
-    font-size: 50px;
+    font-size: 40px;
 }
+
 .imagens-segunda-secao{
     mix-blend-mode: darken;
     width: 250px;
     height: 250px;
 }
+
 .btn{
     align-self: center;
 }
-footer{
+
+footer {
     background-color:rgba(0, 0, 0, 0.7);
-    height: 22vh;
+    height: 220px;
     width: 100%;    
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);  
 }
+
 .rodape1{
     display: flex;
     justify-content: space-around;
 }
+
 .rodape1 h4{
     margin-top: -10px;
     font-size: 25px;
 }
+
 .rodape1 p{
     font-size: 15px;
 }
+
 .rodape1-content-1 h4{
     margin-bottom: 4px;
     margin-left: 1px;
 }
+
 .rodape1-content-1 p{
     margin-left: 8px;
 }
+
 .footer-container-2{
     width: 100%;
     display: flex;
-    height: 10vh;
+    height: 70px;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.889);
 }
+
 .footer-container-2 p{
     align-self: center;
     font-size: 15px;
 }
+
 .rodape1 .icones{
     width: 30px;
     height: 30px;
 }
+
 .rodape-container{
     display: flex;
 }
