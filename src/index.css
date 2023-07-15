@@ -167,10 +167,11 @@ section {
 
 .hamburger-menu-icon {
     display: none;
+    visibility: hidden;
 }
 
 .sidebar {
-    display: none;
+    display: none; 
 }
 
 .sidebar-menu {
@@ -383,17 +384,20 @@ footer {
             right: 0;
             height: 100vh;
             width: 800px;
-            color: black;
-            background-color: red;
+            color: white;
+            background-color: black;
+            display: block;
         }
           
         .sidebar-menu {
+            display: block;
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
           
           .sidebar-menu li {    
+            display: block;
             padding: 10px;
             border-bottom: 1px solid #ccc;
         }          
