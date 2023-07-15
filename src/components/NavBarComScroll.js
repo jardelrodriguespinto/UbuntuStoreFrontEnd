@@ -4,8 +4,13 @@ import logoUbuntuStore from '../assets/img/logo-ubuntu-store.jpeg';
 import { BotaoBaixeApp } from './BotaoBaixeApp';
 import { menuItems } from './MenuItems'
 import hamburgerMenuIcon from '../assets/img/hamburger-menu.png'
+import { useState } from 'react';
+import SideBarMenu from './SideBarMenu';
 
 function NavBarComScroll() {
+
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
   const navigate = useNavigate();
 
   function irParaHome() {
@@ -14,6 +19,7 @@ function NavBarComScroll() {
   
   function renderizaSideBar(){
     /*Pensar na logica pra renderizar a navbar, por enquanto ela ficará amostra*/
+    setSidebarOpen(! isSidebarOpen);
 
   }
 
@@ -35,6 +41,7 @@ function NavBarComScroll() {
             </nav>            
             <BotaoBaixeApp/>
             <img src={hamburgerMenuIcon} onClick={renderizaSideBar} alt="Menu do tipo hamburger"  className="hamburger-menu-icon"/>
+            {isSidebarOpen && <SideBarMenu />}
           </div>
         </nav>
       </header>

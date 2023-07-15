@@ -169,6 +169,18 @@ section {
     display: none;
 }
 
+.sidebar {
+    display: none;
+}
+
+.sidebar-menu {
+    display: none;
+}
+  
+.sidebar-menu li {    
+    display: none;
+}  
+
 .content-2 {
     background-color: hwb(0 80% 20%);
 }
@@ -349,7 +361,7 @@ footer {
     .baixe-app p {
         margin-top: 10px;
     }
-    
+
 @media only screen and (max-width: 1212px) {
         .baixe-app {
             display: none;
@@ -366,5 +378,24 @@ footer {
             width: 70px;
             height: 70px;
         }
+       
+        .sidebar {
+            right: 0;
+            height: 100vh;
+            width: 800px;
+            color: black;
+            background-color: red;
+        }
+          
+        .sidebar-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+          
+          .sidebar-menu li {    
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }          
     }
   }
