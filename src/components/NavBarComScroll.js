@@ -66,12 +66,6 @@ function NavBarComScroll(props) {
           </nav>}
           {baixar && <BotaoBaixeApp />}
           {login && <BotaoLogin/>}
-          <img
-            src={hamburgerMenuIcon}
-            onClick={renderizaSideBar}
-            alt="Menu do tipo hamburger"
-            className="hamburger-menu-icon"
-          />
           {isSidebarOpen && <SideBarMenu />}
         </div>
       </nav>

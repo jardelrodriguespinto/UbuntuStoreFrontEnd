@@ -9,15 +9,14 @@ nav{
 }
 .nav-content {
     display: grid;
-     
     grid-template-columns: 1fr 4fr 1fr 1fr;
     justify-content: space-between;
 }
 
-.nav-content:last-child {
+/* .nav-content:last-child {
     width: 100%;
-}
-.ubuntu-store-logo {
+} */
+.ubuntu-store-logo{
     width: auto ;
     height: auto;
     justify-self: center;
@@ -28,3 +27,6 @@ nav{
     mix-blend-mode: multiply;
     cursor: pointer;
 }
+.nav-content:only-child  {
+    grid-template-columns: 1fr ;
+  }
