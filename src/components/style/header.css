@@ -1,3 +1,30 @@
-header{
-    height: 20vh;
+nav{
+    display:grid;
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(58, 158, 86);
+    align-content: center ;
+    justify-content: center;
+
+}
+.nav-content {
+    display: grid;
+     
+    grid-template-columns: 1fr 4fr 1fr 1fr;
+    justify-content: space-between;
+}
+
+.nav-content:last-child {
+    width: 100%;
+}
+.ubuntu-store-logo {
+    width: auto ;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    margin: 10px;
+    background-color: aliceblue;
+    border-radius: 90px;
+    mix-blend-mode: multiply;
+    cursor: pointer;
 }

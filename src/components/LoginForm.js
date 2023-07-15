@@ -2,26 +2,26 @@ import "../components/style/loginForm.css";
 
 function LoginForm() {
   return (
-    <div >
+    <div>
       <form>
-        <div id="input-usuario">
-        <label for="usuario">
-          <b>Usuario</b>
-        </label>
-        <input name="usuario" required={true} />
+        <div className="campos">
+          <div className="campo-usuario">
+            <label for="usuario">
+              <b>Usuario</b>
+            </label>
+            <input name="usuario" required={true} />
+          </div>
+          <div className="campo-senha">
+            <label for="senha">
+              <b>Senha</b>
+            </label>
+            <input name="senha" required={true} />
+          </div>
         </div>
-        <label for="usuario">
-          <b>Usuario</b>
-        </label>
-        
-        <label for="senha">
-          <b>Senha</b>
-        </label>
-        <input name="senha" required={true} />
         <div>
           <button type="submit">Login</button>
         </div>
-        
+
         <div>
           <button>Cadastrar-se</button>
           <button>Esqueci a senha</button>

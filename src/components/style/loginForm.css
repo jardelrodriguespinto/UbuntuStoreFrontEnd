@@ -1,10 +1,17 @@
+
+body{
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
 label{
     color: black;
 }
 form{
-
-    display: flex;
+    height:100%;
 }
-#inputs{
+.campos{
 
+    display: grid;
+    grid-template-columns: 1fr;
+    
 }

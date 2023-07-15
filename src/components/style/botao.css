@@ -1,5 +1,5 @@
 .botao-login {
-  display: grid;
+ 
   width: 80%;
   height: 50%;
   justify-self: center;
@@ -8,31 +8,22 @@
   outline: none;
   border: none;
   border-radius: 100px;
-  background: #fff;
+  background: #e6e3e3;
   font-size: 40px;
   cursor: pointer;
-  justify-self: center;
-  align-self: center;
   border-color: black;
   border-style: outset;
   border-width: 1px;
 }
 
 .botao-login:hover {
-  display: grid;
-  width: 80%;
-  height: 50%;
-  justify-self: center;
-  align-self: center;
+
+
   color: #fff;
-  border-style: outset;
-  border-width: 1px;
-  outline: none;
-  border: none;
-  border-radius: 100px;
-  background: #185834;
-  cursor: pointer;
-  border-color: rgb(247, 247, 247);
+  background: #63ad83;
+  font-weight: 500;
   border-style: outset;
   border-width: 1px;
 }
+
+
