@@ -14,6 +14,7 @@ function Header(props) {
         estabelecimentos={props.estabelecimentos}
         nossaMissao={props.nossaMissao}
         login= {props.login}
+        navBar= {props.navBar}
         />}
         {}
       </header>

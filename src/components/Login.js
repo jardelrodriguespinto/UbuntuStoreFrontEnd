@@ -10,9 +10,8 @@ function Login() {
       <Header
       logo={true}
       baixar={false}
-      estabelecimentos={false}
-      nossaMissao={false}
       login={false}
+      navBar={false}
       />
 
     </div>

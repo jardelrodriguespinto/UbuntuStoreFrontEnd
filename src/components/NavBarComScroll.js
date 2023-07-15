@@ -20,6 +20,10 @@ function NavBarComScroll(props) {
   if (props.login === true) {
     login = true;
   }
+  let navBar = false;
+  if (props.navBar === true) {
+    navBar = true;
+  }
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
@@ -49,7 +53,7 @@ function NavBarComScroll(props) {
               alt="Logo da empresa UbuntuStore"
             />
           )}
-          <nav>
+          {navBar && <nav>
             <ul className="menu">
               {menuItems.map((menu, index) => {
                 return (
@@ -61,7 +65,7 @@ function NavBarComScroll(props) {
                 );
               })}
             </ul>
-          </nav>
+          </nav>}
           {baixar && <BotaoBaixeApp />}
           {login && <h1  onClick={irParaLogin}>Login</h1>}
           <img
