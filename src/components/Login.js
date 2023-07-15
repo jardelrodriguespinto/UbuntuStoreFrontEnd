@@ -1,6 +1,6 @@
 import '../components/style/login.css';
 import Header from '../components/Header';
-import LoginForm from '../components/LoginForm';
+import LoginForm from './formulario-login/LoginForm';
 
 
 
