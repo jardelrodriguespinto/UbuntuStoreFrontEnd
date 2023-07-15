@@ -7,7 +7,6 @@ import BotaoLogin from "./BotaoLogin";
 import HamburgerMenu from "./HamburgerMenu";
 
 function NavBarComScroll(props) {
-
   let logo = false;
 
   if (props.logo === true) {
@@ -28,7 +27,6 @@ function NavBarComScroll(props) {
   /*redifinir a lógica do menuhamburguer*/
   const menuHamburguer = true;
 
-
   const navigate = useNavigate();
 
   const classeCss = "baixe-app";
@@ -38,32 +36,32 @@ function NavBarComScroll(props) {
   }
 
   return (
-      <nav className="nav">
-        <div className="nav-content">
-          {logo && (
-            <img
-              className="ubuntu-store-logo"
-              src={logoUbuntuStore}
-              onClick={irParaHome}
-              alt="Logo da empresa UbuntuStore"
-            />
-          )}
-            <ul className="menu">
-              {menuItems.map((menu, index) => {
-                return (
-                  <li className="menu-items" key={index}>
-                    <a className="item" href={menu.url}>
-                      {menu.title}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          {baixar && <BotaoBaixeApp classeCss={classeCss} />}
-          {login && <BotaoLogin/>}
-          {menuHamburguer && <HamburgerMenu/>}
-        </div>
-      </nav>
+    <nav className="nav">
+      <div className="nav-content">
+        {logo && (
+          <img
+            className="ubuntu-store-logo"
+            src={logoUbuntuStore}
+            onClick={irParaHome}
+            alt="Logo da empresa UbuntuStore"
+          />
+        )}
+        <ul className="menu">
+          {menuItems.map((menu, index) => {
+            return (
+              <li className="menu-items" key={index}>
+                <a className="item" href={menu.url}>
+                  {menu.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        {baixar && <BotaoBaixeApp classeCss={classeCss} />}
+        {login && <BotaoLogin />}
+        {menuHamburguer && <HamburgerMenu />}
+      </div>
+    </nav>
   );
 }
 export default NavBarComScroll;
