@@ -1,5 +1,4 @@
 import "../components/style/loginForm.css";
-import Header from "./Header";
 
 function LoginForm() {
   return (
