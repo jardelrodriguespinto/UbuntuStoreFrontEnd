@@ -1,0 +1,29 @@
+.botao-login {
+ 
+  width: 80%;
+  height: 50%;
+  justify-self: center;
+  align-self: center;
+  color: #3a9e67;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  background: #e6e3e3;
+  font-size: 40px;
+  cursor: pointer;
+  border-color: black;
+  border-style: outset;
+  border-width: 1px;
+}
+
+.botao-login:hover {
+
+
+  color: #fff;
+  background: #63ad83;
+  font-weight: 500;
+  border-style: outset;
+  border-width: 1px;
+}
+
+

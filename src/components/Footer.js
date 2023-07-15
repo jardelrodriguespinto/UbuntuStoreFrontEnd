@@ -3,7 +3,7 @@ import place from '../assets/img/place.png'
 import predio from '../assets/img/predio.png'
 import tellphone from '../assets/img/tellphone.png'
 
-function Footer(){
+function footer(){
     return (
         <div>
             <footer>
@@ -34,4 +34,4 @@ function Footer(){
     );
 }
 
-export default Footer;
+export default footer;

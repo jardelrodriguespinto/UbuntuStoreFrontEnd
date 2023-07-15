@@ -1,13 +1,19 @@
-import '../index.css';
 import NavBarComScroll from './NavBarComScroll';
 
-function Header() {
-
+function Header(props) {
+  
   return (
     <div>
-      <header>
-        <NavBarComScroll/>
-      </header>
+        {<NavBarComScroll
+         logo = {props.logo}
+        baixar={props.baixar}
+        estabelecimentos={props.estabelecimentos}
+        nossaMissao={props.nossaMissao}
+        login= {props.login}
+        navBar= {props.navBar}
+        />}
+        
+     
     </div>
   );
 }

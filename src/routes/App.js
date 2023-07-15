@@ -9,7 +9,11 @@ import { SegundaSecao } from '../components/SegundaSecao';
 function App() {
   return (
     <>
-      <Header/>
+      <Header 
+      logo ={true}
+      baixar = {true}
+      login = {false}
+      navBar= {true}/>
       <main>
         <PrimeiraSecao/>
         <SegundaSecao/>
