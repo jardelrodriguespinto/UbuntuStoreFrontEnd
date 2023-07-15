@@ -12,7 +12,7 @@ function App() {
       <Header 
       logo ={true}
       baixar = {true}
-      login = {true}
+      login = {false}
       navBar= {true}/>
       <main>
         <PrimeiraSecao/>

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import logoUbuntuStore from "../assets/img/logo-ubuntu-store.jpeg";
 import { BotaoBaixeApp } from "./BotaoBaixeApp";
 import { menuItems } from "./MenuItems";
-import hamburgerMenuIcon from "../assets/img/hamburger-menu.png";
 import { useState } from "react";
 import SideBarMenu from "./SideBarMenu";
 import BotaoLogin from "./BotaoLogin";

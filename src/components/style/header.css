@@ -27,6 +27,7 @@ nav{
     mix-blend-mode: multiply;
     cursor: pointer;
 }
-.nav-content:only-child  {
+/* .nav-content:only-child  {
     grid-template-columns: 1fr ;
-  }
+
+  } */

@@ -12,7 +12,7 @@ function Header(props) {
         login= {props.login}
         navBar= {props.navBar}
         />}
-        {}
+        
      
     </div>
   );
