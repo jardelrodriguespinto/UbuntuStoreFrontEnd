@@ -1,3 +1,4 @@
+import '../assets/style/terceira-secao.css'
 import  React  from 'react';
 import { BotaoBaixeApp } from './BotaoBaixeApp';
 import logo from '../assets/img/logo-ubuntu-store.jpeg'

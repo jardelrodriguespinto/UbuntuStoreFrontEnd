@@ -1,0 +1,13 @@
+.hamburger-menu-icon {
+    display: none;
+}
+
+@media only screen and (max-width: 1212px) {
+    .hamburger-menu-icon {
+        display: flex;
+        align-self: center;
+        margin-right: 15px;
+        width: 120px;
+        height: 120px;
+    }
+}

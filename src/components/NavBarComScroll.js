@@ -1,12 +1,10 @@
-import "./style/header.css";
+import "../assets/style/header.css";
 import { useNavigate } from "react-router-dom";
 import logoUbuntuStore from "../assets/img/logo-ubuntu-store.jpeg";
 import { BotaoBaixeApp } from "./BotaoBaixeApp";
 import { menuItems } from "./MenuItems";
-import { useState } from "react";
-import SideBarMenu from "./SideBarMenu";
-import hamburgerMenuIcon from '../assets/img/hamburger-menu.png'
 import BotaoLogin from "./BotaoLogin";
+import HamburgerMenu from "./HamburgerMenu";
 
 function NavBarComScroll(props) {
 
@@ -27,17 +25,9 @@ function NavBarComScroll(props) {
     login = true;
   }
 
-  let navBar = false;
-  if (props.navBar === true) {
-    navBar = true;
-  }
+  /*redifinir a lógica do menuhamburguer*/
+  const menuHamburguer = true;
 
-  let menuHamburguer = false;
-  if (props.menuHamburguer === true) {
-    menuHamburguer = true;
-  }
-
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -47,45 +37,32 @@ function NavBarComScroll(props) {
     navigate("/");
   }
 
-  function renderizaSideBar() {
-    /*Pensar na logica pra renderizar a navbar, por enquanto ela ficará amostra*/
-    setSidebarOpen(!isSidebarOpen);
-  }
-
-
   return (
-      <nav className="nav-content">
-        {logo && (
-          <img
-            className="ubuntu-store-logo"
-            src={logoUbuntuStore}
-            onClick={irParaHome}
-            alt="Logo da empresa UbuntuStore"
-          />
-        )}
-        {navBar && <nav>
-          <ul className="menu">
-            {menuItems.map((menu, index) => {
-              return (
-                <li className="menu-items" key={index}>
-                  <a className="item" href={menu.url}>
-                    {menu.title}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>}
-        {baixar && <BotaoBaixeApp classeCss={classeCss} />}
-        {login && <BotaoLogin/>}
-        {menuHamburguer &&<img
-          src={hamburgerMenuIcon}
-          onClick={renderizaSideBar}
-          alt="Menu do tipo hamburger"
-          className="hamburger-menu-icon"
-        />}
-        {isSidebarOpen && <SideBarMenu />}
-        <img src={hamburgerMenuIcon} onClick={renderizaSideBar} alt="Menu do tipo hamburger"  className="hamburger-menu-icon"/>
+      <nav className="nav">
+        <div className="nav-content">
+          {logo && (
+            <img
+              className="ubuntu-store-logo"
+              src={logoUbuntuStore}
+              onClick={irParaHome}
+              alt="Logo da empresa UbuntuStore"
+            />
+          )}
+            <ul className="menu">
+              {menuItems.map((menu, index) => {
+                return (
+                  <li className="menu-items" key={index}>
+                    <a className="item" href={menu.url}>
+                      {menu.title}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          {baixar && <BotaoBaixeApp classeCss={classeCss} />}
+          {login && <BotaoLogin/>}
+          {menuHamburguer && <HamburgerMenu/>}
+        </div>
       </nav>
   );
 }

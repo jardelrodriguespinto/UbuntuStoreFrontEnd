@@ -1,4 +1,4 @@
-import '../index.css';
+import '../assets/style/primeira-secao.css';
 import  React from 'react';
 
 function PrimeiraSecao(){

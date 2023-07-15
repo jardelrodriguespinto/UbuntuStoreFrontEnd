@@ -1,3 +1,4 @@
+import '../assets/style/segunda-secao.css'
 import React from 'react';
 import tecnologia from '../assets/img/tecnologia.png';
 

@@ -1,5 +1,4 @@
 .botao-login {
- 
   width: 80%;
   height: 50%;
   justify-self: center;
@@ -17,13 +16,9 @@
 }
 
 .botao-login:hover {
-
-
   color: #fff;
   background: #63ad83;
   font-weight: 500;
   border-style: outset;
   border-width: 1px;
 }
-
-

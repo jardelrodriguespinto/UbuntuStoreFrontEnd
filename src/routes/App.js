@@ -1,4 +1,4 @@
-import '../index.css';
+import '../assets/style/index.css';
 import React from 'react';  
 import Header from '../components/Header';
 import PrimeiraSecao from '../components/PrimeiraSecao';
