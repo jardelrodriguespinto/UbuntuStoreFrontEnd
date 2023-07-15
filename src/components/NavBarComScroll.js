@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import logoUbuntuStore from '../assets/img/logo-ubuntu-store.jpeg';
 import { BotaoBaixeApp } from './BotaoBaixeApp';
 import { menuItems } from './MenuItems'
+import hamburgerMenuIcon from '../assets/img/hamburger-menu.png'
 
 function NavBarComScroll() {
   const navigate = useNavigate();
@@ -11,6 +12,11 @@ function NavBarComScroll() {
     navigate('/');
   }
   
+  function renderizaSideBar(){
+    /*Pensar na logica pra renderizar a navbar, por enquanto ela ficará amostra*/
+
+  }
+
   return (
       <header className="primeiro-header">
         <nav>
@@ -26,8 +32,9 @@ function NavBarComScroll() {
                   );
                 })}
               </ul> 
-            </nav>           
+            </nav>            
             <BotaoBaixeApp/>
+            <img src={hamburgerMenuIcon} onClick={renderizaSideBar} alt="Menu do tipo hamburger"  className="hamburger-menu-icon"/>
           </div>
         </nav>
       </header>

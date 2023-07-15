@@ -1,15 +1,23 @@
 import  React  from 'react';
 import { BotaoBaixeApp } from './BotaoBaixeApp';
+import logo from '../assets/img/logo-ubuntu-store.jpeg'
 
 function TerceiraSecao(){
     return (
         <div>
           <section className="terceira-secao">
-              <p className="baixe-app-texto">
-                  Baixe agora mesmo nosso aplicativo fácil de usar e personalizado para suas necessidades e desfrute de promoções exclusivas, rastreamento de pedidos em tempo real e suporte ao cliente de qualidade. Venha fazer parte do movimento de mudança social e tecnológica da UbuntuStore e alimente a união entre as pessoas.
+              <p className="terceira-secao-texto">
+                  Baixe agora mesmo nosso aplicativo fácil de usar<br/>
+                  e personalizado para suas necessidades e desfrute<br/>
+                  de promoções exclusivas, rastreamento de pedidos<br/>
+                  em tempo real e suporte ao cliente de qualidade.<br/>
+                  Venha fazer parte do movimento de mudança social<br/>
+                  e tecnológica da UbuntuStore e alimente a união<br/>
+                  entre as pessoas.
               </p>
-              <div className="btn">
-                <BotaoBaixeApp/>
+              <div className="baixar-app">
+                <img className="logo" src={logo} alt="imagem de um celular com o aplicativo da UbuntuStore"/>
+                <BotaoBaixeApp className="terceira-secao-btn"/>
               </div>
           </section>  
         </div>

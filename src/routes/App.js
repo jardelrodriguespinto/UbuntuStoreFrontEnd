@@ -8,7 +8,7 @@ import { SegundaSecao } from '../components/SegundaSecao';
 
 function App() {
   return (
-    <div>
+    <>
       <Header/>
       <main>
         <PrimeiraSecao/>
@@ -16,7 +16,7 @@ function App() {
         <TerceiraSecao/>  
       </main>
       <Footer/>
-    </div>
+    </>
   );
 }
 

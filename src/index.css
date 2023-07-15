@@ -8,40 +8,63 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-body{
+body {
     color: #fff;
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
     line-height: 3;
 }
 
-nav{
+nav {
     width: 100%;
     height: 120px;
     background-color: rgb(11, 154, 52);
-}
-.nav-content{
-    display: flex;
+    align-content: center ;
     justify-content: space-evenly;
+    display: flex;
 }
 
-.ubuntu-store-logo{
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(11, 154, 52);
+    align-content: center ;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-content:last-child {
+    width: 100%;
+}
+
+.ubuntu-store-logo {
     width: 120px;
     height: 120px;
     border-radius: 90px;
     margin-top: 8px;
     mix-blend-mode: multiply;
 }
-.ubuntu-store-logo:hover{
+
+.ubuntu-store-logo:hover {
     width: 120px;
     height: 120px;
     border-radius: 90px;
     margin-top: 8px;
-    margin-left: 8px;
     mix-blend-mode: multiply;
     cursor: pointer;
 }
-.baixe-app{
+
+.baixe-app {
     display: flex;
     font-family: "Roboto Mono", sans-serif;
     font-weight: bolder;
@@ -55,16 +78,19 @@ nav{
     margin-top: 40px;
     cursor: pointer;
 }
-.baixe-app p{
+
+.baixe-app p {
     margin-top: 12px;
     margin-left: 10px;
 }
-.baixe-app img{
+
+.baixe-app img {
     margin-top: 10px;
     width: 30px;
     height: 30px;
 }
-.introducao{
+
+.introducao {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,20 +102,24 @@ nav{
     color: white;
     letter-spacing: 3px;
 }
-.introducao span{
+
+.introducao span {
     color:yellow;
 }
-.primeira-secao{
+
+.primeira-secao {
     color: black;
 }
-.introducao h2{
+
+.introducao h2 {
     text-align: center;
+    margin-top: -50px;
+    margin-bottom: 150px;
     color: white;
     font-size: 45px;
 }
 
-.introducao p{
-    margin-left: 2%;
+.introducao p {
     font-size: 1.5em;
     text-align: center;
     word-wrap: break-word;
@@ -98,42 +128,48 @@ nav{
 section {
     line-height: 35px;
 }
+
 .main-content{
     display: flex;
     flex-direction: row;
     width: 100%;
     
 }
-.main-content p{
+
+.main-content p {
     margin-top: 2%;
-    margin-left: 15px;
     margin-bottom: 3%;
     font-size: 30px;
     word-wrap: break-word;
     text-align: left;
     color: black;
 }
+
 .menu {
     margin-top: 15px;
     display: flex;
     flex-direction: row;
     width: 1000px;
     justify-content: space-evenly;
-    align-content: center;
+    align-self: center;
     font-size: 35px;
 }
 
-.menu-items{
+.menu-items {
     list-style-type: none;
 }
 
-.item{
+.item {
     text-decoration: none;
     color: white;
     font-family: "Roboto Mono", sans-serif;
 }
 
-.content-2{
+.hamburger-menu-icon {
+    display: none;
+}
+
+.content-2 {
     background-color: hwb(0 80% 20%);
 }
 
@@ -144,53 +180,84 @@ section {
 }
 
 .segunda-secao {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 20px;
-  justify-content: center; /* Centraliza horizontalmente os conteúdos */
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  height: 450px;
 }
 
 .segunda-secao-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza verticalmente os conteúdos */
+  align-self: center; 
   text-align: justify;
-  border: 1px solid red;
+  height: 450px;
 }
 
 .segunda-secao-content h2 {
-  color: rgb(11, 154, 52);
-}
-
-.segunda-secao-content span {
+  font-size: 35px;
   color: rgb(11, 154, 52);
   letter-spacing: 1px;
-  font-size: 25px;
+}
+
+.segunda-secao-content p {
+  color: rgb(11, 154, 52);
+  font-size: 18px;
+}
+
+.segunda-secao-content a {
+  color: rgb(201, 15, 15);
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 35px;
 }
 
 .terceira-secao {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgb(174, 171, 171);
+    align-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: rgb(236, 233, 233);
+    letter-spacing: 1px;
+    line-height: 1.3;
     height: 550px;
 }
 
-.baixe-app-texto{
+.terceira-secao-texto {
     color: black;
-    font-family: 'Opens-sans', sans-serif;
+    font-family: 'Roboto Mono', sans-serif;
+    justify-content: center;
+    align-self: center;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
 }
 
-.imagens-segunda-secao{
-    mix-blend-mode: darken;
-    width: 250px;
+.baixar-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+.terceira-secao-btn {
+    align-self: center;
+}
+
+.logo {
+    mix-blend-mode: multiply;    
+    width: 240px;
     height: 250px;
 }
 
-.btn{
+.imagens-segunda-secao {
+    mix-blend-mode: darken;
+    align-self: center;
+    width: 350px;
+    height: 350px;
+}
+
+.btn {
     align-self: center;
 }
 
@@ -201,30 +268,30 @@ footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);  
 }
 
-.rodape1{
+.rodape1 {
     display: flex;
     justify-content: space-around;
 }
 
-.rodape1 h4{
+.rodape1 h4 {
     margin-top: -10px;
     font-size: 25px;
 }
 
-.rodape1 p{
+.rodape1 p {
     font-size: 15px;
 }
 
-.rodape1-content-1 h4{
+.rodape1-content-1 h4 {
     margin-bottom: 4px;
     margin-left: 1px;
 }
 
-.rodape1-content-1 p{
+.rodape1-content-1 p {
     margin-left: 8px;
 }
 
-.footer-container-2{
+.footer-container-2 {
     width: 100%;
     display: flex;
     height: 70px;
@@ -233,16 +300,71 @@ footer {
     background-color: rgba(0, 0, 0, 0.889);
 }
 
-.footer-container-2 p{
+.footer-container-2 p {
     align-self: center;
     font-size: 15px;
 }
 
-.rodape1 .icones{
+.rodape1 .icones {
     width: 30px;
     height: 30px;
 }
 
-.rodape-container{
+.rodape-container {
     display: flex;
 }
+
+/* Adicionando as medias queries */
+
+@media only screen and (max-width: 1312px) {
+    .menu {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        width: 600px;
+        justify-content: space-between; 
+        align-self: center;
+        font-size: 25px;
+    }
+
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px; 
+    }
+
+    .baixe-app {
+        width: 120px;
+        height: 40px;
+        font-size: 11px;
+        margin-top: 50px;
+    }
+
+    .baixe-app img {
+        margin-top: 5px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .baixe-app p {
+        margin-top: 10px;
+    }
+    
+@media only screen and (max-width: 1212px) {
+        .baixe-app {
+            display: none;
+        }
+
+        .menu { 
+            display: none;
+        }
+
+        .hamburger-menu-icon {
+            display: block;
+            margin-top: 30px;
+            margin-right: 15px;
+            width: 70px;
+            height: 70px;
+        }
+    }
+  }
