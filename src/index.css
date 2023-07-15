@@ -24,10 +24,7 @@ nav {
     display: flex;
 }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 nav {
     width: 100%;
@@ -39,7 +36,8 @@ nav {
 }
 
 .nav-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr;
     justify-content: space-between;
 }
 
@@ -147,16 +145,18 @@ section {
 
 .menu {
     margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    width: 1000px;
+    display: grid;
+    flex-direction: column;
+    width: 70vw;
     justify-content: space-evenly;
     align-self: center;
     font-size: 35px;
+    grid-template-columns: repeat(auto-fit,minmax(10%,auto));
 }
 
 .menu-items {
     list-style-type: none;
+
 }
 
 .item {

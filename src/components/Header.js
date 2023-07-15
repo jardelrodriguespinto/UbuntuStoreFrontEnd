@@ -3,11 +3,8 @@ import NavBarComScroll from './NavBarComScroll';
 
 function Header(props) {
   
-  
-
   return (
     <div>
-      <header>
         {<NavBarComScroll
          logo = {props.logo}
         baixar={props.baixar}
@@ -17,7 +14,7 @@ function Header(props) {
         navBar= {props.navBar}
         />}
         {}
-      </header>
+     
     </div>
   );
 }

@@ -1,4 +1,10 @@
 label{
     color: black;
 }
+form{
 
+    display: flex;
+}
+#inputs{
+
+}

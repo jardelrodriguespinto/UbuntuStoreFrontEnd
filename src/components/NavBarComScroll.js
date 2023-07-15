@@ -6,6 +6,7 @@ import { menuItems } from "./MenuItems";
 import hamburgerMenuIcon from "../assets/img/hamburger-menu.png";
 import { useState } from "react";
 import SideBarMenu from "./SideBarMenu";
+import BotaoLogin from "./BotaoLogin";
 
 function NavBarComScroll(props) {
   let logo = false;
@@ -32,9 +33,7 @@ function NavBarComScroll(props) {
   function irParaHome() {
     navigate("/");
   }
-  function irParaLogin() {
-    navigate("/login");
-  }
+
 
   function renderizaSideBar() {
     /*Pensar na logica pra renderizar a navbar, por enquanto ela ficará amostra*/
@@ -42,7 +41,6 @@ function NavBarComScroll(props) {
   }
 
   return (
-    <header className="primeiro-header">
       <nav>
         <div className="nav-content">
           {logo && (
@@ -67,7 +65,7 @@ function NavBarComScroll(props) {
             </ul>
           </nav>}
           {baixar && <BotaoBaixeApp />}
-          {login && <h1  onClick={irParaLogin}>Login</h1>}
+          {login && <BotaoLogin/>}
           <img
             src={hamburgerMenuIcon}
             onClick={renderizaSideBar}
@@ -77,7 +75,6 @@ function NavBarComScroll(props) {
           {isSidebarOpen && <SideBarMenu />}
         </div>
       </nav>
-    </header>
   );
 }
 export default NavBarComScroll;

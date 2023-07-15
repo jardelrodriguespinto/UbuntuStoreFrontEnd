@@ -2,12 +2,18 @@ import "../components/style/loginForm.css";
 
 function LoginForm() {
   return (
-    <div>
+    <div >
       <form>
+        <div id="input-usuario">
         <label for="usuario">
           <b>Usuario</b>
         </label>
         <input name="usuario" required={true} />
+        </div>
+        <label for="usuario">
+          <b>Usuario</b>
+        </label>
+        
         <label for="senha">
           <b>Senha</b>
         </label>

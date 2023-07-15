@@ -1,0 +1,38 @@
+.botao-login {
+  display: grid;
+  width: 80%;
+  height: 50%;
+  justify-self: center;
+  align-self: center;
+  color: #3a9e67;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  background: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  justify-self: center;
+  align-self: center;
+  border-color: black;
+  border-style: outset;
+  border-width: 1px;
+}
+
+.botao-login:hover {
+  display: grid;
+  width: 80%;
+  height: 50%;
+  justify-self: center;
+  align-self: center;
+  color: #fff;
+  border-style: outset;
+  border-width: 1px;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  background: #185834;
+  cursor: pointer;
+  border-color: rgb(247, 247, 247);
+  border-style: outset;
+  border-width: 1px;
+}
