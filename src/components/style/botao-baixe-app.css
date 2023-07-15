@@ -32,3 +32,10 @@
   width: 75%;
   height: 75%;
 }
+@media only screen and (max-width: 1312px) {
+
+  .baixe-app{
+    display: none;
+  }
+}
+
