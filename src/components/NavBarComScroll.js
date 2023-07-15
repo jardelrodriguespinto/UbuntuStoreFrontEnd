@@ -40,6 +40,8 @@ function NavBarComScroll(props) {
     setSidebarOpen(!isSidebarOpen);
   }
 
+  const classeCss = "baixe-app";
+
   return (
       <nav>
         <div className="nav-content">
@@ -64,7 +66,7 @@ function NavBarComScroll(props) {
               })}
             </ul>
           </nav>}
-          {baixar && <BotaoBaixeApp />}
+          {baixar && <BotaoBaixeApp classeCss={classeCss} />}
           {login && <BotaoLogin/>}
           {isSidebarOpen && <SideBarMenu />}
         <img src={hamburgerMenuIcon} onClick={renderizaSideBar} alt="Menu do tipo hamburger"  className="hamburger-menu-icon"/>

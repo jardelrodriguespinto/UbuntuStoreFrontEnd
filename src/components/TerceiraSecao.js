@@ -3,6 +3,9 @@ import { BotaoBaixeApp } from './BotaoBaixeApp';
 import logo from '../assets/img/logo-ubuntu-store.jpeg'
 
 function TerceiraSecao(){
+
+    const classeCss = "terceira-secao-btn";
+
     return (
         <div>
           <section className="terceira-secao">
@@ -17,7 +20,7 @@ function TerceiraSecao(){
               </p>
               <div className="baixar-app">
                 <img className="logo" src={logo} alt="imagem de um celular com o aplicativo da UbuntuStore"/>
-                <BotaoBaixeApp className="terceira-secao-btn"/>
+                <BotaoBaixeApp classeCss={classeCss} />
               </div>
           </section>  
         </div>
