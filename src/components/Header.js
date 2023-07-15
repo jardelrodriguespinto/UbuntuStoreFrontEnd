@@ -11,6 +11,7 @@ function Header(props) {
         nossaMissao={props.nossaMissao}
         login= {props.login}
         navBar= {props.navBar}
+        menuHamburguer= {props.menuHamburguer}
         />}
         
      

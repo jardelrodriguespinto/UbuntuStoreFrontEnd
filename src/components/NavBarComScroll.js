@@ -25,7 +25,10 @@ function NavBarComScroll(props) {
   if (props.navBar === true) {
     navBar = true;
   }
-
+  let menuHamburguer = false;
+  if (props.menuHamburguer === true) {
+    menuHamburguer = true;
+  }
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -66,12 +69,12 @@ function NavBarComScroll(props) {
           </nav>}
           {baixar && <BotaoBaixeApp />}
           {login && <BotaoLogin/>}
-          <img
+          {menuHamburguer &&<img
             src={hamburgerMenuIcon}
             onClick={renderizaSideBar}
             alt="Menu do tipo hamburger"
             className="hamburger-menu-icon"
-          />
+          />}
           {isSidebarOpen && <SideBarMenu />}
         </div>
       </nav>
