@@ -1,5 +1,6 @@
 import '../components/style/login.css';
 import Header from '../components/Header';
+import LoginForm from '../components/LoginForm';
 
 
 
@@ -13,6 +14,7 @@ function Login() {
       login={false}
       navBar={false}
       />
+     <LoginForm/>
 
     </div>
   );
