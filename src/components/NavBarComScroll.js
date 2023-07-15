@@ -6,6 +6,7 @@ import { menuItems } from "./MenuItems";
 import { useState } from "react";
 import SideBarMenu from "./SideBarMenu";
 import BotaoLogin from "./BotaoLogin";
+import hamburgerMenuIcon from '../assets/img/hamburger-menu.png'
 
 function NavBarComScroll(props) {
   let logo = false;
@@ -65,6 +66,12 @@ function NavBarComScroll(props) {
           </nav>}
           {baixar && <BotaoBaixeApp />}
           {login && <BotaoLogin/>}
+          <img
+            src={hamburgerMenuIcon}
+            onClick={renderizaSideBar}
+            alt="Menu do tipo hamburger"
+            className="hamburger-menu-icon"
+          />
           {isSidebarOpen && <SideBarMenu />}
         </div>
       </nav>
