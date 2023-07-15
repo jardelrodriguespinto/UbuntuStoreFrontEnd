@@ -4,6 +4,7 @@ import tecnologia from '../assets/img/tecnologia.png';
 export function SegundaSecao(){
   return (
       <div className="segunda-secao">
+        <img src={tecnologia} className="imagens-segunda-secao" alt="Tecnologia" />
         <div className="segunda-secao-content">
           <h2>Tecnologia e Comunidade</h2>
           <p>
@@ -14,7 +15,6 @@ export function SegundaSecao(){
           </p>
           <a href="#">Saiba mais</a>
         </div>
-          <img src={tecnologia} className="imagens-segunda-secao" alt="Tecnologia" />
       </div>
     );
 
