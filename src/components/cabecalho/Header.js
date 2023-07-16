@@ -1,10 +1,10 @@
-import "../assets/style/header.css";
+import "./header.css";
 import { useNavigate } from "react-router-dom";
-import logoUbuntuStore from "../assets/img/logo-ubuntu-store.jpeg";
-import { BotaoBaixeApp } from "./BotaoBaixeApp";
-import { menuItems } from "./MenuItems";
-import BotaoLogin from "./BotaoLogin";
-import HamburgerMenu from "./HamburgerMenu";
+import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
+import { BotaoBaixeApp } from "../BotaoBaixeApp";
+import { menuItems } from "../MenuItems";
+import BotaoLogin from "../BotaoLogin";
+import HamburgerMenu from "../HamburgerMenu";
 
 function Header(props) {
   let logo = false;
@@ -23,18 +23,25 @@ function Header(props) {
   if (props.login === true) {
     login = true;
   }
+  let menu = false;
+  if (props.menu === true) {
+    menu = true;
+  }
+  let menuClassName = "menu";
+  if (props.navClassName != null) {
+    menuClassName = props.menuClassName;
+  }
 
   /*redifinir a lógica do menuhamburguer*/
   const menuHamburguer = true;
 
   const navigate = useNavigate();
 
-  const classeCss = "baixe-app";
+  let classeCss = "baixe-app";
 
   function irParaHome() {
     navigate("/");
   }
-
 
   return (
     <nav className="nav">
@@ -47,17 +54,19 @@ function Header(props) {
             alt="Logo da empresa UbuntuStore"
           />
         )}
-        <ul className="menu">
-          {menuItems.map((menu, index) => {
-            return (
-              <li className="menu-items" key={index}>
-                <a className="item" href={menu.url}>
-                  {menu.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+        {menu && (
+          <ul className={menuClassName}>
+            {menuItems.map((menu, index) => {
+              return (
+                <li className="menu-items" key={index}>
+                  <a className="item" href={menu.url}>
+                    {menu.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        )}
         {baixar && <BotaoBaixeApp classeCss={classeCss} />}
         {login && <BotaoLogin />}
         {menuHamburguer && <HamburgerMenu />}

@@ -1,6 +1,6 @@
 import '../assets/style/index.css';
 import React from 'react';  
-import Header from '../components/Header';
+import Header from '../components/cabecalho/Header';
 import PrimeiraSecao from '../components/PrimeiraSecao';
 import TerceiraSecao from '../components/TerceiraSecao';
 import Footer from '../components/Footer';
