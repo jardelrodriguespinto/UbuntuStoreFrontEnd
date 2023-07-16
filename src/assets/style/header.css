@@ -75,5 +75,9 @@
         .menu { 
             display: none;
         }
+
+        .ubuntu-store-logo {
+            margin-left: 8px;
+        }
     }          
 }
