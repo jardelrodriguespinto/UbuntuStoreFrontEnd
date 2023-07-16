@@ -67,6 +67,7 @@
     height: 150px;
     border-radius: 90px;
     margin-top: 8px;
+    margin-left: 10px;
     align-self: center;
     mix-blend-mode: multiply;
   }

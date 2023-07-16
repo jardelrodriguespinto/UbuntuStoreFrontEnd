@@ -9,22 +9,19 @@ import HamburgerMenu from "../HamburgerMenu";
 function NavBarComScroll(props) {
   let logo = false;
 
-  if (props.logo === true) {
+  if (props.logo === true) 
     logo = true;
-  }
 
   let baixar = false;
 
-  if (props.baixar === true) {
+  if (props.baixar === true) 
     baixar = true;
-  }
 
   let login = false;
-  if (props.login === true) {
-    login = true;
-  }
 
-  /*redifinir a lógica do menuhamburguer*/
+  if (props.login === true) 
+    login = true;
+
   const menuHamburguer = true;
 
   const navigate = useNavigate();

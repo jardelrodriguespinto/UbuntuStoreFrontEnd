@@ -14,6 +14,7 @@
     .sidebar {
         position: fixed;
         top: 0;
+        margin: 0;
         right: 0;
         height: 100%;
         width: 1212px;
@@ -22,9 +23,22 @@
         z-index: 4;
         display: block;
     }
+
+    .sidebar-items {
+        display: flex;
+        align-self: center;
+        list-style-type: none;
+    }
+      
+    .elemento {
+        text-decoration: none;
+        color: black;
+        font-family: "Roboto Mono", sans-serif;
+    }
     
     .cabecalho-sidebar {
         display: flex;
+        margin-top: 35px;
         align-items: center;
         justify-content: space-between;
     }
@@ -39,8 +53,9 @@
 
     .logo-ubuntu {
         margin-left: 20px;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
+        mix-blend-mode: multiply;
     }
 
     .fechar-btn {
@@ -68,5 +83,44 @@
         padding: 20px;
         display: flex;
         font-size: 30px;
+    }
+
+    .sidebar-menu li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .accordion_item {
+        /* margin-bottom: 10px; */
+        display: flex;
+        flex-direction: column;
+      }
+      
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f0f0f0;
+        border: none;
+        padding: 10px;
+        font-size: 35px;
+        width: 100%;
+    }
+    
+    .button:hover {
+        background-color: #e0e0e0;
+    }
+    
+    .control {
+        margin-left: 5px;
+        font-size: 50px;
+    }
+    
+    .answer_wrapper {
+        display: none;
+    }
+    
+    .answer_wrapper.open {
+        display: block;
     }
 }
