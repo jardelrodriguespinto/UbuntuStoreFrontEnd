@@ -1,5 +1,10 @@
 body {
   height: 100%;
+
+}
+*{
+  padding: 0;
+  margin: 0;
 }
 html{
   padding: 0;
@@ -15,7 +20,7 @@ html{
   display: grid;
   grid-template-rows:auto, 2fr, ;
   padding:50px;
-  width: 30vw;
+  width:30vw;
   align-items: center;
   height: 70vh;
   opacity: 0.8;
@@ -76,14 +81,14 @@ input:focus {
 }
 .form-img-backgroud{
 
-  width:30%;
+  width:100%;
   justify-self: center;
   border-radius: 20px;
 }
 h1{
-  font-size: 4vh;
+  font-size: 4vw;
   color: rgb(24, 51, 36);
-  align-self: last baseline;
+  align-self:center;
 }
 .form-img{
   mix-blend-mode: multiply;
@@ -92,43 +97,22 @@ h1{
 
 }
 
-@media screen and (max-width: 2000px) {
-  .formulario{
-    width: 50vw;
+@media screen and (max-width: 1400px) {
 
-  }
-}
-@media only screen and (max-width: 112px) {
-  .formulario {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding:50px;
-    width: 80vw;
-    height: 70vh;
-    opacity: 0.8;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-box-shadow: 0 0 10px black;
-    -moz-box-shadow: 0 0 10px black;
-    box-shadow: 0 0 10px black;
-    background: #338f4a;
-    margin: 100px auto;
-    text-align: center;
-  }
-  input {
-    background-color: #dce9e0;
-    -webkit-border-radius: 45px;
-    -moz-border-radius: 45px;
-    border-radius: 45px;
   
-    height: 100px;
-    border: none;
-    text-align: center;
-    padding-left: 15px;
-    width: 100%;
-
-   
-  }
 }
+@media only screen and (max-width: 1000px) {
+  .formulario{
+    width: 60vw;
+
+  }
+  h1{
+    font-size: 35px;
+    color: rgb(24, 51, 36);
+    align-self: last baseline;
+  }
+
+}
+
+
 
