@@ -5,12 +5,6 @@
   background-color: rgb(11, 154, 52);
   align-content: center;
   justify-content: space-around;
-  border-style: solid;
-  border-width: 5px;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-color: black;
 }
 
 .nav-content {
@@ -67,6 +61,7 @@
   .nav-content {
     justify-content: space-between;
   }
+  
   .ubuntu-store-logo {
     width: 150px;
     height: 150px;
