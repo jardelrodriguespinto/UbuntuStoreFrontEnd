@@ -1,0 +1,60 @@
+.sidebar {
+    display: none;
+}
+
+.sidebar-menu {
+    display: none;
+}
+  
+.sidebar-menu li {    
+    display: none;
+}  
+
+@media only screen and (max-width: 1212px) {
+     .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 800px;
+        color: black;
+        background-color: hwb(0 80% 20%);
+        z-index: 4;
+        overflow-x: hidden;
+        transition: 0.9s;
+        display: block;
+    }
+
+    .fechar-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-top: 10px;
+        font-size: 20px;
+        border-radius: 50%;
+    }
+
+    .sidebar-open{
+        left: 0;
+    }
+    
+    .sidebar-closed{
+        left: -800px;
+    }
+    
+    .sidebar-menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: block;
+    }
+
+    .sidebar-menu li {
+        padding: 10px;
+        border-bottom: 1px solid black;
+        display: block;
+    }
+}
