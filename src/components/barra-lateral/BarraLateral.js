@@ -1,9 +1,7 @@
 import "./barra-lateral.css";
 import React from "react";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
-import { useNavigate } from "react-router-dom";
 import ItemBarraLateral from "./item-barra-lateral/ItemBarraLateral"
-
 
 function BarraLateral() {
 
