@@ -1,11 +1,13 @@
 import '../assets/style/hamburger-menu.css';
-
 import { useState } from "react";
 import hamburgerMenuIcon from '../assets/img/hamburger-menu.png';
 import SideBarMenu from "./SideBarMenu";
 
 function HamburgerMenu() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <>
@@ -20,7 +22,7 @@ function HamburgerMenu() {
           className={`nav ${isSidebarOpen}` ? "nav-open" : "nav-closed"}
           hamburgerMenuIcon={hamburgerMenuIcon}
           isSidebarOpen={isSidebarOpen}
-          
+          toggleSidebar={toggleSidebar} 
         />
       )}
     </>

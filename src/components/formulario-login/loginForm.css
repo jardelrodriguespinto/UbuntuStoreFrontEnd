@@ -1,18 +1,24 @@
+/* as configurações do body estão gerando alterações nos arquivos css como por
+exemplo na segunda seção da home page. */
+
 body {
   height: 100%;
-
+  background-color: rgb(203, 218, 207);
 }
+
 *{
   padding: 0;
   margin: 0;
 }
-html{
+
+html {
   padding: 0;
   margin: 0;
   height: 100%;
   align-content: center;
 }
-#root{
+
+#root {
   height: 100%;
 }
 
@@ -48,49 +54,54 @@ html{
   align-items: baseline;
   gap: 2vh;
   grid-template-columns: 1fr ;
-  
 }
+
 input {
   background-color: rgba(160, 255, 165, 0);
   border-color: black;
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
- border-width: 2px;
+  border-width: 2px;
   font-size: 25px;
   height: 100px;
-border-style: solid;
+  border-style: solid;
   text-align: center;
   padding-left: 15px;
   width: -webkit-calc(100% - 15px);
   width: -moz-calc(100% - 15px);
   width: calc(100% - 15px);
- 
   
  
 }
-input:hover{
+
+input:hover {
   border-width: 5px;
 }
+
 input:focus {
   outline: none;
 }
-.inputEmail{
+
+.inputEmail {
   justify-self: center ;
   align-self: center;
 }
-.form-img-backgroud{
+
+.form-img-backgroud {
 
   width:100%;
   justify-self: center;
   border-radius: 20px;
 }
-h1{
+
+h1 {
   font-size: 4vw;
   color: rgb(24, 51, 36);
   align-self:center;
 }
-.form-img{
+
+.form-img {
   mix-blend-mode: multiply;
   justify-self: center;
   width: 100%;
@@ -101,11 +112,13 @@ h1{
 
   
 }
+
 @media only screen and (max-width: 1000px) {
   .formulario{
     width: 60vw;
 
   }
+
   h1{
     font-size: 35px;
     color: rgb(24, 51, 36);

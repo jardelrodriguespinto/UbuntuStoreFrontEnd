@@ -6,39 +6,27 @@ import { menuItems } from "../MenuItems";
 import BotaoLogin from "../BotaoLogin";
 import HamburgerMenu from "../HamburgerMenu";
 
-
-function Header(props) {
+function NavBarComScroll(props) {
   let logo = false;
 
-  if (props.logo === true) {
+  if (props.logo === true) 
     logo = true;
-  }
 
   let baixar = false;
 
-  if (props.baixar === true) {
+  if (props.baixar === true) 
     baixar = true;
-  }
 
   let login = false;
-  if (props.login === true) {
-    login = true;
-  }
-  let menu = false;
-  if (props.menu === true) {
-    menu = true;
-  }
-  let menuClassName = "menu";
-  if (props.navClassName != null) {
-    menuClassName = props.menuClassName;
-  }
 
-  /*redifinir a lógica do menuhamburguer*/
+  if (props.login === true) 
+    login = true;
+
   const menuHamburguer = true;
 
   const navigate = useNavigate();
 
-  let classeCss = "baixe-app";
+  const classeCss = "baixe-app";
 
   function irParaHome() {
     navigate("/");
@@ -55,19 +43,17 @@ function Header(props) {
             alt="Logo da empresa UbuntuStore"
           />
         )}
-        {menu && (
-          <ul className={menuClassName}>
-            {menuItems.map((menu, index) => {
-              return (
-                <li className="menu-items" key={index}>
-                  <a className="item" href={menu.url}>
-                    {menu.title}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        )}
+        <ul className="menu">
+          {menuItems.map((menu, index) => {
+            return (
+              <li className="menu-items" key={index}>
+                <a className="item" href={menu.url}>
+                  {menu.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
         {baixar && <BotaoBaixeApp classeCss={classeCss} />}
         {login && <BotaoLogin />}
         {menuHamburguer && <HamburgerMenu />}
@@ -75,4 +61,4 @@ function Header(props) {
     </nav>
   );
 }
-export default Header;
+export default NavBarComScroll;
