@@ -12,7 +12,7 @@ function LoginForm() {
 
     if(resposta === true){
 
-      navigate("/estabelecimentos/home")
+      navigate("/estabelecimentos/inicio")
     
     }
     
