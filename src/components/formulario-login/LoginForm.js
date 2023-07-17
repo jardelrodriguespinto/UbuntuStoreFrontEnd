@@ -1,5 +1,4 @@
 import "./loginForm.css";
-import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
 import { useNavigate } from "react-router-dom";
 
 function login(){

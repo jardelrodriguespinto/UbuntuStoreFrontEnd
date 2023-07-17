@@ -14,7 +14,7 @@ export function SegundaSecao(){
               da tecnologia, e transformar o mercado<br/>
               de apps de delivery.     
           </p>
-          <a href="#">Saiba mais</a>
+          <a href="www">Saiba mais</a>
         </div>
       </div>
     );

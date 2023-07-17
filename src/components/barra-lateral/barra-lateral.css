@@ -1,0 +1,38 @@
+li{
+    width: 100%;
+}
+.barraLateral{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-flow: column;
+    grid-template-columns: 1fr; 
+    background-color: rgb(187, 201, 191);
+    
+    border-top: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 5px;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+}
+.botaoBarraLateral{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    border: none;
+    grid-template-columns: 1fr 4fr;
+    background-color: rgba(8, 39, 39, 0);
+    cursor: pointer;
+}
+
+.iconeBarraLateral{
+    width: 80px;
+    height: 80px;
+    align-self: center;
+    mix-blend-mode: multiply;
+}
+.textoBarraLateral{
+    justify-content: center;
+    font-size: 25px;
+    align-self: center;
+}

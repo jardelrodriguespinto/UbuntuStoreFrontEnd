@@ -1,10 +1,7 @@
 /* as configurações do body estão gerando alterações nos arquivos css como por
 exemplo na segunda seção da home page. */
 
-body {
-  height: 100%;
-  background-color: rgb(203, 218, 207);
-}
+
 
 *{
   padding: 0;
@@ -74,7 +71,6 @@ input {
   width: -moz-calc(100% - 15px);
   width: calc(100% - 15px);
   
- 
 }
 
 input:hover {

@@ -5,8 +5,8 @@ import App from './components/telas/App';
 import Estabelecimento from './components/telas/Estabelecimento';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Login from './components/telas/Login';
-import HomeEstabelecimento from './components/telas/HomeEstabelecimento';
+import Login from './components/telas/login/Login';
+import HomeEstabelecimento from './components/telas/home-estabelecimento/HomeEstabelecimento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
