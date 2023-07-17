@@ -5,7 +5,8 @@ import App from './routes/App';
 import Estabelecimento from './routes/Estabelecimento';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Login from './components/Login';
+import Login from './routes/Login';
+import HomeEstabelecimento from './routes/HomeEstabelecimento';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <Login/>
+  },
+  {
+    path:'/estabelecimentos/home',
+    element: <HomeEstabelecimento/>
   }
   
 ]);

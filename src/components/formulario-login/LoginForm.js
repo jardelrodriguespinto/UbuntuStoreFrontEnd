@@ -1,6 +1,24 @@
 import "./loginForm.css";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
+import { useNavigate } from "react-router-dom";
+
+function login(){
+return true
+}
 function LoginForm() {
+  const navigate = useNavigate();
+  function navegarParaHome(){
+
+    let resposta = login()
+
+    if(resposta === true){
+
+      navigate("/estabelecimentos/home")
+    
+    }
+    
+  }
+  
   return (
     <form className="formulario">
       <div className="form-img-backgroud">
@@ -12,7 +30,7 @@ function LoginForm() {
           placeholder="Usuario"
           name="usuario"
           type="text"
-          maxLength={30}
+          maxLength={50}
         />
         <input
           className="inputSenha"
@@ -22,7 +40,7 @@ function LoginForm() {
         />
       </div>
       
-      <button class="botao-login">Login</button>
+      <button class="botao-login" onClick={navegarParaHome}>Login</button>
     </form>
   );
 }
