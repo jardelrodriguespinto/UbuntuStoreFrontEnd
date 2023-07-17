@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
 import { BotaoBaixeApp } from "../BotaoBaixeApp";
 import { menuItems } from "../MenuItems";
-import BotaoLogin from "../BotaoLogin";
+import BotaoLogin from "../botoes/BotaoLogin";
 import HamburgerMenu from "../HamburgerMenu";
 
 function NavBarComScroll(props) {

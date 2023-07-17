@@ -53,6 +53,8 @@ html {
   display: grid;
   align-items: baseline;
   gap: 2vh;
+  width: 80%;
+  justify-self:center; 
   grid-template-columns: 1fr ;
 }
 

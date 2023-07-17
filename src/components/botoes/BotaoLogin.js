@@ -1,4 +1,4 @@
-import "../assets/style/botao-login.css";
+import "./botao-login.css";
 import { useNavigate } from "react-router-dom";
 
 function BotaoLogin() {

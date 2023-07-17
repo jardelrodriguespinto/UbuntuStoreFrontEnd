@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../src/assets/style/index.css';
-import App from './routes/App';
-import Estabelecimento from './routes/Estabelecimento';
+import App from './components/telas/App';
+import Estabelecimento from './components/telas/Estabelecimento';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Login from './routes/Login';
-import HomeEstabelecimento from './routes/HomeEstabelecimento';
-
+import Login from './components/telas/Login';
+import HomeEstabelecimento from './components/telas/HomeEstabelecimento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
