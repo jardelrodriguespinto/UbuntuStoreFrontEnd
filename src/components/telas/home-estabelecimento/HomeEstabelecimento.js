@@ -3,6 +3,7 @@ import "./home-estabelecimento.css";
 import HeaderEstabelecimento from "../../cabecalho/estabelecimento/HeaderEstabelecimento";
 import Footer from "../../Footer";
 import BarraLateral from "../../barra-lateral/BarraLateral";
+import BotaoLogin from "../../botoes/BotaoLogin";
 
 function HomeEstabelecimento() {
   return (
@@ -10,7 +11,9 @@ function HomeEstabelecimento() {
       <HeaderEstabelecimento logo={true} />
       <div className="homeEstabelecimento">
         <BarraLateral />
-        <main></main>
+        <main>
+          <BotaoLogin/>
+        </main>
       </div>
 
       <Footer />
