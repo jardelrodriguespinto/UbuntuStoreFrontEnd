@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Login from './components/telas/login/Login';
 import HomeEstabelecimento from './components/telas/home-estabelecimento/HomeEstabelecimento';
+import MinhaLoja from './components/telas/minha-loja/MinhaLoja';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path:'/estabelecimentos/home',
     element: <HomeEstabelecimento/>
+  },
+  {
+    path:'/estabelecimentos/minhaloja',
+    element: <MinhaLoja/>
   }
   
 ]);

@@ -23,7 +23,7 @@ function HeaderEstabelecimento(props) {
 
   return (
     <nav className="nav">
-      <div className="nav-content">
+      <div className="nav-content" id= "nav-estabelecimento">
         {logo && (
           <img
             className="ubuntu-store-logo"
