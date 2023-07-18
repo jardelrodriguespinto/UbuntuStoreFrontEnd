@@ -2,40 +2,61 @@ li{
     width: 100%;
     
 }
-
+#side{
+    background-color: rgb(126, 126, 126);
+    padding-left: 2px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
 #logoEstabelecimento{
     align-self: center;
     justify-self: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+  
     width: 200px;
     height: 200px;
+    mix-blend-mode: multiply;
     
 }
 
-#menuBarraLateral{
-    display: flex;
-    flex-direction: column;  
-    align-items: center;
-    gap: 20px;
-    flex-flow: column;
-    grid-template-columns: 1fr; 
-    background-color: rgb(187, 201, 191);
-    border-top: 0;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 5px;
-    -webkit-box-shadow: 0 0 5px black;
-    -moz-box-shadow: 0 0 5px black;
-}
-
-.iconeBarraLateral{
-    width: 80px;
-    height: 80px;
-    align-self: center;
-    mix-blend-mode: multiply;
-}
 .textoBarraLateral{
     justify-content: center;
     font-size: 25px;
+    align-self: center;
+}
+
+.botaoBarraLateral{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100%;
+    width: 100%;
+    padding:20px;
+    padding-top:4px;
+    padding-bottom:4px;
+    display: grid;
+    border: none;
+    grid-template-columns: 1fr 4fr;
+    cursor: pointer;
+    background-color: rgb(126, 126, 126);
+    border-bottom: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: white;
+    border-style: double;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconeBarraLateral{
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    mix-blend-mode: multiply;
+}
+
+.textoBarraLateral{
+    justify-content: center;
+    font-size: 25px;
+    color:rgb(230, 230, 230);
     align-self: center;
 }
