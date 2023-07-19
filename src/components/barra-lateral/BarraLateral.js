@@ -1,8 +1,8 @@
 import "./barra-lateral.css";
 import React from "react";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 function BarraLateral() {
@@ -21,7 +21,7 @@ function BarraLateral() {
               onClick={navegar("/estabelecimentos/inicio")}
               className="botaoBarraLateral"
             >
-              <FontAwesomeIcon className="iconeBarraLateral" icon={faHouse} />
+              {/* <FontAwesomeIcon className="iconeBarraLateral" icon={faHouse} /> */}
               <p>Inicio</p>
             </button>
           </li>
