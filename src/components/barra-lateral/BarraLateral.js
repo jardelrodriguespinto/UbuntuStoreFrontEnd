@@ -28,14 +28,19 @@ function BarraLateral() {
             rota="/estabelecimentos/cardapio"
             icone={faBookReader}
           />
+          <ItemBarraLateral
+            texto="Pedidos"
+            rota="/estabelecimentos/Pedidos"
+            icone={faBookReader}
+          />
         </div>
         <div>
-        <ItemBarraLateral
+          <ItemBarraLateral
             texto="Sair"
             rota=""
             icone={faArrowLeft}
-            acao= {()=>{
-              console.log("Logout")
+            acao={() => {
+              console.log("Logout");
             }}
           />
         </div>

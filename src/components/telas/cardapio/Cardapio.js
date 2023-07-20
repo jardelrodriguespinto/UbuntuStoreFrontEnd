@@ -4,34 +4,48 @@ import BarraLateral from "../../barra-lateral/BarraLateral";
 import Footer from "../../Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom"
+import ItemCardapio from "./ItemCardapio/ItemCardapio";
 
 function Cardapio() {
-  const [usuario, setUsuario] = useState([]);
+  const [lista, setLista] = useState([]);
   const [senha, setSenha] = useState("");
   const [responseState, setResponseState] = useState(null); // Novo estado para armazenar a resposta do Axios
-
-    const getLogin = async () => {
-    console.log("bla");    
+  let resposta = null;
+  console.log("bla");
+  const getLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:7200/estabelecimento/telas/listarprodutos',null,{
-        headers: {
-      Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmZXJuYW5kb0BnbWFpbC5jb20iLCJpYXQiOjE2ODk4NjE1NTgsImV4cCI6MTY4OTg2Mjk5OH0.VDWtlMOMIK6eCR_Z7zKieLPtr_9O8MZK6Z1M-Of4qLg"
-      }
-    }
-    )
-    ;
+      const response = await axios.post(
+        "http://localhost:7200/estabelecimento/telas/listarprodutos",
+        null,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlc3RAZXN0LmNvbSIsImlhdCI6MTY4OTg5NTE3NiwiZXhwIjoxNjg5ODk2NjE2fQ.iFOUaJie2kpnCqsp6N2qZJbB6jOVunqzJG8-h2BLibs",
+          },
+        }
+      );
+
       console.log(response);
-      setResponseState(response.data)
+      resposta = response.data;
+      setResponseState(response.data);
+      setLista(response.data.lista);
     } catch (error) {
       console.log(error);
     }
   };
-useEffect(()=> {
-  getLogin()
-},[])
+  useEffect(() => {
+    getLogin();
+    //     const { id } = responseState.lista[0].id;
+    // const { imagem } = responseState.lista[0].imagem;
+    // const { preco } = responseState.lista[0].preco;
+    // const { titulo } = responseState.data.lista[0].titulo;
+  }, []);
+  console.log(responseState);
 
+  // setResponseState(response.data);
+  console.log(responseState);
 
+  console.log(lista);
   return (
     <div>
       <HeaderEstabelecimento logo={true} />
@@ -39,8 +53,17 @@ useEffect(()=> {
         <BarraLateral />
         <main>
           <h1>Cardapio</h1>
-          {responseState && <pre>{JSON.stringify(responseState, null, 2)}</pre>}
-
+          {lista.map((obj,index,) => {
+            return (
+              <ItemCardapio
+                id={obj.id}
+                preco={obj.preco}
+                imagem={obj.imagem}
+                titulo={obj.titulo}
+                key= {index}
+              />
+            );
+          })}
         </main>
       </div>
 
