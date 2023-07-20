@@ -1,41 +1,44 @@
 import "./barra-lateral.css";
 import React from "react";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import { faShop } from "@fortawesome/free-solid-svg-icons";
+import { faBookReader } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import ItemBarraLateral from "./ItemBarraLateral.js";
 
 function BarraLateral() {
-  const navigate = useNavigate();
-  function navegar(caminho) {
-    navigate(caminho);
-  }
-
   return (
     <div id="side">
       <img id="logoEstabelecimento" src={logoUbuntuStore}></img>
       <ul className="barraLateral">
         <div>
-          <li className="itemBarraLateral">
-            <button
-              onClick={navegar("/estabelecimentos/inicio")}
-              className="botaoBarraLateral"
-            >
-              <FontAwesomeIcon className="iconeBarraLateral" icon={faHouse} />
-              <p>Inicio</p>
-            </button>
-          </li>
+          <ItemBarraLateral
+            texto="Inicio"
+            rota="/estabelecimentos/inicio"
+            icone={faHouse}
+          />
+          <ItemBarraLateral
+            texto="Minha Loja"
+            rota="/estabelecimentos/minhaloja"
+            icone={faShop}
+          />
+          <ItemBarraLateral
+            texto="Cardapio"
+            rota="/estabelecimentos/cardapio"
+            icone={faBookReader}
+          />
         </div>
-        {/* <ItemBarraLateral
-          caminho="/estabelecimentos/minhaloja"
-          texto="MinhaLoja"
-        />
+        <div>
         <ItemBarraLateral
-          caminho="/estabelecimentos/minhaloja"
-          texto="Cardápio"
-        />
-        <ItemBarraLateral caminho="/estabelecimentos/minhaloja" texto="Conta" />
-        <ItemBarraLateral caminho="/estabelecimentos/minhaloja" texto="Ajuda" /> */}
+            texto="Sair"
+            rota=""
+            icone={faArrowLeft}
+            acao= {()=>{
+              console.log("Logout")
+            }}
+          />
+        </div>
       </ul>
     </div>
   );

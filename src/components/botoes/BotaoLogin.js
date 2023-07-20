@@ -9,7 +9,7 @@ function BotaoLogin() {
   }
 
   return (
-      <button className="botao-login"  onClick={irParaLogin}>Login</button>
+      <button className="botao-login"  onClick={()=>irParaLogin()}>Login</button>
   );
 }
 export default BotaoLogin;

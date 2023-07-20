@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../cabecalho/Header';
-import Footer from '../Footer';
-import PrimeiraSecao from '../PrimeiraSecao';
+import Header from '../../cabecalho/Header';
+import Footer from '../../Footer';
+import PrimeiraSecao from '../../PrimeiraSecao';
 
 function Estabelecimento() {
   return (
