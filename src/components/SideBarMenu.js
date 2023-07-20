@@ -2,6 +2,8 @@ import '../assets/style/sidebar-menu.css';
 import logoUbuntuStore from "../assets/img/logo-ubuntu-store.jpeg";
 import { menuItems } from "./MenuItems";
 import AccordionItem from "./AccordionItem";
+import closeBtn from '../assets/img/close-button.png'
+
 
 function SideBarMenu({ toggleSidebar }) {
 
@@ -9,9 +11,7 @@ function SideBarMenu({ toggleSidebar }) {
     <div className="sidebar">
       <div className="cabecalho-sidebar">
         <img className="logo-ubuntu" src={logoUbuntuStore} alt="Logo da UbuntuStore"/>
-        <button className="fechar-btn" onClick={toggleSidebar}>
-          <span>x</span>
-        </button>
+        <img src={closeBtn} onClick={toggleSidebar} className='closed-btn' alt='Botão em formato de cruz para fechar a barra lateral' />
       </div>
       <ul className="sidebar-menu">
         {menuItems.map((menu, index) => {

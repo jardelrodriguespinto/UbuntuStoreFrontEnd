@@ -6,7 +6,7 @@ export const menuItems = [
       {
         title: 'Estabelecimentos',
         url: '/estabelecimentos',
-      }
+      },
     ],
   },
   {

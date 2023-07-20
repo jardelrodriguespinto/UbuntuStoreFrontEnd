@@ -1,4 +1,3 @@
-// AccordionItem.js
 import React, { useState } from 'react';
 
 const AccordionItem = ({ menuItems }) => {
@@ -11,10 +10,14 @@ const AccordionItem = ({ menuItems }) => {
 
   return (
     <li className={`accordion_item ${isOpen ? 'open' : 'closed'}`}>
-      <button className="button" onClick={handleToggle}>
+      <div className="tab">
         {title}
-        <span className="control">{isOpen ? '-' : '+'}</span>
-      </button>
+        <button
+          onClick={handleToggle}
+          className="control">
+          {isOpen ? '-' : '+'}
+        </button>
+      </div>
       {isOpen && (
         <ul className="submenu">
           {submenu.map((item, index) => (
