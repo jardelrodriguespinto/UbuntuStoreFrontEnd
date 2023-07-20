@@ -30,12 +30,6 @@
         list-style-type: none;
     }
       
-    .elemento {
-        text-decoration: none;
-        color: black;
-        font-family: "Roboto Mono", sans-serif;
-    }
-    
     .cabecalho-sidebar {
         display: flex;
         margin-top: 35px;
@@ -67,10 +61,11 @@
         margin-top: 10px;
     }
     
-    .fechar-btn span {
-        color: red;
-        font-size: 7em;
-    } 
+    .closed-btn {
+        width: 70px;
+        height: 70px;
+        margin-right: 45px;
+    }
 
     .sidebar-menu {
         display: flex;
@@ -80,9 +75,13 @@
     }
 
     .sidebar-menu li {
-        padding: 20px;
         display: flex;
+        padding:0;
         font-size: 30px;
+    }
+
+    .submenu-item {
+        padding: 0;
     }
 
     .sidebar-menu li a {
@@ -91,36 +90,23 @@
     }
 
     .accordion_item {
-        /* margin-bottom: 10px; */
         display: flex;
+        margin-bottom: 30px;
+        align-self: center;
         flex-direction: column;
       }
       
-    .button {
+    .tab {
         display: flex;
         align-items: center;
         justify-content: space-between;
         background-color: #f0f0f0;
-        border: none;
-        padding: 10px;
         font-size: 35px;
-        width: 100%;
-    }
-    
-    .button:hover {
-        background-color: #e0e0e0;
     }
     
     .control {
-        margin-left: 5px;
-        font-size: 50px;
-    }
-    
-    .answer_wrapper {
-        display: none;
-    }
-    
-    .answer_wrapper.open {
-        display: block;
+        margin-right: 15px;
+        font-size: 60px;
+        border: none;
     }
 }
