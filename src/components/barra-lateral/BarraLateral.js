@@ -6,8 +6,11 @@ import { faShop } from "@fortawesome/free-solid-svg-icons";
 import { faBookReader } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import ItemBarraLateral from "./ItemBarraLateral.js";
+import { useNavigate } from "react-router-dom";
+
 
 function BarraLateral() {
+  const navegar = useNavigate()
   return (
     <div id="side">
       <img id="logoEstabelecimento" src={logoUbuntuStore}></img>
@@ -37,10 +40,11 @@ function BarraLateral() {
         <div>
           <ItemBarraLateral
             texto="Sair"
-            rota=""
+            rota="/login"
             icone={faArrowLeft}
             acao={() => {
-              console.log("Logout");
+              localStorage.removeItem('token')
+              console.log();
             }}
           />
         </div>
