@@ -31,7 +31,6 @@ useEffect(()=> {
   getLogin()
 },[])
 
-
   return (
     <div>
       <HeaderEstabelecimento logo={true} />
