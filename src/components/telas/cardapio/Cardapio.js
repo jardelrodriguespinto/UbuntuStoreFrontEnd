@@ -4,32 +4,32 @@ import BarraLateral from "../../barra-lateral/BarraLateral";
 import Footer from "../../Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom"
+import { ubuntuIp } from "../../../propriedades";
+import ItemCardapio from "./item-cardapio/ItemCardapio";
 
 function Cardapio() {
-  const [usuario, setUsuario] = useState([]);
-  const [senha, setSenha] = useState("");
+  const [lista, setLista] = useState([]);
+  const [modificando, setModificando] = useState(false);
+  const [propriedades, setPropriedades] = useState(false);
   const [responseState, setResponseState] = useState(null); // Novo estado para armazenar a resposta do Axios
 
-    const getLogin = async () => {
-    console.log("bla");    
+  const itemCardapioNotify = async () => {
     try {
-      const response = await axios.post('http://localhost:7200/estabelecimento/telas/listarprodutos',null,{
-        headers: {
-      Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmZXJuYW5kb0BnbWFpbC5jb20iLCJpYXQiOjE2ODk4NjE1NTgsImV4cCI6MTY4OTg2Mjk5OH0.VDWtlMOMIK6eCR_Z7zKieLPtr_9O8MZK6Z1M-Of4qLg"
-      }
-    }
-    )
-    ;
-      console.log(response);
-      setResponseState(response.data)
+      const response = await axios.post(
+        ubuntuIp + "/estabelecimento/telas/produtos",
+        null,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      );
+      setResponseState(response.data);
+      setLista(response.data.lista);
     } catch (error) {
       console.log(error);
     }
   };
-useEffect(()=> {
-  getLogin()
-},[])
 
   return (
     <div>
@@ -38,8 +38,18 @@ useEffect(()=> {
         <BarraLateral />
         <main>
           <h1>Cardapio</h1>
-          {responseState && <pre>{JSON.stringify(responseState, null, 2)}</pre>}
-
+          {lista.map((obj, index) => {
+            return (
+              <ItemCardapio
+                id={obj.id}
+                preco={obj.preco}
+                imagem={obj.imagem}
+                titulo={obj.titulo}
+                key={index}
+                // onNotify={}
+              />
+            );
+          })}
         </main>
       </div>
 

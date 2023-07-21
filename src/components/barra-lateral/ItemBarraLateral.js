@@ -14,7 +14,12 @@ function ItemBarraLateral(props) {
     <>
           <li className="itemBarraLateral">
             <button
-              onClick={() => navegar(props.rota)}
+              onClick={() =>{
+                if(props.acao != null){
+                  props.acao()
+                }
+                navegar(props.rota)}
+              } 
               className="botaoBarraLateral"
             >
               <FontAwesomeIcon className="iconeBarraLateral" icon= {props.icone} />

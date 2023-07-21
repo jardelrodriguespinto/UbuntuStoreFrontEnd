@@ -9,6 +9,8 @@ import Login from './components/telas/login/Login';
 import HomeEstabelecimento from './components/telas/home-estabelecimento/HomeEstabelecimento';
 import MinhaLoja from './components/telas/minha-loja/MinhaLoja';
 import Cardapio from './components/telas/cardapio/Cardapio';
+import ItemCardapio from './components/telas/cardapio/item-cardapio/ItemCardapio';
+import EditarItemCardapio from './components/telas/cardapio/edicao-item-cardapio/EditarItemCardapio';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
   {
     path:'/estabelecimentos/cardapio',
     element: <Cardapio/>
+  },
+  {
+    path:'/estabelecimentos/cardapio/edicao',
+    element: <EditarItemCardapio/>
   }
   
 ]);
