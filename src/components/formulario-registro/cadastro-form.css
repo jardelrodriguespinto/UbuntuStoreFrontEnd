@@ -1,7 +1,6 @@
 /* as configurações do body estão gerando alterações nos arquivos css como por
 exemplo na segunda seção da home page. */
 
-
 *{
   padding: 0;
   margin: 0;
@@ -24,7 +23,7 @@ html {
   padding:50px;
   width:30vw;
   align-items: center;
-  height: 70vh;
+  height: 90vh;
   opacity: 0.8;
   background-color: #338f4a00;
   margin: 100px auto;
@@ -41,7 +40,7 @@ html {
   
 }
 
-.botao-login{
+.botao-cadastro{
   height: 7vh;
 }
 
@@ -69,7 +68,6 @@ input {
   width: -webkit-calc(100% - 15px);
   width: -moz-calc(100% - 15px);
   width: calc(100% - 15px);
-  
 }
 
 input:hover {

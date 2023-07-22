@@ -10,4 +10,11 @@
         width: 100px;
         height: 100px;
     }
+
+    .nav-open {
+        left: 0;
+    }
+    .nav-closed {
+        left: -1212px;
+    }
 }

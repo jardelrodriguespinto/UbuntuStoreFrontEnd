@@ -5,7 +5,7 @@ function BotaoCadastre() {
   
   const navigate = useNavigate();
   function irParaCadastro() {
-    navigate("/cadastro");
+    navigate("/registro");
   }
 
   return (

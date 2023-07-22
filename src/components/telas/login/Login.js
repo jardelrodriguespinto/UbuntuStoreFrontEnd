@@ -5,7 +5,6 @@ function Login() {
   return (
     <div className='telaLogin'>
      <LoginForm/>
-
     </div>
   );
 }

@@ -122,15 +122,19 @@
         width: 50%;
         margin-left: 15px;
     }
-    
+
     .control {
-        width: 8%;
-        height: 80px;
+        width: 80px;
+        font-family: 'Open-sans', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
         font-size: 65px;
-        border: none;
+        border: 1px solid white;
         margin-right: 15px;
-        border-radius: 50%;
-        color: rgb(76, 192, 10);
+        border-radius: 50%;background-color: #A3D29F;
+        color: black;
     }
 
     .botoes {
