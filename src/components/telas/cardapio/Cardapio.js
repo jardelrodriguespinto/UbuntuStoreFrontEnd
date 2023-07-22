@@ -12,7 +12,6 @@ function Cardapio() {
   const [modificando, setModificando] = useState(false);
   const [propriedades, setPropriedades] = useState(false);
   const [responseState, setResponseState] = useState(null); // Novo estado para armazenar a resposta do Axios
-  let resposta = null;
 
   const itemCardapioNotify = async () => {
     try {
@@ -25,9 +24,6 @@ function Cardapio() {
           },
         }
       );
-
-      console.log(response);
-      resposta = response.data;
       setResponseState(response.data);
       setLista(response.data.lista);
     } catch (error) {
@@ -35,35 +31,6 @@ function Cardapio() {
     }
   };
 
-  const getLogin = async () => {
-    try {
-      const response = await axios.post(
-        "http://localhost:7200/estabelecimento/telas/listarprodutos",
-        null,
-        {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-          },
-        }
-      );
-
-      console.log(response);
-      resposta = response.data;
-      setResponseState(response.data);
-      setLista(response.data.lista);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    getLogin();
-  }, []);
-  console.log(responseState);
-
-  // setResponseState(response.data);
-  console.log(responseState);
-
-  console.log(lista);
   return (
     <div>
       <HeaderEstabelecimento logo={true} />

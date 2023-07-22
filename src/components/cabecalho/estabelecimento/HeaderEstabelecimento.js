@@ -32,8 +32,6 @@ function HeaderEstabelecimento(props) {
             alt="Logo da empresa UbuntuStore"
           />
         )}
-        
-        
         {menuHamburguer && <HamburgerMenu />}
       </div>
     </nav>
