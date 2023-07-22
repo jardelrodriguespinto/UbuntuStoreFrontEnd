@@ -11,7 +11,7 @@ const AccordionItem = ({ menuItems }) => {
   return (
     <li className={`accordion_item ${isOpen ? 'open' : 'closed'}`}>
       <div className="tab">
-        {title}
+        <p className='titulo'>{title}</p>
         <button
           onClick={handleToggle}
           className="control">

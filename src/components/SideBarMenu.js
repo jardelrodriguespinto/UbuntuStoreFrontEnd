@@ -3,6 +3,8 @@ import logoUbuntuStore from "../assets/img/logo-ubuntu-store.jpeg";
 import { menuItems } from "./MenuItems";
 import AccordionItem from "./AccordionItem";
 import closeBtn from '../assets/img/close-button.png'
+import BotaoLogin from './botoes/BotaoLogin';
+import BotaoCadastre from './botoes/BotaoCadastre';
 
 
 function SideBarMenu({ toggleSidebar }) {
@@ -20,12 +22,10 @@ function SideBarMenu({ toggleSidebar }) {
               );
             })}
       </ul>
-      <button className="login-btn">
-          <span>Login</span>
-      </button>
-      <button className="register-btn">
-          <span>Cadastre-se</span>
-      </button>
+      <div className="botoes">
+        <BotaoLogin className="btn-login"/>
+        <BotaoCadastre className="btn-cadastre"/>
+      </div>
     </div>
   );
 }

@@ -19,7 +19,7 @@
         height: 100%;
         width: 1212px;
         color: black;
-        background-color: white;
+        background-color: #A3D29F;
         z-index: 4;
         display: block;
     }
@@ -82,6 +82,10 @@
 
     .submenu-item {
         padding: 0;
+        margin-top: 15px;
+        width: 100%;
+        background-color: #f0f0f0;
+        border-radius: 15px;
     }
 
     .sidebar-menu li a {
@@ -99,14 +103,28 @@
     .tab {
         display: flex;
         align-items: center;
+        border-radius: 15px;
         justify-content: space-between;
         background-color: #f0f0f0;
         font-size: 35px;
     }
     
+    .titulo {
+        width: 50%;
+        margin-left: 15px;
+    }
     .control {
-        margin-right: 15px;
+        width: 10%;
+        /* margin-right: 15px; */
         font-size: 60px;
         border: none;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        align-items: center;
+        justify-content: space-around;
     }
 }
