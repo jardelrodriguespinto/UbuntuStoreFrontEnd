@@ -21,11 +21,9 @@ const AccordionItem = ({ menuItems }) => {
       {isOpen && (
         <ul className="submenu">
           {submenu.map((item, index) => (
-            <div className="item">
-              <li className="submenu-item" key={index}>
-                <a href={item.url}>{item.title}</a>
-              </li>
-            </div>
+            <li className="submenu-item" key={index}>
+              <a href={item.url}>{item.title}</a>
+            </li>
           ))}
         </ul>
       )}

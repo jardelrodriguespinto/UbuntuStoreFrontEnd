@@ -24,7 +24,7 @@ function SideBarMenu({ toggleSidebar }) {
       </ul>
       <div className="botoes">
         <BotaoLogin className="btn-login"/>
-        <BotaoCadastre className="btn-cadastre"/>
+        <BotaoCadastre className="btn-login"/>
       </div>
     </div>
   );
