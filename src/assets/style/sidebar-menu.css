@@ -124,12 +124,11 @@
     }
 
     .control {
-        width: 80px;
-        font-family: 'Open-sans', sans-serif;
+        width: 8%;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 70px;
+        height: 80px;
         font-size: 65px;
         border: 1px solid white;
         margin-right: 15px;
