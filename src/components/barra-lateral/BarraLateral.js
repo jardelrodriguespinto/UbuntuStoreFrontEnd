@@ -1,4 +1,4 @@
-import "./barra-lateral.css";
+import "./barra-lateral.modules.css";
 import React from "react";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";

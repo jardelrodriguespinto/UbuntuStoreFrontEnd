@@ -1,4 +1,4 @@
-import '../assets/style/hamburger-menu.css';
+import '../assets/style/hamburger-menu.modules.css';
 import { useState } from "react";
 import hamburgerMenuIcon from '../assets/img/hamburger-menu.png';
 import SideBarMenu from "./SideBarMenu";

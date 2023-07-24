@@ -1,5 +1,5 @@
 import React from "react";
-import "./ItemCardapio.css";
+import "./item-cardapio.modules.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ubuntuIp } from "../../../../propriedades";

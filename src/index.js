@@ -12,6 +12,7 @@ import Cardapio from './components/telas/cardapio/Cardapio';
 import ItemCardapio from './components/telas/cardapio/item-cardapio/ItemCardapio';
 import EditarItemCardapio from './components/telas/cardapio/edicao-item-cardapio/EditarItemCardapio';
 import Cadastro from './components/casdastro/Cadastro';
+import NossaMissao from './components/telas/nossa-missao/NossaMissao';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: '/estabelecimentos',
     element: <Estabelecimento/>
+  },
+  {
+    path: '/nossa-missao',
+    element: <NossaMissao/>
   },
   {
     path: '/login',

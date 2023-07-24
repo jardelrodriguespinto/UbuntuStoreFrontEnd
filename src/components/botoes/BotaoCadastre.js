@@ -1,17 +1,18 @@
-import "./botao-cadastre.css";
+import "./botao-cadastre.modules.css";
 import { useNavigate } from "react-router-dom";
 
 function BotaoCadastre() {
   
-  const navigate = useNavigate();
-  function irParaCadastro() {
-    navigate("/registro");
-  }
+  // const navigate = useNavigate();
+  // function irParaCadastro() {
+  //   navigate("/registro");
+  // }
 
   return (
-      <button
+      <button>
         className="botao-cadastre"
-        onClick={()=> irParaCadastro()}>Cadastre-se
+         {/* onClick={()=> irParaCadastro()} */}
+        Cadastre-se
       </button>
   );
 }

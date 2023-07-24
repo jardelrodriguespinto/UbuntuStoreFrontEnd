@@ -1,4 +1,4 @@
-import '../assets/style/sidebar-menu.css';
+import '../assets/style/sidebar-menu.modules.css';
 import logoUbuntuStore from "../assets/img/logo-ubuntu-store.jpeg";
 import { menuItems } from "./MenuItems";
 import AccordionItem from "./AccordionItem";

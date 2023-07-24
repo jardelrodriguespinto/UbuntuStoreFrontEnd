@@ -1,4 +1,4 @@
-import "./loginForm.css";
+import "./login-form.modules.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -53,7 +53,7 @@ function LoginForm() {
       </div>
       <div className="campos">
         <input
-          className="inputEmail"
+          className="inputEmail input"
           placeholder="Usuario"
           minLength={3}
           name="usuario"
@@ -64,7 +64,7 @@ function LoginForm() {
           onChange={(e) => setUsuario(e.target.value)}
         />
         <input
-          className="inputSenha"
+          className="inputSenha input"
           placeholder="Senha"
           type="password"
           required

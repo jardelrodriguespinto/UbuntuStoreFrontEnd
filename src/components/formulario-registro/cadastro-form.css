@@ -53,7 +53,7 @@ html {
   grid-template-columns: 1fr ;
 }
 
-input {
+.input {
   background-color: rgba(160, 255, 165, 0);
   border-color: black;
   border-top: transparent;
@@ -70,11 +70,11 @@ input {
   width: calc(100% - 15px);
 }
 
-input:hover {
+.input:hover {
   border-width: 5px;
 }
 
-input:focus {
+.input:focus {
   outline: none;
 }
 

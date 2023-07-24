@@ -1,4 +1,4 @@
-import '../assets/style/segunda-secao.css'
+import '../assets/style/segunda-secao.modules.css'
 import React from 'react';
 import tecnologia from '../assets/img/tecnologia.png';
 
