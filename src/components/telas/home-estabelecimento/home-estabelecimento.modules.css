@@ -1,7 +1,7 @@
 .homeEstabelecimento {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    height: 150vh;
+    margin-bottom: 50px;
 }
 
 .formulario-cadastro {
