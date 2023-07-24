@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Label from "../../../../utils/Label";
 import InputTexto from "../../../../utils/Input";
 import Input from "../../../../utils/Input";
+import BotaoCadastrarProduto from "../../../botoes/BotaoCadastrarProduto";
 
 function EditarItemCardapio(props) {
   const navigate = useNavigate();
@@ -76,16 +77,13 @@ function EditarItemCardapio(props) {
                 <Input placeholder={"Nome"} type={"text"} nomeClasse={"input-texto"} name={"nome"}/>
               }/>
               <Label nome={'Preco'} classNameDiv="dados" conteudo={
-                <Input placeholder={"Preco"} type={"number"} nomeClasse={"input-preco"} name={"preco"}/>
+                <Input placeholder={"Preço"} type={"number"} nomeClasse={"input-preco"} name={"preco"}/>
               }/>
               <Label nome={'Calorias'} classNameDiv="dados" conteudo={
                 <Input placeholder={"Calorias"} type={"text"} nomeClasse={"input-numero"} name={"calorias"}/>
               }/>
               <Label nome={'Tempo de Preparo'} classNameDiv="dados" conteudo={
                 <Input placeholder={"Tempo de Preparo"} type={"text"} nomeClasse={"input-texto"} name={"tempo"}/>
-              }/>
-              <Label nome={'Descrição'} classNameDiv="dados descricao" conteudo={
-                <Input placeholder={"Descrição"} isDescricao={true} type={"text"} nomeClasse={"input-descricao"} name={"descricao"}/>
               }/>
               <div className="groupbox">
                 <Label nome={'Destacado'} classNameDiv="dados-checkbox" conteudo={
@@ -104,6 +102,10 @@ function EditarItemCardapio(props) {
                   <Input type={"checkbox"} nomeClasse={"input-checkbox"} name={"vegano"}/>
                 }/>
               </div>
+              <Label nome={'Descrição'} classNameDiv="dados descricao" conteudo={
+                <Input placeholder={"Insira a descrição do produto."} isDescricao={true} type={"text"} nomeClasse={"input-descricao"} name={"descricao"}/>
+              }/>
+              <BotaoCadastrarProduto className="btn-enviar"/>
             </div>
           </form>
           

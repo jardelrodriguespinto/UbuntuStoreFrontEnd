@@ -14,7 +14,7 @@ function Input(props) {
 
   if (isDescricao) {
     return (
-     <textarea className={nomeClasse}>
+     <textarea className={nomeClasse} placeholder={placeholder}>
 
     </textarea>
     );

@@ -12,23 +12,20 @@ function ItemBarraLateral(props) {
 
   return (
     <>
-          <li className="itemBarraLateral">
-            <button
-              onClick={() =>{
-                if(props.acao != null){
-                  props.acao()
-                }
-                navegar(props.rota)}
-              } 
-              className="botaoBarraLateral"
-            >
-              <FontAwesomeIcon className="iconeBarraLateral" icon= {props.icone} />
-              <p>{props.texto}</p>
-            </button>
-          </li>
-      
-
-    
+      <li className="itemBarraLateral">
+        <button
+          onClick={() =>{
+            if(props.acao != null){
+              props.acao()
+            }
+            navegar(props.rota)}
+          } 
+          className="botaoBarraLateral"
+        >
+          <FontAwesomeIcon className="iconeBarraLateral" icon= {props.icone} />
+          <p>{props.texto}</p>
+        </button>
+      </li>
     </>
   );
 }
