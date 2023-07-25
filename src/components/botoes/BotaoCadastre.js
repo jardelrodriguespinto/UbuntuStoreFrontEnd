@@ -1,4 +1,4 @@
-import "./botao-cadastre.css";
+import "./botao-cadastre.modules.css";
 import { useNavigate } from "react-router-dom";
 
 function BotaoCadastre() {
@@ -9,7 +9,7 @@ function BotaoCadastre() {
   }
 
   return (
-      <button
+      <button>
         className="botao-cadastre"
         onClick={()=> irParaCadastro()}>Cadastrar-se
       </button>

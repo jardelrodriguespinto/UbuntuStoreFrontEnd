@@ -1,4 +1,4 @@
-import "./header.css";
+import "./header.modules.css";
 import { useNavigate } from "react-router-dom";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
 import { BotaoBaixeApp } from "../BotaoBaixeApp";

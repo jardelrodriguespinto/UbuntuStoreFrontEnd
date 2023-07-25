@@ -1,5 +1,5 @@
 import teste from '../assets/img/teste.png';
-import "../assets/style/botao-baixe-app.css"
+import "../assets/style/botao-baixe-app.modules.css"
 
 export function BotaoBaixeApp(props){
     return (

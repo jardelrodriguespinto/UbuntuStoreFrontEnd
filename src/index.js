@@ -13,6 +13,9 @@ import ItemCardapio from './components/telas/cardapio/item-cardapio/ItemCardapio
 import EditarItemCardapio from './components/telas/cardapio/edicao-item-cardapio/EditarItemCardapio';
 import Cadastro from './components/telas/login/formulario-cadastro/Cadastro.js';
 import EsqueciminhaSenha from './components/telas/login/esqueci-minha-senha/EsqueciMinhaSenha';
+import NossaMissao from './components/telas/nossa-missao/NossaMissao';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: '/estabelecimentos',
     element: <Estabelecimento/>
+  },
+  {
+    path: '/nossa-missao',
+    element: <NossaMissao/>
   },
   {
     path: '/login',

@@ -1,5 +1,5 @@
 import React  from 'react';
-import '../assets/style/footer.css'
+import '../assets/style/footer.modules.css'
 import place from '../assets/img/place.png'
 import predio from '../assets/img/predio.png'
 import tellphone from '../assets/img/tellphone.png'

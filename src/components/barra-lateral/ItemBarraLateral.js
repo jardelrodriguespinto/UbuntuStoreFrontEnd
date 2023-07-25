@@ -1,4 +1,4 @@
-import "./barra-lateral.css";
+import "./barra-lateral.modules.css";
 import React from "react";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,23 +12,20 @@ function ItemBarraLateral(props) {
 
   return (
     <>
-          <li className="itemBarraLateral">
-            <button
-              onClick={() =>{
-                if(props.acao != null){
-                  props.acao()
-                }
-                navegar(props.rota)}
-              } 
-              className="botaoBarraLateral"
-            >
-              <FontAwesomeIcon className="iconeBarraLateral" icon= {props.icone} />
-              <p>{props.texto}</p>
-            </button>
-          </li>
-      
-
-    
+      <li className="itemBarraLateral">
+        <button
+          onClick={() =>{
+            if(props.acao != null){
+              props.acao()
+            }
+            navegar(props.rota)}
+          } 
+          className="botaoBarraLateral"
+        >
+          <FontAwesomeIcon className="iconeBarraLateral" icon= {props.icone} />
+          <p>{props.texto}</p>
+        </button>
+      </li>
     </>
   );
 }

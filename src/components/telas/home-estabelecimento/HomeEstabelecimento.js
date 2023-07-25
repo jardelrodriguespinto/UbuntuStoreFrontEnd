@@ -1,5 +1,5 @@
 import React from "react";
-import "./home-estabelecimento.css";
+import "./home-estabelecimento.modules.css";
 import HeaderEstabelecimento from "../../cabecalho/estabelecimento/HeaderEstabelecimento";
 import Footer from "../../Footer";
 import BarraLateral from "../../barra-lateral/BarraLateral";

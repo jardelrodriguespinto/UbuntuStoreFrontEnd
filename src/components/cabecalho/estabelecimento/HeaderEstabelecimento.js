@@ -1,4 +1,4 @@
-import "./headerEstabelecimento.css";
+import "./header-estabelecimento.modules.css";
 import { useNavigate } from "react-router-dom";
 import logoUbuntuStore from "../../../assets/img/logo-ubuntu-store.jpeg";
 import HamburgerMenu from "../../HamburgerMenu";
