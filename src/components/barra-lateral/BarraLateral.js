@@ -34,7 +34,7 @@ function BarraLateral(props) {
           />
           <ItemBarraLateral
             texto="Pedidos"
-            rota="/estabelecimentos/Pedidos"
+            rota="/estabelecimentos/pedidos"
             icone={faBookReader}
           />
         </div>

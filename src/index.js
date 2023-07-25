@@ -68,6 +68,10 @@ const router = createBrowserRouter([
     path:'/estabelecimentos/esqueciasenha',
     element: <EsqueciminhaSenha/>
   },
+  {
+    path:'/estabelecimentos/pedidos',
+    element: <EsqueciminhaSenha/>
+  },
 ]);
 
 root.render(
