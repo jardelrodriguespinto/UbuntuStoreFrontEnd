@@ -10,10 +10,11 @@ import HomeEstabelecimento from './components/telas/home-estabelecimento/HomeEst
 import MinhaLoja from './components/telas/minha-loja/MinhaLoja';
 import Cardapio from './components/telas/cardapio/Cardapio';
 import ItemCardapio from './components/telas/cardapio/item-cardapio/ItemCardapio';
-import EditarItemCardapio from './components/telas/cardapio/edicao-item-cardapio/EditarItemCardapio';
+import EditarItemCardapio from './components/telas/cardapio/editar-criar-item-cardapio/EditarItemCardapio';
 import Cadastro from './components/telas/login/formulario-cadastro/Cadastro.js';
 import EsqueciminhaSenha from './components/telas/login/esqueci-minha-senha/EsqueciMinhaSenha';
 import NossaMissao from './components/telas/nossa-missao/NossaMissao';
+import CriarItemCardapio from './components/telas/cardapio/editar-criar-item-cardapio/CriarItemCardapio';
 
 
 
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
   {
     path:'/estabelecimentos/cardapio/edicao',
     element: <EditarItemCardapio/>
+  },
+  {
+    path:'/estabelecimentos/cardapio/adicionar-produto',
+    element: <CriarItemCardapio/>
   },
   {
     path:'/estabelecimentos/esqueciasenha',

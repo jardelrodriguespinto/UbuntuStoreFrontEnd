@@ -19,8 +19,6 @@
     display: grid;
     grid-template-rows: 3fr 7fr;
     gap: 2px;
-    
-
 }
 .nome-preco{
     display: grid;
