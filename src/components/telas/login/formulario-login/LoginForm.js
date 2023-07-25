@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 function LoginForm() {
   const navigate = useNavigate();
   const [usuario, setUsuario] = useState("");
@@ -25,14 +24,21 @@ function LoginForm() {
           },
         }
       );
-      console.log( response.data.token);
+      console.log(response.data.token);
       console.log(" resposta: " + response.data.estabelecimentoId);
-      console.log(localStorage.setItem("token" ,"Bearer " + response.data.token));
-      console.log(localStorage.setItem("estabelecimentoId" ,response.data.estabelecimentoId));
+      console.log(
+        localStorage.setItem("token", "Bearer " + response.data.token)
+      );
+      console.log(
+        localStorage.setItem(
+          "estabelecimentoId",
+          response.data.estabelecimentoId
+        )
+      );
       setResponseState(response.data);
       const { token } = response.data.token;
       console.log(token);
-     
+
       console.log(localStorage.getItem("token"));
       navigate("/estabelecimentos/inicio");
     } catch (error) {
@@ -76,6 +82,16 @@ function LoginForm() {
       </div>
 
       <button className="botao-login">Login</button>
+      <div className="botoes-pos-login">
+        <button className="botao-esqueci-a-senha" onClick={() => {
+          navigate("/estabelecimentos/esqueciasenha");
+        }}>
+          Esqueci minha senha
+        </button>
+        <button className="botao-cadastre-se" onClick={() =>{
+          navigate("/estabelecimentos/cadastro");
+        }}>Cadastre-se</button>
+      </div>
     </form>
   );
 }

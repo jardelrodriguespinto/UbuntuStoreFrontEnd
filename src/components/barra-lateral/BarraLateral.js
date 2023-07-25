@@ -9,7 +9,7 @@ import ItemBarraLateral from "./ItemBarraLateral.js";
 import { useNavigate } from "react-router-dom";
 
 
-function BarraLateral() {
+function BarraLateral(props) {
   const navegar = useNavigate()
   return (
     <div id="side">
@@ -25,6 +25,7 @@ function BarraLateral() {
             texto="Minha Loja"
             rota="/estabelecimentos/minhaloja"
             icone={faShop}
+            selecionado= {props.selecionado}
           />
           <ItemBarraLateral
             texto="Cardapio"

@@ -1,5 +1,5 @@
 import './cadastro.css';
-import CadastroForm from '../formulario-registro/CadastroForm';
+import CadastroForm from "../../../formulario-registro/CadastroForm.js";
 
 function Cadastro() {
   return (

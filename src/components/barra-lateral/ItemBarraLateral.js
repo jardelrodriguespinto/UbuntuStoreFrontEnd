@@ -9,6 +9,7 @@ function ItemBarraLateral(props) {
   function navegar(caminho) {
     navigate(caminho);
   }
+  
 
   return (
     <>

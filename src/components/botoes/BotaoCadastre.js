@@ -3,16 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 function BotaoCadastre() {
   
-  // const navigate = useNavigate();
-  // function irParaCadastro() {
-  //   navigate("/registro");
-  // }
+  const navigate = useNavigate();
+  function irParaCadastro() {
+    navigate("/login");
+  }
 
   return (
-      <button>
+      <button
         className="botao-cadastre"
-         {/* onClick={()=> irParaCadastro()} */}
-        Cadastre-se
+        onClick={()=> irParaCadastro()}>Cadastrar-se
       </button>
   );
 }

@@ -2,7 +2,6 @@ import "./cadastro-form.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Cadastro from "../casdastro/Cadastro";
 import BotaoCadastre from "../botoes/BotaoCadastre";
 
 function CadastroForm() {
@@ -86,7 +85,7 @@ function CadastroForm() {
           onChange={(e) => setSenhaRepetida(e.target.value)}
         />
       </div>
-      <BotaoCadastre className="cadastro-btn"/>
+      <BotaoCadastre className=""/>
     </form>
   );
 }
