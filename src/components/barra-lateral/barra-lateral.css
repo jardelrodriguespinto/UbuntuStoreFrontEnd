@@ -3,7 +3,7 @@ li{
     
 }
 #side{
-    background-color: rgb(126, 126, 126);
+    background-color: #7e7e7e;
     padding-left: 2px;
     display: grid;
     grid-template-columns: 1fr;

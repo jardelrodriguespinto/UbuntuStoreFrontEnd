@@ -11,7 +11,8 @@ import MinhaLoja from './components/telas/minha-loja/MinhaLoja';
 import Cardapio from './components/telas/cardapio/Cardapio';
 import ItemCardapio from './components/telas/cardapio/item-cardapio/ItemCardapio';
 import EditarItemCardapio from './components/telas/cardapio/edicao-item-cardapio/EditarItemCardapio';
-import Cadastro from './components/casdastro/Cadastro';
+import Cadastro from './components/telas/login/formulario-cadastro/Cadastro.js';
+import EsqueciminhaSenha from './components/telas/login/esqueci-minha-senha/EsqueciMinhaSenha';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -29,8 +30,12 @@ const router = createBrowserRouter([
     element: <Login/>
   },
   {
-    path:'/registro',
+    path:'/estabelecimentos/cadastro',
     element: <Cadastro/>
+  },
+  {
+    path:'/estabelecimentos/esqueciasenha',
+    element: <EsqueciminhaSenha/>
   },
   {
     path:'/estabelecimentos/inicio',
@@ -47,7 +52,15 @@ const router = createBrowserRouter([
   {
     path:'/estabelecimentos/cardapio/edicao',
     element: <EditarItemCardapio/>
-  }
+  },
+  {
+    path:'/estabelecimentos/esqueciasenha',
+    element: <EsqueciminhaSenha/>
+  },
+  {
+    path:'/estabelecimentos/esqueciasenha',
+    element: <EsqueciminhaSenha/>
+  },
 ]);
 
 root.render(

@@ -5,13 +5,13 @@ function BotaoCadastre() {
   
   const navigate = useNavigate();
   function irParaCadastro() {
-    navigate("/registro");
+    navigate("/login");
   }
 
   return (
       <button
         className="botao-cadastre"
-        onClick={()=> irParaCadastro()}>Cadastre-se
+        onClick={()=> irParaCadastro()}>Cadastrar-se
       </button>
   );
 }
