@@ -16,7 +16,7 @@ function Cardapio() {
   const itemCardapioNotify = async () => {
     try {
       const response = await axios.post(
-        ubuntuIp + "/estabelecimento/telas/produtos",
+        ubuntuIp + "/estabelecimento/telas/listarprodutos",
         null,
         {
           headers: {
@@ -24,12 +24,16 @@ function Cardapio() {
           },
         }
       );
+      console.log(response.data);
       setResponseState(response.data);
       setLista(response.data.lista);
     } catch (error) {
       console.log(error);
     }
   };
+  useEffect(() => {
+    itemCardapioNotify()
+  },[]);
 
   return (
     <div>

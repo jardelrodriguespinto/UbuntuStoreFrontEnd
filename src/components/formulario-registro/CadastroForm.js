@@ -85,7 +85,7 @@ function CadastroForm() {
           onChange={(e) => setSenhaRepetida(e.target.value)}
         />
       </div>
-      <BotaoCadastre className="cadastro-btn"/>
+      <BotaoCadastre className=""/>
     </form>
   );
 }

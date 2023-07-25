@@ -9,7 +9,7 @@ function BotaoCadastre() {
   }
 
   return (
-      <button>
+      <button
         className="botao-cadastre"
         onClick={()=> irParaCadastro()}>Cadastrar-se
       </button>
