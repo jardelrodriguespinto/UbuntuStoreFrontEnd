@@ -14,6 +14,7 @@ import EditarItemCardapio from './components/telas/cardapio/edicao-item-cardapio
 import Cadastro from './components/telas/login/formulario-cadastro/Cadastro.js';
 import EsqueciminhaSenha from './components/telas/login/esqueci-minha-senha/EsqueciMinhaSenha';
 import NossaMissao from './components/telas/nossa-missao/NossaMissao';
+import Pedidos from './components/telas/pedidos/Pedidos';
 
 
 
@@ -64,13 +65,10 @@ const router = createBrowserRouter([
     path:'/estabelecimentos/esqueciasenha',
     element: <EsqueciminhaSenha/>
   },
-  {
-    path:'/estabelecimentos/esqueciasenha',
-    element: <EsqueciminhaSenha/>
-  },
+
   {
     path:'/estabelecimentos/pedidos',
-    element: <EsqueciminhaSenha/>
+    element: <Pedidos/>
   },
 ]);
 
