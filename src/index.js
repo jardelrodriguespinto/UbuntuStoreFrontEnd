@@ -6,16 +6,15 @@ import Estabelecimento from './components/telas//estabelecimento/Estabelecimento
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Login from './components/telas/login/Login';
-import HomeEstabelecimento from './components/telas/home-estabelecimento/HomeEstabelecimento';
 import MinhaLoja from './components/telas/minha-loja/MinhaLoja';
 import Cardapio from './components/telas/cardapio/Cardapio';
-import ItemCardapio from './components/telas/cardapio/item-cardapio/ItemCardapio';
 import EditarItemCardapio from './components/telas/cardapio/editar-criar-item-cardapio/EditarItemCardapio';
 import Cadastro from './components/telas/login/formulario-cadastro/Cadastro.js';
 import EsqueciminhaSenha from './components/telas/login/esqueci-minha-senha/EsqueciMinhaSenha';
 import NossaMissao from './components/telas/nossa-missao/NossaMissao';
 import Pedidos from './components/telas/pedidos/Pedidos';
 import CriarItemCardapio from './components/telas/cardapio/editar-criar-item-cardapio/CriarItemCardapio';
+import HomeEstabelecimento from './components/telas/area-estabelecimento/HomeEstabelecimento';
 
 
 

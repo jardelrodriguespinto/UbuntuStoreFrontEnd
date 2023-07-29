@@ -2,16 +2,10 @@ li{
     width: 100%;
     
 }
-#side{
-    background-color: #7e7e7e;
-    padding-left: 2px;
-    display: grid;
-    grid-template-columns: 1fr;
-}
 #logoEstabelecimento{
     align-self: center;
     justify-self: center;
-  
+    
     width: 200px;
     height: 200px;
     mix-blend-mode: multiply;
@@ -60,3 +54,41 @@ li{
     color:rgb(230, 230, 230);
     align-self: center;
 }
+@media only screen and (max-width: 600px) {
+    
+    .barra-lateral{
+        display: none;
+        
+        padding-left: 2px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .barra-lateral{
+        background-color: #7e7e7e;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .barra-lateral{
+        background-color: #7e7e7e;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .barra-lateral{
+        background-color: #7e7e7e;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+

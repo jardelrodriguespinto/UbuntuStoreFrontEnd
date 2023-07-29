@@ -5,22 +5,20 @@ import { BotaoBaixeApp } from "../BotaoBaixeApp";
 import { menuItems } from "../MenuItems";
 import BotaoLogin from "../botoes/BotaoLogin";
 import HamburgerMenu from "../HamburgerMenu";
+import { Box, IconButton } from "@mui/material";
 
 function NavBarComScroll(props) {
   let logo = false;
 
-  if (props.logo === true) 
-    logo = true;
+  if (props.logo === true) logo = true;
 
   let baixar = false;
 
-  if (props.baixar === true) 
-    baixar = true;
+  if (props.baixar === true) baixar = true;
 
   let login = false;
 
-  if (props.login === true) 
-    login = true;
+  if (props.login === true) login = true;
 
   const menuHamburguer = true;
 
@@ -33,15 +31,17 @@ function NavBarComScroll(props) {
   }
 
   return (
-    <nav className="nav">
+    <Box className="nav">
       <div className="nav-content">
         {logo && (
-          <img
-            className="ubuntu-store-logo"
-            src={logoUbuntuStore}
-            onClick={irParaHome}
-            alt="Logo da empresa UbuntuStore"
-          />
+          <IconButton>
+            <img
+              className="ubuntu-store-logo"
+              src={logoUbuntuStore}
+              onClick={irParaHome}
+              alt="Logo da empresa UbuntuStore"
+            />
+          </IconButton>
         )}
         <ul className="menu">
           {menuItems.map((menu, index) => {
@@ -58,7 +58,7 @@ function NavBarComScroll(props) {
         {login && <BotaoLogin />}
         {menuHamburguer && <HamburgerMenu />}
       </div>
-    </nav>
+    </Box>
   );
 }
 export default NavBarComScroll;

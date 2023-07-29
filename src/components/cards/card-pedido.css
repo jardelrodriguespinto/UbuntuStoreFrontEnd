@@ -30,9 +30,9 @@
 }
 .card-botoes{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr ;
+    width: 100%;
     align-items: center;
-    width: 200px;
     height: auto;
     flex-direction: column;
     margin: 20px;

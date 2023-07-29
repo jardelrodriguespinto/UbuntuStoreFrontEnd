@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 function BarraLateral(props) {
   const navegar = useNavigate()
   return (
-    <div id="side">
+    <div className="barra-lateral">
       <img id="logoEstabelecimento" src={logoUbuntuStore}></img>
       <ul className="barraLateral">
         <div>
@@ -31,6 +31,7 @@ function BarraLateral(props) {
             texto="Cardapio"
             rota="/estabelecimentos/cardapio"
             icone={faBookReader}
+
           />
           <ItemBarraLateral
             texto="Pedidos"

@@ -5,7 +5,10 @@ import Footer from "../../Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ubuntuIp } from "../../../propriedades";
-import ItemCardapio from "./item-cardapio/ItemCardapio";
+import ItemCardapio from "../../item-cardapio/ItemCardapio";
+import "./cardapio.css";
+import { Box, Tab, Typography } from "@mui/material";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
 
 function Cardapio() {
   const [lista, setLista] = useState([]);
@@ -32,8 +35,8 @@ function Cardapio() {
     }
   };
   useEffect(() => {
-    itemCardapioNotify()
-  },[]);
+    itemCardapioNotify();
+  }, []);
 
   return (
     <div>
@@ -41,19 +44,17 @@ function Cardapio() {
       <div className="homeEstabelecimento">
         <BarraLateral />
         <main>
-          <h1>Cardapio</h1>
-          {lista.map((obj, index) => {
-            return (
-              <ItemCardapio
-                id={obj.id}
-                preco={obj.preco}
-                imagem={obj.imagem}
-                titulo={obj.titulo}
-                key={index}
-                // onNotify={}
-              />
-            );
-          })}
+          <Box>
+            <Typography className="titulo-pagina" color={"black"} variant="h3">
+              Cardapio
+            </Typography>
+          </Box>
+
+
+          <Box
+            className="grade-cardapio"
+            sx={{ display: "grid", gap: "15px", margin: "50px", width: "100%" }}
+          ></Box>
         </main>
       </div>
 
