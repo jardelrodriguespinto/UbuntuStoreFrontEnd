@@ -5,7 +5,7 @@ import Footer from "../../Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ubuntuIp } from "../../../propriedades";
-import CardPedido from "../../cards/CardPedido";
+import CardPedido from "../../cards/ItemPedido";
 import "./pedidos.css";
 import { Box, Button, ButtonGroup, Grid, Tab, Typography } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";

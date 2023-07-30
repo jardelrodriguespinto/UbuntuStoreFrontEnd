@@ -1,7 +1,5 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+
 import {} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -10,20 +8,20 @@ import "./card-pedido.css";
 import {
   Box,
   Button,
-  ButtonGroup,
   Grid,
-  Icon,
-  IconButton,
   Stack,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-function CardPedido(props) {
+function ItemPedido(props) {
   const [lista, setLista] = useState([]);
   const [responseState, setResponseState] = useState(null);
+  const navigate = useNavigate();
   const detalhesDePedido = async () => {
-    console.log("gvf");
+    navigate("/estabelecimentos/pedidos/detalhes");
   };
+
   const responderPedido = async (foiAceito) => {
     try {
       const idEstabelecimento = localStorage.getItem("estabelecimentoId");
@@ -149,4 +147,4 @@ function CardPedido(props) {
   );
 }
 
-export default CardPedido;
+export default ItemPedido;

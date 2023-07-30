@@ -15,6 +15,7 @@ import NossaMissao from './components/telas/nossa-missao/NossaMissao';
 import Pedidos from './components/telas/pedidos/Pedidos';
 import CriarItemCardapio from './components/telas/cardapio/editar-criar-item-cardapio/CriarItemCardapio';
 import HomeEstabelecimento from './components/telas/area-estabelecimento/HomeEstabelecimento';
+import DetalheDePedido from './components/telas/cardapio/DetalheDePedido';
 
 
 
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
   {
     path:'/estabelecimentos/pedidos',
     element: <Pedidos/>
+  },
+  {
+    path:'/estabelecimentos/pedidos/detalhes',
+    element: <DetalheDePedido/>
   },
 ]);
 

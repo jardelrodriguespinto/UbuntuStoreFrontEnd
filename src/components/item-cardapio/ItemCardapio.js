@@ -1,11 +1,8 @@
 import React from "react";
 import "./item-cardapio.modules.css";
-import { useState, useEffect } from "react";
-import { BinaryToImage } from "../../utils/imageUtil.js";
+
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
 import {
   Button,
   ButtonGroup,
