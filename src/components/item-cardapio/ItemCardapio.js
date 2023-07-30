@@ -8,13 +8,15 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import {
   Button,
+  ButtonGroup,
+  Grid,
   ImageList,
   ImageListItem,
   Stack,
   Typography,
 } from "@mui/material";
 import { Box, Card, CardContent } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { blue, grey } from "@mui/material/colors";
 import { Padding } from "@mui/icons-material";
 import logo from "../../assets/img/logo-ubuntu-store.jpeg";
 
@@ -22,7 +24,7 @@ function ItemCardapio(props) {
   const navigate = useNavigate();
 
   const navegarParaProduto = () => {
-    console.log(localStorage.setItem("produto", props.id));
+    console.log(localStorage.setItem("produto", props.props.id));
     navigate("/estabelecimentos/cardapio/edicao");
   };
   const solicitarExclusao = () => {
@@ -34,29 +36,43 @@ function ItemCardapio(props) {
     } else {
     }
   };
+  console.log(props.props);
   return (
-    <Card className="card" sx={{ width: { sm: "80%", md: "100%" } }}>
-      <CardContent>
-        <Stack direction={"column"}>
-          <ImageList>
-            <ImageListItem>
+    <Grid 
+    item
+    width="100%"
+    xs={6}
+    sm={4}
+    md={3}
+    lg={3}
+    xl={3}>
+  
+        <Card c sm ={6} sx={{ width: "100%", bg :blue }}>
+          <CardContent xs="12" width = "100%" bg= "black">
+            <Stack direction={"column"}>
               <img id="logoEstabelecimento" src={logo}></img>
-            </ImageListItem>
-          </ImageList>
 
-          <Typography className="titulo-pagina">{props.titulo}</Typography>
-          <Stack direction="row" width="100%" >
-            <Box >
-              <Typography>{props.price}</Typography>
-            </Box>
-            <Box>
-              <Typography>{props.avaliacao}</Typography>
-            </Box>
-          </Stack>
-        </Stack>
-      
-      </CardContent>
-    </Card>
+              <Typography className="titulo-pagina">
+                {props.props.titulo}
+              </Typography>
+              <Typography>{props.props.preco}</Typography>
+              <Stack direction="row" width="100%">
+                <>
+                  <Typography>{props.props.avaliacao}</Typography>
+                </>
+              </Stack>
+              <Stack direction="column" width="100%">
+                <Button variant="contained"  onClick={() =>{
+                  navegarParaProduto();
+                }}>
+                  <Typography textTransform={"none"}> Mais Detalhes</Typography>
+                </Button>
+              </Stack>
+            </Stack>
+          </CardContent>
+        </Card>
+    
+    </Grid>
   );
   {
     /* <div className="item-produto">

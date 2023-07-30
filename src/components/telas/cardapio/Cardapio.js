@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { ubuntuIp } from "../../../propriedades";
 import ItemCardapio from "../../item-cardapio/ItemCardapio";
 import "./cardapio.css";
-import { Box, Tab, Typography } from "@mui/material";
+import { Box, Grid, Tab, Typography } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 
 function Cardapio() {
@@ -28,7 +28,6 @@ function Cardapio() {
         }
       );
       console.log(response.data);
-      setResponseState(response.data);
       setLista(response.data.lista);
     } catch (error) {
       console.log(error);
@@ -43,19 +42,24 @@ function Cardapio() {
       <HeaderEstabelecimento logo={true} />
       <div className="homeEstabelecimento">
         <BarraLateral />
-        <main>
+        <Box>
+
           <Box>
             <Typography className="titulo-pagina" color={"black"} variant="h3">
               Cardapio
             </Typography>
           </Box>
 
-
-          <Box
-            className="grade-cardapio"
-            sx={{ display: "grid", gap: "15px", margin: "50px", width: "100%" }}
-          ></Box>
-        </main>
+          <Grid container   className="grade-cardapio"  
+            xs= {12}
+            sx={{ gap: "15px", margin: "50px"}}
+          >
+            {lista.map((i) => {
+              return <ItemCardapio props= {i}></ItemCardapio>;
+            })}
+          </Grid>
+        
+        </Box>
       </div>
 
       <Footer />
