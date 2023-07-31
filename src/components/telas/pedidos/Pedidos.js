@@ -45,44 +45,6 @@ function Pedidos() {
         <main>
           <h1 className="titulo-pagina">Pedidos</h1>
           <GradeDePedidos props={secoesPedidos}></GradeDePedidos>
-          {/* <TabContext value={guia}>
-            <TabList value={guia}>
-              {secoesPedidos.map((obj, index) => {
-                console.log(secoesPedidos.length);
-                return (
-                  <Tab
-                    onClick={() => {
-                      setguia(index);
-                    }}
-                    value={index}
-                    label={obj.titulo}
-                  ></Tab>
-                );
-              })}
-            </TabList>
-
-            {secoesPedidos.map((secao, index) => {
-              return (
-                <TabPanel value={index}>
-                  <Grid
-                    container
-                    className="grade-pedidos"
-                    justifyItems={"center"}
-                  >
-                    {secao.secao.map((card) => {
-                      return (
-                        <CardPedido
-                          status={card.status}
-                          id={card.pedidoId}
-                          titulo={card.nomeDoCliente}
-                        ></CardPedido>
-                      );
-                    })}
-                  </Grid>
-                </TabPanel>
-              );
-            })}
-          </TabContext> */}
         </main>
       </div>
     </Box>

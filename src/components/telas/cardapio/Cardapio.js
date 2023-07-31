@@ -9,12 +9,14 @@ import ItemCardapio from "../../item-cardapio/ItemCardapio";
 import "./cardapio.css";
 import { Box, Grid, Tab, Typography } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { useNavigate } from "react-router-dom";
 
 function Cardapio() {
   const [lista, setLista] = useState([]);
   const [modificando, setModificando] = useState(false);
   const [propriedades, setPropriedades] = useState(false);
   const [responseState, setResponseState] = useState(null); // Novo estado para armazenar a resposta do Axios
+  let navegar = useNavigate()
 
   const itemCardapioNotify = async () => {
     try {
