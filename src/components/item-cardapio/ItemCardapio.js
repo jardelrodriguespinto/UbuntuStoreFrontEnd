@@ -1,25 +1,12 @@
 import React from "react";
-import "./item-cardapio.modules.css";
-
 import { useNavigate } from "react-router-dom";
-
-import {
-  Button,
-  ButtonGroup,
-  Grid,
-  ImageList,
-  ImageListItem,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Button, Grid, Stack, Typography } from "@mui/material";
 import { Box, Card, CardContent } from "@mui/material";
-import { blue, grey } from "@mui/material/colors";
-import { Padding } from "@mui/icons-material";
-import logo from "../../assets/img/logo-ubuntu-store.jpeg";
+import { blue } from "@mui/material/colors";
+import RenderizadorDeImagem from "../midia/RenderizadorDeImagem";
 
 function ItemCardapio(props) {
   const navigate = useNavigate();
-
   const navegarParaProduto = () => {
     console.log(localStorage.setItem("produto", props.props.id));
     navigate("/estabelecimentos/cardapio/edicao");
@@ -35,40 +22,39 @@ function ItemCardapio(props) {
   };
   console.log(props.props);
   return (
-    <Grid 
-    item
-    width="100%"
-    xs={6}
-    sm={4}
-    md={3}
-    lg={3}
-    xl={3}>
-  
-        <Card c sm ={6} sx={{ width: "100%", bg :blue }}>
-          <CardContent xs="12" width = "100%" bg= "black">
-            <Stack direction={"column"}>
-              <img id="logoEstabelecimento" src={logo}></img>
-
-              <Typography className="titulo-pagina">
-                {props.props.titulo}
-              </Typography>
-              <Typography>{props.props.preco}</Typography>
-              <Stack direction="row" width="100%">
-                <>
-                  <Typography>{props.props.avaliacao}</Typography>
-                </>
-              </Stack>
-              <Stack direction="column" width="100%">
-                <Button variant="contained"  onClick={() =>{
-                  navegarParaProduto();
-                }}>
-                  <Typography textTransform={"none"}> Mais Detalhes</Typography>
-                </Button>
-              </Stack>
+    <Grid item width="100%" xs={6} sm={4} md={3} lg={3} xl={3}>
+      <Card c sm={6} sx={{ width: "100%", bg: blue }}>
+        <CardContent xs="12" width="100%" bg="black">
+          <Stack direction={"column"}>
+            <Box display="flex" justifyContent="center" alignItems="center">
+              <RenderizadorDeImagem
+                imagem={props.props.imagem}
+                width="100%"
+                height="200px"
+              ></RenderizadorDeImagem>
+            </Box>
+            <Typography className="titulo-pagina">
+              {props.props.titulo}
+            </Typography>
+            <Typography>{props.props.preco}</Typography>
+            <Stack direction="row" width="100%">
+              <>
+                <Typography>{props.props.avaliacao}</Typography>
+              </>
             </Stack>
-          </CardContent>
-        </Card>
-    
+            <Stack direction="column" width="100%">
+              <Button
+                variant="contained"
+                onClick={() => {
+                  navegarParaProduto();
+                }}
+              >
+                <Typography textTransform={"none"}> Mais Detalhes</Typography>
+              </Button>
+            </Stack>
+          </Stack>
+        </CardContent>
+      </Card>
     </Grid>
   );
   {

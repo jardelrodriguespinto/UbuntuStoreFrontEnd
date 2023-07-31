@@ -72,6 +72,8 @@ function Pedidos() {
                           status={card.status}
                           id={card.pedidoId}
                           titulo={card.nomeDoCliente}
+                          imagem={card}
+                          produtos= {card.produtos}
                         ></CardPedido>
                       );
                     })}

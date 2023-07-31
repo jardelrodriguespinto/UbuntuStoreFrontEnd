@@ -13,10 +13,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import RenderizadorDeImagem from "../midia/RenderizadorDeImagem";
 
 function ItemPedido(props) {
-  const [lista, setLista] = useState([]);
-  const [responseState, setResponseState] = useState(null);
   const navigate = useNavigate();
   const detalhesDePedido = async () => {
     navigate("/estabelecimentos/pedidos/detalhes");
@@ -24,7 +23,7 @@ function ItemPedido(props) {
 
   const responderPedido = async (foiAceito) => {
     try {
-      const idEstabelecimento = localStorage.getItem("estabelecimentoId");
+       localStorage.getItem("estabelecimentoId");
       const response = await axios.post(
         ubuntuIp + "/estabelecimento/telas/pedidos/responder",
         {
@@ -37,9 +36,7 @@ function ItemPedido(props) {
           },
         }
       );
-      console.log(response.data);
-      setResponseState(response.data.pedidos);
-      setLista(response.data.lista);
+
     } catch (error) {
       console.log(error);
     }
@@ -56,6 +53,8 @@ function ItemPedido(props) {
       lg={4}
       xl={4}
     >
+    <RenderizadorDeImagem imagem= {props.produtos[0].nome} width= {props.width} height = {props.height}></RenderizadorDeImagem>
+
       <img className="card-image" src="logo"></img>
       <Box>
         <div className="card-titulo">{props.titulo}</div>
