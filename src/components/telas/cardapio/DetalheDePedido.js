@@ -9,7 +9,7 @@ import ItemCardapio from "../../item-cardapio/ItemCardapio";
 import "./cardapio.css";
 import { Box, Grid, Typography } from "@mui/material";
 
-function DetalheDePedido() {
+function DetalheDePedido(props) {
   const [lista, setLista] = useState([]);
   const [modificando, setModificando] = useState(false);
   const [propriedades, setPropriedades] = useState(false);
@@ -18,8 +18,10 @@ function DetalheDePedido() {
   const itemCardapioNotify = async () => {
     try {
       const response = await axios.post(
-        ubuntuIp + "/estabelecimento/telas/listarprodutos",
-        null,
+        ubuntuIp + "/estabelecimento/telas/pedidos/detalhes",
+        {
+            idPedido: props.id
+        },
         {
           headers: {
             Authorization: localStorage.getItem("token"),

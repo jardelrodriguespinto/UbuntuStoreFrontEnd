@@ -142,6 +142,21 @@ function ItemPedido(props) {
             </Button>
           </Stack>
         )}
+        {props.status === "ENTREGANDO"  && (
+          <Stack direction={"column"}>
+
+            <Button
+              variant="contained"
+              onClick={() => {
+                responderPedido(true);
+              }}
+            >
+              <Typography variant="body2" fontSize={"12px"} textTransform={"capitalize"}>
+                Concluir entrega
+              </Typography>
+            </Button>
+          </Stack>
+        )}
       </div>
     </Grid>
   );

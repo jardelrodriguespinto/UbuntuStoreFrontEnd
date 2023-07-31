@@ -30,6 +30,9 @@ function Cardapio() {
       console.log(response.data);
       setLista(response.data.lista);
     } catch (error) {
+      if( error.response.status == 402){
+        
+      }
       console.log(error);
     }
   };
