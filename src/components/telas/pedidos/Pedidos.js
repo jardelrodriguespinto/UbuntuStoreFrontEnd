@@ -9,6 +9,7 @@ import CardPedido from "../../cards/ItemPedido";
 import "./pedidos.css";
 import { Box, Button, ButtonGroup, Grid, Tab, Typography } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
+import GradeDePedidos from "../../grade/GradeDePedidos";
 
 function Pedidos() {
   const [lista, setLista] = useState([]);
@@ -43,7 +44,8 @@ function Pedidos() {
         <BarraLateral />
         <main>
           <h1 className="titulo-pagina">Pedidos</h1>
-          <TabContext value={guia}>
+          <GradeDePedidos props={secoesPedidos}></GradeDePedidos>
+          {/* <TabContext value={guia}>
             <TabList value={guia}>
               {secoesPedidos.map((obj, index) => {
                 console.log(secoesPedidos.length);
@@ -58,6 +60,7 @@ function Pedidos() {
                 );
               })}
             </TabList>
+
             {secoesPedidos.map((secao, index) => {
               return (
                 <TabPanel value={index}>
@@ -72,8 +75,6 @@ function Pedidos() {
                           status={card.status}
                           id={card.pedidoId}
                           titulo={card.nomeDoCliente}
-                          imagem={card}
-                          produtos= {card.produtos}
                         ></CardPedido>
                       );
                     })}
@@ -81,7 +82,7 @@ function Pedidos() {
                 </TabPanel>
               );
             })}
-          </TabContext>
+          </TabContext> */}
         </main>
       </div>
     </Box>

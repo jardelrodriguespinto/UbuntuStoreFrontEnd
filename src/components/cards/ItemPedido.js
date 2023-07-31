@@ -53,9 +53,9 @@ function ItemPedido(props) {
       lg={4}
       xl={4}
     >
-    <RenderizadorDeImagem imagem= {props.produtos[0].nome} width= {props.width} height = {props.height}></RenderizadorDeImagem>
-
-      <img className="card-image" src="logo"></img>
+    <Box display={"flex"} justifyContent={"center"}>
+    <RenderizadorDeImagem  width= {props.width} height = {props.height}></RenderizadorDeImagem>
+    </Box>
       <Box>
         <div className="card-titulo">{props.titulo}</div>
       </Box>

@@ -2,25 +2,22 @@ import React, { useEffect, useState } from "react";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
 import "./renderizadorDeImagem.css";
 
-const RenderizadorDeImagem = (props) => {
+const RenderizadorDeImagem = (props ) => {
   const [imagem, setImagem] = useState();
 useEffect(()=>{
     setImagem(props.imagem)
+
 })
   if (imagem != null) {
     return (
       <img className="miniatura"
-        src={`data:image/jpeg;base64,${props.imagem}`}
+        src={`data:image/jpeg;base64,${props.imagem}`
+        }
       />
     );
   } else {
     return (
-      <img
-      className=""
-        src={logoUbuntuStore}
-        width="200px"
-        height="100%"
-      />
+      <img className="miniatura" src={logoUbuntuStore} width={props.width} height={props.height} />
     );
   }
 };
