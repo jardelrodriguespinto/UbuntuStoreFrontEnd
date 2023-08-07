@@ -20,10 +20,10 @@ body{
 }
 
 .ubuntu-store-logo {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius: 90px;
-  margin-top: 8px;
+  margin-right: 10px;
   mix-blend-mode: multiply;
 }
 
@@ -64,20 +64,11 @@ body{
   .nav-content {
     justify-content: space-between;
   }
-  
-  .ubuntu-store-logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 90px;
-    margin-top: 8px;
-    margin-left: 10px;
-    align-self: center;
-    mix-blend-mode: multiply;
-  }
 
+
+}
   @media only screen and (max-width: 1212px) {
     .menu {
       display: none;
     }
   }
-}

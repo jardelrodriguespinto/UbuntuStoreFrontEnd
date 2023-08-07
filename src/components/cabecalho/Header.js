@@ -5,7 +5,7 @@ import { BotaoBaixeApp } from "../BotaoBaixeApp";
 import { menuItems } from "../MenuItems";
 import BotaoLogin from "../botoes/BotaoLogin";
 import HamburgerMenu from "../HamburgerMenu";
-import { Box, IconButton } from "@mui/material";
+import { AppBar,Toolbar, IconButton, Stack, Typography } from "@mui/material";
 
 function NavBarComScroll(props) {
   let logo = false;
@@ -31,19 +31,25 @@ function NavBarComScroll(props) {
   }
 
   return (
-    <Box className="nav">
-      <div className="nav-content">
+    <AppBar>
+      
+
+        <Toolbar>
         {logo && (
-          <IconButton>
+          <IconButton sx={{flexGrow:1}}>
             <img
               className="ubuntu-store-logo"
               src={logoUbuntuStore}
               onClick={irParaHome}
               alt="Logo da empresa UbuntuStore"
+              
             />
           </IconButton>
+          
         )}
-        <ul className="menu">
+        {/* <Typography variant="h5" color={"black"} fontWeight={"500"}>Ubuntu</Typography> */}
+        </Toolbar>
+        {/* <ul className="menu">
           {menuItems.map((menu, index) => {
             return (
               <li className="menu-items" key={index}>
@@ -57,8 +63,8 @@ function NavBarComScroll(props) {
         {baixar && <BotaoBaixeApp classeCss={classeCss} />}
         {login && <BotaoLogin />}
         {menuHamburguer && <HamburgerMenu />}
-      </div>
-    </Box>
+       */}
+    </AppBar>
   );
 }
 export default NavBarComScroll;
