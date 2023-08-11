@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import "./botao-login.modules.css";
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +10,7 @@ function BotaoLogin() {
   }
 
   return (
-      <button className="botao-login"  onClick={()=>irParaLogin()}>Login</button>
+      <Button  onClick={()=>irParaLogin()}>Login</Button>
   );
 }
 export default BotaoLogin;

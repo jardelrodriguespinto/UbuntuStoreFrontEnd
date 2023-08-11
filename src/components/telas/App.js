@@ -1,29 +1,35 @@
-import "../../assets/style/index.css";
 import React, { useState } from "react";
-import Header from "../cabecalho/Header";
-import PrimeiraSecao from "../PrimeiraSecao";
-import TerceiraSecao from "../TerceiraSecao";
-import Footer from "../Footer";
-import { SegundaSecao } from "../SegundaSecao";
-import { Button, Icon, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import Inicio from "./inicio/inicio";
+import "./app.css";
+import { Box, createTheme, ThemeProvider } from "@mui/material";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#4EBC52",
+    },
+    secondary: {
+      main: "#465750",
+    },
+    primariaEstabelecimento: {  // Adicione sua paleta personalizada aqui
+      main: '#A3D29F', // Cor principal da paleta personalizada
+      contrastText: '#ffffff', // Cor do texto contrastante
+    },
+    secundariaEstabelecimento: {  // Adicione sua paleta personalizada aqui
+      main: '#5B8558', // Cor principal da paleta personalizada
+      contrastText: '#ffffff', // Cor do texto contrastante
+    },
+  },
+});
 
 function App() {
-  const [format,setFormat] = useState([])
-
-  const handleOnChange = () =>{
-    console.log()
-  }
+  const [format, setFormat] = useState([]);
   return (
-    <>
-      <Header logo={true} baixar={true} login={false} navBar={true} />
-      <main>
-        <PrimeiraSecao />
-        <SegundaSecao />
-        <TerceiraSecao />
-      </main>
-      <Footer />
-    </>
+    <ThemeProvider theme={theme}>
+      <Box sx={{backgroundColor: theme.palette.secondary.main}}>
+        <Inicio />
+      </Box>
+    </ThemeProvider>
   );
 }
 

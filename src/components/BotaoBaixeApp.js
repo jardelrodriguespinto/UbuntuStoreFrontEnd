@@ -1,13 +1,13 @@
+import { Button, Typography } from '@mui/material';
 import teste from '../assets/img/teste.png';
 import "../assets/style/botao-baixe-app.modules.css"
 
 export function BotaoBaixeApp(props){
     return (
         <>
-            <button className={props.classeCss}>
-                <p>Baixe o App</p>
-                <img src={teste} alt="Imagem da playstore para baixar o app da UbuntuStore" />
-            </button>
+            <Button size='large' variant="contained"  >
+                <Typography textTransform={'none'}>Baixe o app na Play Store</Typography>
+            </Button>
         </>
     );
 }

@@ -6,9 +6,7 @@
   align-content: center;
   justify-content: space-around;
 }
-body{
-  background-color: rgba(163, 210, 159, 1);
-}
+
 
 .nav-content {
   display: flex;

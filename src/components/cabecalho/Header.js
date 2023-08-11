@@ -6,8 +6,11 @@ import { menuItems } from "../MenuItems";
 import BotaoLogin from "../botoes/BotaoLogin";
 import HamburgerMenu from "../HamburgerMenu";
 import { AppBar,Toolbar, IconButton, Stack, Typography } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 
 function NavBarComScroll(props) {
+  const theme = useTheme();
+  
   let logo = false;
 
   if (props.logo === true) logo = true;
@@ -31,12 +34,10 @@ function NavBarComScroll(props) {
   }
 
   return (
-    <AppBar>
-      
-
+    <AppBar position="static" style={{backgroundColor: theme.palette.primary.main}}>
         <Toolbar>
         {logo && (
-          <IconButton sx={{flexGrow:1}}>
+          <IconButton  sx={{flexGrow:1, backgroundColor: ""} }>
             <img
               className="ubuntu-store-logo"
               src={logoUbuntuStore}
@@ -45,25 +46,11 @@ function NavBarComScroll(props) {
               
             />
           </IconButton>
-          
+
         )}
-        {/* <Typography variant="h5" color={"black"} fontWeight={"500"}>Ubuntu</Typography> */}
+        <BotaoLogin/>
         </Toolbar>
-        {/* <ul className="menu">
-          {menuItems.map((menu, index) => {
-            return (
-              <li className="menu-items" key={index}>
-                <a className="item" href={menu.url}>
-                  {menu.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-        {baixar && <BotaoBaixeApp classeCss={classeCss} />}
-        {login && <BotaoLogin />}
-        {menuHamburguer && <HamburgerMenu />}
-       */}
+      
     </AppBar>
   );
 }
