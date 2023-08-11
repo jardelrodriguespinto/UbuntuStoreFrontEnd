@@ -4,14 +4,27 @@ import Header from "../../cabecalho/Header";
 import PublicIcon from "@mui/icons-material/Public";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { Box, Grid, Stack, Typography, colors, useTheme } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
+import {
+  Box,
+  Button,
+  Grid,
+  Stack,
+  Typography,
+  colors,
+  useTheme,
+} from "@mui/material";
 import { BotaoBaixeApp } from "../../BotaoBaixeApp";
 import { ThemeContext } from "@emotion/react";
 
 function Inicio() {
   const [format, setFormat] = useState([]);
   const tema = useTheme();
-
+  const navigate = useNavigate();
+  function irParaLogin() {
+    navigate("/login");
+  }
 
   return (
     <>
@@ -21,7 +34,12 @@ function Inicio() {
         sx={{ backgroundColor: tema.palette.secondary.main }}
       >
         <Stack direction={"column"} className="primeira-secao">
-          <Typography color={tema.palette.primary.light} fontWeight={600} paddingBottom={"60px"} variant="h4">
+          <Typography
+            color={tema.palette.primary.light}
+            fontWeight={600}
+            paddingBottom={"60px"}
+            variant="h4"
+          >
             Explore a <span>Ubuntu</span>: seu serviço de Delivery de Comida
             Simplificada!
           </Typography>
@@ -45,7 +63,7 @@ function Inicio() {
                   }}
                 >
                   <PublicIcon
-                    style={{color:tema.palette.primary.main}}
+                    style={{ color: tema.palette.primary.main }}
                     sx={{
                       width: {
                         sm: "100px",
@@ -61,7 +79,10 @@ function Inicio() {
                       },
                     }}
                   />
-                  <Typography variant="h5" color={tema.palette.contrastThreshold}>
+                  <Typography
+                    variant="h5"
+                    color={tema.palette.contrastThreshold}
+                  >
                     Sustentabilidade Social
                   </Typography>
                   <Typography
@@ -90,7 +111,7 @@ function Inicio() {
                   }}
                 >
                   <DeliveryDiningIcon
-                    style={{color:tema.palette.primary.main}}
+                    style={{ color: tema.palette.primary.main }}
                     sx={{
                       width: {
                         sm: "100px",
@@ -106,7 +127,10 @@ function Inicio() {
                       },
                     }}
                   />
-                  <Typography color={tema.palette.contrastThreshold} variant="h5" >
+                  <Typography
+                    color={tema.palette.contrastThreshold}
+                    variant="h5"
+                  >
                     Serviço humanizado
                   </Typography>
                   <Typography
@@ -134,7 +158,7 @@ function Inicio() {
                   }}
                 >
                   <StarBorderIcon
-                      style={{color:tema.palette.primary.main}}
+                    style={{ color: tema.palette.primary.main }}
                     sx={{
                       width: {
                         sm: "100px",
@@ -150,11 +174,13 @@ function Inicio() {
                       },
                     }}
                   />
-                  <Typography variant="h5" color={tema.palette.contrastThreshold}>
+                  <Typography
+                    variant="h5"
+                    color={tema.palette.contrastThreshold}
+                  >
                     Em breve
                   </Typography>
                   <Typography
-
                     paragraph
                     textAlign={"center"}
                     variant="subtitle1"
@@ -167,6 +193,17 @@ function Inicio() {
             </Grid>
           </Stack>
           <BotaoBaixeApp />
+          <Typography margin={"20px"} variant="h5" color={tema.palette.contrastThreshold}>
+            ou se você for um estabelecimento
+          </Typography>
+          <Button variant="outlined" onClick={() => {
+            
+            irParaLogin();
+            }}>
+            <Typography textTransform={"none"} variant="h5" color={tema.palette.contrastThreshold}>
+              Ir para Área do estabelecimento
+            </Typography>
+          </Button>
         </Stack>
       </Box>
     </>
