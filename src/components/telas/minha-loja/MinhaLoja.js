@@ -14,11 +14,6 @@ function MinhaLoja() {
       <HeaderEstabelecimento logo={true} />
       <div className="homeEstabelecimento">
         <BarraLateral />
-        <main>
-          <h1>
-            Home
-          </h1>
-        </main>
       </div>
 
       <Footer />
