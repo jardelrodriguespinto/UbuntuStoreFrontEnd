@@ -6,7 +6,7 @@ export function BotaoBaixeApp(props){
     return (
         <>
             <Button size='large' variant="contained"  >
-                <Typography textTransform={'none'}>Baixe o app na Play Store</Typography>
+                <Typography variant = "h4"   textTransform={'none'}>Baixe o app na Play Store</Typography>
             </Button>
         </>
     );

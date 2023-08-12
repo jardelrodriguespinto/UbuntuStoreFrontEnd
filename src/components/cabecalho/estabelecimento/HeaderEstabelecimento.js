@@ -1,40 +1,39 @@
 import "./header-estabelecimento.modules.css";
 import { useNavigate } from "react-router-dom";
 import logoUbuntuStore from "../../../assets/img/logo-ubuntu-store.jpeg";
-import HamburgerMenu from "../../HamburgerMenu";
+import { AppBar,Toolbar, IconButton } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
+import {propiedadesDoTema} from "../../../utils/tema"
 
 
-function HeaderEstabelecimento(props) {
-  let logo = false;
-
-  if (props.logo === true) {
-    logo = true;
+function HeaderEstabelecimento( ) {
+    console.log(propiedadesDoTema);
+  let l = true;
+  if (l === true) {
+    l = true;
   }
 
-  /*redifinir a lógica do menuhamburguer*/
-  const menuHamburguer = true;
-
   const navigate = useNavigate();
-
-
-  function irParaHome() {
-    navigate("/");
+  const  irParaHome= () => {
+    navigate("/estabelecimentos/inicio");
   }
 
   return (
-    <nav className="nav">
-      <div className="nav-content" id= "nav-estabelecimento">
-        {logo && (
-          <img
-            className="ubuntu-store-logo"
-            src={logoUbuntuStore}
-            onClick={irParaHome}
-            alt="Logo da empresa UbuntuStore"
-          />
+    <AppBar position="static" style={{backgroundColor: propiedadesDoTema.palette.primary.main}}>
+        <Toolbar>
+        {l && (
+          <IconButton onClick={irParaHome} sx={{ backgroundColor: "",} }>
+            <img
+              className="ubuntu-store-logo"
+              src={logoUbuntuStore}
+              onClick={irParaHome}
+              alt="Logo da empresa UbuntuStore"
+            />
+          </IconButton>
         )}
-        {menuHamburguer && <HamburgerMenu />}
-      </div>
-    </nav>
+        </Toolbar>
+      
+    </AppBar>
   );
 }
 export default HeaderEstabelecimento;

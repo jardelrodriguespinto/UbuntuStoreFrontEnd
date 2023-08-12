@@ -43,7 +43,7 @@ function Inicio() {
             Explore a <span>Ubuntu</span>: seu serviço de Delivery de Comida
             Simplificada!
           </Typography>
-          <Typography color={tema.palette.contrastThreshold}>
+          <Typography variant= "h5"  color={tema.palette.contrastThreshold}>
             Peça, saboreie, repita! Com Ubuntu, a melhor comida está a um toque
             de distância. Baixe agora e desfrute!
           </Typography>
@@ -86,11 +86,11 @@ function Inicio() {
                     Sustentabilidade Social
                   </Typography>
                   <Typography
+                    marginTop={"20px"}
                     paragraph
                     textAlign={"center"}
-                    variant="subtitle1"
+                    variant="h6"
                     color={tema.palette.contrastThreshold}
-                    fontWeight={600}
                   >
                     Apoiando a Ubuntu, você apoia uma empresa de trabalhadores
                     em prol de trabalhadores
@@ -136,7 +136,8 @@ function Inicio() {
                   <Typography
                     paragraph
                     textAlign={"center"}
-                    variant="subtitle1"
+                    variant="h6"
+                    marginTop={"20px"}
                     color={tema.palette.contrastThreshold}
                   >
                     Nós nos dedicamos a manter um ambiente saudável para todos a
@@ -183,8 +184,9 @@ function Inicio() {
                   <Typography
                     paragraph
                     textAlign={"center"}
-                    variant="subtitle1"
+                    variant="h6"
                     color={tema.palette.contrastThreshold}
+                    marginTop={"20px"}
                   >
                     Consuma na Ubuntu e acumule vantagens em festas e eventos{" "}
                   </Typography>
@@ -193,7 +195,7 @@ function Inicio() {
             </Grid>
           </Stack>
           <BotaoBaixeApp />
-          <Typography margin={"20px"} variant="h5" color={tema.palette.contrastThreshold}>
+          <Typography margin={"20px"} variant="h6" color={tema.palette.contrastThreshold}>
             ou se você for um estabelecimento
           </Typography>
           <Button variant="outlined" onClick={() => {

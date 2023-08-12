@@ -18,13 +18,13 @@ li{
     align-self: center;
 }
 
-.barra-lateral{
+/* .barra-lateral{
     background-color: #7e7e7e;
     padding-left: 3px;
     padding-right: 3px;
     display: grid;
     grid-template-columns: 1fr;
-}
+} */
 .botaoBarraLateral{
     display: grid;
     grid-template-columns: 1fr 4fr;

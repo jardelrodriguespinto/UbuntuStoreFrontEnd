@@ -1,5 +1,5 @@
 
-
+/* 
 #nav-estabelecimento {
   display: flex;
   background-color: #688370;
@@ -11,7 +11,7 @@
   -moz-border-radius: 5px;
   -webkit-box-shadow: 0 0 5px black;
   -moz-box-shadow: 0 0 5px black;
-}
+} */
 
 .ubuntu-store-logo {
   width: 200px;
@@ -25,52 +25,3 @@
   cursor: pointer;
 }
 
-.menu {
-  display: flex;
-  background-color: rgba(163, 210, 159, 1);
-  flex-direction: row;
-  width: 1000px;
-  justify-content: space-evenly;
-  font-size: 35px;
-}
-
-.menu-items {
-  display: flex;
-  align-self: center;
-  list-style-type: none;
-}
-
-.item {
-  text-decoration: none;
-  color: black;
-  font-family: "Roboto Mono", sans-serif;
-}
-
-@media only screen and (max-width: 1312px) {
-  .menu {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: row;
-    width: 600px;
-    align-self: center;
-    font-size: 25px;
-  }
-  .nav-content {
-    justify-content: space-between;
-  }
-
-  .ubuntu-store-logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 90px;
-    margin-top: 8px;
-    align-self: center;
-    mix-blend-mode: multiply;
-  }
-
-  @media only screen and (max-width: 1212px) {
-    .menu {
-      display: none;
-    }
-  }
-}

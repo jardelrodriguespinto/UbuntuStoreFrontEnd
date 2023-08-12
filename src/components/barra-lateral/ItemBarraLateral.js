@@ -3,7 +3,7 @@ import React from "react";
 import logoUbuntuStore from "../../assets/img/logo-ubuntu-store.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, MenuItem } from "@mui/material";
 
 function ItemBarraLateral(props) {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function ItemBarraLateral(props) {
 
   return (
     <>
-      <li className="itemBarraLateral">
+      <MenuItem className="itemBarraLateral">
         {<Button
         variant="outlined"
           onClick={() =>{
@@ -28,7 +28,7 @@ function ItemBarraLateral(props) {
         <Typography variant="h5" color={"black"} textTransform={"capitalize"}>{props.texto}</Typography>
 
         </Button>}
-      </li>
+      </MenuItem>
     </>
   );
 }

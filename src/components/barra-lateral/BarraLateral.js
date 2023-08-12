@@ -7,7 +7,7 @@ import { faBookReader } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import ItemBarraLateral from "./ItemBarraLateral.js";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button, MenuList } from "@mui/material";
 import RenderizadorDeImagem from "../midia/RenderizadorDeImagem";
 
 function BarraLateral(props) {
@@ -23,8 +23,8 @@ function BarraLateral(props) {
   return (
     <div className="barra-lateral">
       <RenderizadorDeImagem imagem="" width= "100%" height= "100%"></RenderizadorDeImagem>
-      <ul className="barraLateral">
-        <div>
+      <MenuList className="barraLateral">
+        
           <Button variant="outlined">textoAbertoFechado</Button>
           <ItemBarraLateral
             texto="Inicio"
@@ -47,7 +47,7 @@ function BarraLateral(props) {
             rota="/estabelecimentos/pedidos"
             icone={faBookReader}
           />
-        </div>
+        
         <div>
           <ItemBarraLateral
             texto="Sair"
@@ -59,7 +59,7 @@ function BarraLateral(props) {
             }}
           />
         </div>
-      </ul>
+      </MenuList>
     </div>
   );
 }
