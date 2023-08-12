@@ -7,14 +7,17 @@ import { useState, useEffect } from "react";
 import { ubuntuIp } from "../../../propriedades";
 import CardPedido from "../../cards/ItemPedido";
 import "./pedidos.css";
-import { Box, Button, ButtonGroup, Grid, Tab, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Grid, Tab, ThemeProvider, createTheme } from "@mui/material";
 import { TabContext, TabPanel, TabList } from "@mui/lab";
 import GradeDePedidos from "../../grade/GradeDePedidos";
+
+import {propiedadesDoTema} from "../../../utils/tema";
 
 function Pedidos() {
   const [lista, setLista] = useState([]);
   const [secoesPedidos, setSecoesPedidos] = useState([]);
   const [guia, setguia] = useState(0);
+  const tema = createTheme(propiedadesDoTema);
 
   const obterPedidos = async () => {
     try {
@@ -38,7 +41,7 @@ function Pedidos() {
   }, []);
 
   return (
-    <Box>
+    <ThemeProvider theme = {tema}>
       <HeaderEstabelecimento logo={true} />
       <div className="homeEstabelecimento">
         <BarraLateral />
@@ -47,7 +50,7 @@ function Pedidos() {
           <GradeDePedidos props={secoesPedidos}></GradeDePedidos>
         </main>
       </div>
-    </Box>
+    </ThemeProvider>
   );
 }
 

@@ -19,7 +19,7 @@ function HeaderEstabelecimento( ) {
   }
 
   return (
-    <AppBar position="static" style={{backgroundColor: propiedadesDoTema.palette.primary.main}}>
+    <AppBar position="static" style={{backgroundColor: propiedadesDoTema.palette.primariaEstabelecimento.main}}>
         <Toolbar>
         {l && (
           <IconButton onClick={irParaHome} sx={{ backgroundColor: "",} }>

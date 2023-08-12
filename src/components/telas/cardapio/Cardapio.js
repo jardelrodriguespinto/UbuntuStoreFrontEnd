@@ -7,17 +7,17 @@ import { useState, useEffect } from "react";
 import { ubuntuIp } from "../../../propriedades";
 import ItemCardapio from "../../item-cardapio/ItemCardapio";
 import "./cardapio.css";
-import { Box, Grid, Tab, Typography } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
+  import { Box, Grid, Tab, ThemeProvider, Typography, createTheme } from "@mui/material";
+  import {propiedadesDoTema} from "../../../utils/tema";
+
 
 function Cardapio() {
   const [lista, setLista] = useState([]);
-  const [modificando, setModificando] = useState(false);
-  const [propriedades, setPropriedades] = useState(false);
-  const [responseState, setResponseState] = useState(null); // Novo estado para armazenar a resposta do Axios
+  const tema = createTheme(propiedadesDoTema);
+  
   let navegar = useNavigate()
-
   const itemCardapioNotify = async () => {
     try {
       const response = await axios.post(
@@ -43,7 +43,7 @@ function Cardapio() {
   }, []);
 
   return (
-    <div>
+    <ThemeProvider theme = {tema}>
       <HeaderEstabelecimento logo={true} />
       <div className="homeEstabelecimento">
         <BarraLateral />
@@ -68,7 +68,7 @@ function Cardapio() {
       </div>
 
       <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
 

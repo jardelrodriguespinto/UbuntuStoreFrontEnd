@@ -16,7 +16,6 @@ import {
   useTheme,
 } from "@mui/material";
 import { BotaoBaixeApp } from "../../BotaoBaixeApp";
-import { ThemeContext } from "@emotion/react";
 
 function Inicio() {
   const [format, setFormat] = useState([]);
@@ -31,7 +30,8 @@ function Inicio() {
       <Header logo={true} baixar={true} login={false} navBar={true} />
       <Box
         classname="main-box"
-        sx={{ backgroundColor: tema.palette.secondary.main }}
+        sx={{ backgroundColor: tema.palette.secondary.main ,
+        height: "100vh"}}
       >
         <Stack direction={"column"} className="primeira-secao">
           <Typography

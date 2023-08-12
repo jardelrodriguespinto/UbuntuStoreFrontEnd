@@ -7,8 +7,9 @@ import { faBookReader } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import ItemBarraLateral from "./ItemBarraLateral.js";
 import { useNavigate } from "react-router-dom";
-import { Button, MenuList } from "@mui/material";
+import { Box, Button, MenuList, Stack, Typography, colors } from "@mui/material";
 import RenderizadorDeImagem from "../midia/RenderizadorDeImagem";
+import { propiedadesDoTema } from "../../utils/tema";
 
 function BarraLateral(props) {
   const navegar = useNavigate();
@@ -19,35 +20,57 @@ function BarraLateral(props) {
   } else {
     textoAbertoFechado = "Fechado";
   }
+  let aberto= true
 
   return (
-    <div className="barra-lateral">
-      <RenderizadorDeImagem imagem="" width= "100%" height= "100%"></RenderizadorDeImagem>
-      <MenuList className="barraLateral">
-        
-          <Button variant="outlined">textoAbertoFechado</Button>
-          <ItemBarraLateral
-            texto="Inicio"
-            rota="/estabelecimentos/inicio"
-            icone={faHouse}
-          />
-          <ItemBarraLateral
-            texto="Minha Loja"
-            rota="/estabelecimentos/minhaloja"
-            icone={faShop}
-            selecionado={props.selecionado}
-          />
-          <ItemBarraLateral
-            texto="Cardapio"
-            rota="/estabelecimentos/cardapio"
-            icone={faBookReader}
-          />
-          <ItemBarraLateral
-            texto="Pedidos"
-            rota="/estabelecimentos/pedidos"
-            icone={faBookReader}
-          />
-        
+    <Box
+      className="barra-lateral"
+      sx={{
+        backgroundColor: propiedadesDoTema.palette.primariaEstabelecimento.main,
+      }}
+    >
+    <Stack direction={"column"} alignItems={"center"}>
+      <RenderizadorDeImagem
+        // imagem=""
+        width="100%"
+        height="100%"
+      ></RenderizadorDeImagem>
+      {
+        aberto &&
+      <Button variant="contained">
+        <Typography color={"black"}>Aberto</Typography>
+      </Button>
+      }
+      <MenuList
+        className="barraLateral"
+        sx={{
+          backgroundColor:
+            propiedadesDoTema.palette.primariaEstabelecimento.main,
+            width: "100%"
+        }}
+      >
+        <ItemBarraLateral
+          texto="Inicio"
+          rota="/estabelecimentos/inicio"
+          icone={faHouse}
+        />
+        <ItemBarraLateral
+          texto="Minha Loja"
+          rota="/estabelecimentos/minhaloja"
+          icone={faShop}
+          selecionado={props.selecionado}
+        />
+        <ItemBarraLateral
+          texto="Cardapio"
+          rota="/estabelecimentos/cardapio"
+          icone={faBookReader}
+        />
+        <ItemBarraLateral
+          texto="Pedidos"
+          rota="/estabelecimentos/pedidos"
+          icone={faBookReader}
+        />
+
         <div>
           <ItemBarraLateral
             texto="Sair"
@@ -60,7 +83,8 @@ function BarraLateral(props) {
           />
         </div>
       </MenuList>
-    </div>
+      </Stack>
+    </Box>
   );
 }
 export default BarraLateral;

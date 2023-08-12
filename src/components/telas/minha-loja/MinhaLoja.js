@@ -3,11 +3,14 @@ import HeaderEstabelecimento from "../../cabecalho/estabelecimento/HeaderEstabel
 import BarraLateral from "../../barra-lateral/BarraLateral";
 import Footer from "../../Footer";
 import "./minhaLoja.css"
-
+import { Box, Grid, Tab, ThemeProvider, Typography, createTheme } from "@mui/material";
+import {propiedadesDoTema} from "../../../utils/tema";
 
 function MinhaLoja() {
+  const tema = createTheme(propiedadesDoTema);
+
   return (
-    <div >
+    <ThemeProvider theme={tema} >
       <HeaderEstabelecimento logo={true} />
       <div className="homeEstabelecimento">
         <BarraLateral />
@@ -19,7 +22,7 @@ function MinhaLoja() {
       </div>
 
       <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
 
