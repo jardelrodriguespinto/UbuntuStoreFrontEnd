@@ -7,7 +7,6 @@ import {propiedadesDoTema} from "../../../utils/tema"
 
 
 function HeaderEstabelecimento( ) {
-    console.log(propiedadesDoTema);
   let l = true;
   if (l === true) {
     l = true;

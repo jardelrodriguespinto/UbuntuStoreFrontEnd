@@ -7,11 +7,9 @@ import { useState, useEffect } from "react";
 import { ubuntuIp } from "../../../propriedades";
 import ItemCardapio from "../../item-cardapio/ItemCardapio";
 import "./cardapio.css";
-import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
-  IconButton,
   TextField,
   FormControlLabel,
   Checkbox,
@@ -21,40 +19,109 @@ import {
   Typography,
   createTheme,
   Button,
-  ButtonGroup,Dialog, DialogTitle, DialogContent, DialogActions
+  ButtonGroup,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
 } from "@mui/material";
 import { propiedadesDoTema } from "../../../utils/tema";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 function Cardapio() {
   const [lista, setLista] = useState([]);
   const tema = createTheme(propiedadesDoTema);
   const [open, setOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    nome: '',
-    preco: '',
-    imagem: null,
-    descricao: '',
-    contemGluten: false,
-    vegetariano: false,
-    vegano: false,
-    tempoDeEntrega: '',
-    tempoDePreparo: '',
-    calorias: '',
-    disponivel: false,
-  });
+  const [editOpen, setEditOpen] = useState(false);
+  const [nomeProduto, setNomeProduto] = useState("");
+  const [precoProduto, setPrecoProduto] = useState("");
+  const [tempoDePreparo, setTempoDePreparo] = useState("");
+  const [calorias, setCalorias] = useState("");
+  const [disponivel, setDisponivel] = useState(true);
+  const [contemGluten, setContemGluten] = useState(false);
+  const [vegetariano, setVegetariano] = useState(false);
+  const [vegano, setVegano] = useState(false);
+  const [descricao, setDescricao] = useState("");
+
+  const [previewImage, setPreviewImage] = useState(null);
 
   const handleOpen = () => {
     setOpen(true);
   };
 
+  const setImagem = (e) => {
+    setPreviewImage(URL.createObjectURL(e.target.files[0]));
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
-  const handleSubmit = () => {
-    setOpen(false);
+  const handleEditClose = () => {
+    setEditOpen(false);
   };
-  let navegar = useNavigate();
+
+  const navegar = useNavigate();
+
+  const adicionarProduto = async () => {
+    const estabelecimentoId = localStorage.getItem("estabelecimentoId");
+    try {
+      console.log({
+        idDoEstabelecimento: estabelecimentoId,
+        nome: nomeProduto,
+        preco: precoProduto,
+        imagem: null,
+        descricao: descricao,
+        contemGluten: contemGluten,
+        vegetariano: vegetariano,
+        vegano: vegano,
+        tempoDeEntrega: null,
+        tempoDePreparo: tempoDePreparo,
+        calorias: calorias,
+        disponivel: disponivel,
+      });
+      const axiosInstance = axios.create({});
+      const response = await axiosInstance.post(
+        "http://localhost:7200/produto/adicionar",
+        {
+          idDoEstabelecimento: estabelecimentoId,
+          nome: nomeProduto,
+          preco: precoProduto,
+          imagem: null,
+          descricao: descricao,
+          contemGluten: contemGluten,
+          vegetariano: vegetariano,
+          vegano: vegano,
+          tempoDeEntrega: null,
+          tempoDePreparo: tempoDePreparo,
+          calorias: calorias,
+          disponivel: disponivel,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      );
+      setOpen(false);
+      setNomeProduto("");
+      setPrecoProduto("");
+      setTempoDePreparo("");
+      setCalorias("");
+      setDisponivel(true);
+      setContemGluten(false);
+      setVegetariano(false);
+      setVegano(false);
+      setDescricao("");
+      handleClose();
+    } catch (error) {
+      console.error(error);
+      if (error.response.status === 402) {
+        navegar("/login");
+      }
+    }
+  };
   const itemCardapioNotify = async () => {
     try {
       const response = await axios.post(
@@ -66,10 +133,10 @@ function Cardapio() {
           },
         }
       );
-      console.log(response.data);
       setLista(response.data.lista);
     } catch (error) {
-      if (error.response.status == 402) {
+      if (error.response.status === 402) {
+        navegar("/login");
       }
       console.log(error);
     }
@@ -77,7 +144,9 @@ function Cardapio() {
   useEffect(() => {
     itemCardapioNotify();
   }, []);
-
+  const callbackEdicaoProduto = (id) => {
+    
+  };
   return (
     <ThemeProvider theme={tema}>
       <HeaderEstabelecimento logo={true} />
@@ -95,9 +164,12 @@ function Cardapio() {
               </Typography>
             </Box>
             <ButtonGroup fullWidth alignItems="center">
-              <Button startIcon={<AddCircleOutlineIcon/>}  variant="contained" onClick={handleOpen}>
-                
-                <Typography textTransform={"none"}  >
+              <Button
+                startIcon={<AddCircleOutlineIcon />}
+                variant="contained"
+                onClick={handleOpen}
+              >
+                <Typography textTransform={"none"}>
                   Adicionar Produto
                 </Typography>
               </Button>
@@ -109,7 +181,7 @@ function Cardapio() {
               sx={{ gap: "15px", margin: "50px" }}
             >
               {lista.map((i) => {
-                return <ItemCardapio props={i}></ItemCardapio>;
+                return <ItemCardapio props={i} callback={callbackEdicaoProduto}></ItemCardapio>;
               })}
             </Grid>
           </Box>
@@ -118,26 +190,69 @@ function Cardapio() {
 
       <Footer />
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Formulário</DialogTitle>
+        <DialogTitle>Adicionar Item</DialogTitle>
         <DialogContent>
-          <form onSubmit={handleSubmit}>
+          <TextField
+            type="file"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            name="imagem"
+            accept="image/*"
+            onChange={(e) => {
+              setImagem(e);
+            }}
+          />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              adicionarProduto();
+            }}
+          >
             <TextField
               label="Nome"
               variant="outlined"
               fullWidth
               margin="normal"
               name="nome"
-              value={formData.nome}
-              // onChange={handleChange}
+              value={nomeProduto}
+              onChange={(e) => {
+                setNomeProduto(e.target.value);
+              }}
             />
             <TextField
               label="Preço"
               variant="outlined"
+              type="number"
               fullWidth
               margin="normal"
               name="preco"
-              value={formData.preco}
-              // onChange={handleChange}
+              value={precoProduto}
+              onChange={(e) => {
+                setPrecoProduto(e.target.value);
+              }}
+            />
+            <TextField
+              label="Tempo de Preparo"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              name="tempoDePreparo"
+              value={tempoDePreparo}
+              onChange={(e) => {
+                setTempoDePreparo(e.target.value);
+              }}
+            />
+            <TextField
+              label="Calorias"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              name="calorias"
+              value={calorias}
+              onChange={(e) => {
+                setCalorias(e.target.value);
+              }}
             />
             <TextField
               label="Descrição"
@@ -145,15 +260,19 @@ function Cardapio() {
               fullWidth
               margin="normal"
               name="descricao"
-              value={formData.descricao}
-              // onChange={handleChange}
+              value={descricao}
+              onChange={(e) => {
+                setDescricao(e.target.value);
+              }}
             />
             <FormControlLabel
               control={
                 <Checkbox
                   name="contemGluten"
-                  checked={formData.contemGluten}
-                  // onChange={handleChange}
+                  checked={contemGluten}
+                  onChange={(e) => {
+                    setContemGluten(e.target.checked);
+                  }}
                 />
               }
               label="Contém Glúten"
@@ -162,8 +281,10 @@ function Cardapio() {
               control={
                 <Checkbox
                   name="vegetariano"
-                  checked={formData.vegetariano}
-                  // onChange={handleChange}
+                  checked={vegetariano}
+                  onChange={(e) => {
+                    setVegetariano(e.target.checked);
+                  }}
                 />
               }
               label="Vegetariano"
@@ -172,20 +293,77 @@ function Cardapio() {
               control={
                 <Checkbox
                   name="vegano"
-                  checked={formData.vegano}
-                  // onChange={handleChange}
+                  checked={vegano}
+                  onChange={(e) => setVegano(e.target.checked)}
                 />
               }
               label="Vegano"
             />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="disponivel"
+                  checked={disponivel}
+                  onChange={(e) => {
+                    setDisponivel(e.target.checked);
+                  }}
+                />
+              }
+              label="Disponível"
+            />
+            <DialogActions>
+              <Button onClick={handleClose} color="primary">
+                <Typography textTransform={"none"}>Cancelar</Typography>
+              </Button>
+              <Button type="submit" variant="contained" color="primary">
+                <Typography textTransform={"none"}>Enviar</Typography>
+              </Button>
+            </DialogActions>
+          </form>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={editOpen} onClose={handleEditClose}>
+        <DialogTitle>Adicionar Item</DialogTitle>
+        <DialogContent>
+          <TextField
+            type="file"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            name="imagem"
+            accept="image/*"
+            onChange={(e) => {
+              setImagem(e);
+            }}
+          />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              adicionarProduto();
+            }}
+          >
             <TextField
-              label="Tempo de Entrega"
+              label="Nome"
               variant="outlined"
               fullWidth
               margin="normal"
-              name="tempoDeEntrega"
-              value={formData.tempoDeEntrega}
-              // onChange={handleChange}
+              name="nome"
+              value={nomeProduto}
+              onChange={(e) => {
+                setNomeProduto(e.target.value);
+              }}
+            />
+            <TextField
+              label="Preço"
+              variant="outlined"
+              type="number"
+              fullWidth
+              margin="normal"
+              name="preco"
+              value={precoProduto}
+              onChange={(e) => {
+                setPrecoProduto(e.target.value);
+              }}
             />
             <TextField
               label="Tempo de Preparo"
@@ -193,8 +371,10 @@ function Cardapio() {
               fullWidth
               margin="normal"
               name="tempoDePreparo"
-              value={formData.tempoDePreparo}
-              // onChange={handleChange}
+              value={tempoDePreparo}
+              onChange={(e) => {
+                setTempoDePreparo(e.target.value);
+              }}
             />
             <TextField
               label="Calorias"
@@ -202,29 +382,78 @@ function Cardapio() {
               fullWidth
               margin="normal"
               name="calorias"
-              value={formData.calorias}
-              // onChange={handleChange}
+              value={calorias}
+              onChange={(e) => {
+                setCalorias(e.target.value);
+              }}
+            />
+            <TextField
+              label="Descrição"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+              name="descricao"
+              value={descricao}
+              onChange={(e) => {
+                setDescricao(e.target.value);
+              }}
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="contemGluten"
+                  checked={contemGluten}
+                  onChange={(e) => {
+                    setContemGluten(e.target.checked);
+                  }}
+                />
+              }
+              label="Contém Glúten"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="vegetariano"
+                  checked={vegetariano}
+                  onChange={(e) => {
+                    setVegetariano(e.target.checked);
+                  }}
+                />
+              }
+              label="Vegetariano"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="vegano"
+                  checked={vegano}
+                  onChange={(e) => setVegano(e.target.checked)}
+                />
+              }
+              label="Vegano"
             />
             <FormControlLabel
               control={
                 <Checkbox
                   name="disponivel"
-                  checked={formData.disponivel}
-                  // onChange={handleChange}
+                  checked={disponivel}
+                  onChange={(e) => {
+                    setDisponivel(e.target.checked);
+                  }}
                 />
               }
               label="Disponível"
             />
-            <Button type="submit" color="primary">
-              Enviar
-            </Button>
+            <DialogActions>
+              <Button onClick={handleClose} color="primary">
+                <Typography textTransform={"none"}>Cancelar</Typography>
+              </Button>
+              <Button type="submit" variant="contained" color="primary">
+                <Typography textTransform={"none"}>Enviar</Typography>
+              </Button>
+            </DialogActions>
           </form>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancelar
-          </Button>
-        </DialogActions>
       </Dialog>
     </ThemeProvider>
   );

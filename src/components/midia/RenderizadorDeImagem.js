@@ -31,4 +31,5 @@ function arrayBufferToBase64(byteArray) {
   }
   return window.btoa(binary);
 }
+
 export default RenderizadorDeImagem;
