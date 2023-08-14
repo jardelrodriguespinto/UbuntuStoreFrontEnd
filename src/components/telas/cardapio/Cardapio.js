@@ -43,12 +43,12 @@ function Cardapio() {
   const [vegano, setVegano] = useState(false);
   const [descricao, setDescricao] = useState("");
 
-  const [previewImage, setPreviewImage] = useState(null);
-
+  
   const handleOpen = () => {
     setOpen(true);
   };
-
+  
+  const [previewImage, setPreviewImage] = useState(null);
   const setImagem = (e) => {
     setPreviewImage(URL.createObjectURL(e.target.files[0]));
   };
@@ -181,7 +181,7 @@ function Cardapio() {
               sx={{ gap: "15px", margin: "50px" }}
             >
               {lista.map((i) => {
-                return <ItemCardapio props={i} callback={callbackEdicaoProduto}></ItemCardapio>;
+                return <ItemCardapio props={i}></ItemCardapio>;
               })}
             </Grid>
           </Box>
@@ -325,6 +325,12 @@ function Cardapio() {
       <Dialog open={editOpen} onClose={handleEditClose}>
         <DialogTitle>Adicionar Item</DialogTitle>
         <DialogContent>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              adicionarProduto();
+            }}
+          >
           <TextField
             type="file"
             variant="outlined"
@@ -336,12 +342,6 @@ function Cardapio() {
               setImagem(e);
             }}
           />
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              adicionarProduto();
-            }}
-          >
             <TextField
               label="Nome"
               variant="outlined"

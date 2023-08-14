@@ -8,10 +8,10 @@ import { Box, Card, CardContent } from "@mui/material";
 import { blue, grey } from "@mui/material/colors";
 import RenderizadorDeImagem from "../midia/RenderizadorDeImagem";
 
-function ItemCardapio(props, { callback }) {
+function ItemCardapio(props) {
   const navigate = useNavigate();
   const navegarParaProduto = () => {
-    console.log(localStorage.setItem("produto", props.id));
+    console.log(localStorage.setItem("produto", props.props.id));
     navigate("/estabelecimentos/cardapio/edicao");
   };
   const solicitarExclusao = () => {
@@ -23,6 +23,11 @@ function ItemCardapio(props, { callback }) {
     } else {
     }
   };
+  console.log(props);
+  // localStorage.setItem(
+  //   "produto",
+  //   props.
+  // )
   return (
     <Grid item width="100%" xs={6} sm={4} md={3} lg={3} xl={3}>
       <Card c sm={6} sx={{ width: "100%", bg: blue }}>
@@ -49,13 +54,14 @@ function ItemCardapio(props, { callback }) {
               <Button
                 variant="contained"
                 onClick={() => {
+
                   navegarParaProduto();
                 }}
               >
                 <Typography
                   textTransform={"none"}
                   onClick={() => {
-                    callback(props.id);
+               
                   }}
                 >
                   {" "}
