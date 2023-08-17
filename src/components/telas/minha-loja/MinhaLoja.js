@@ -3,211 +3,242 @@ import HeaderEstabelecimento from "../../cabecalho/estabelecimento/HeaderEstabel
 import BarraLateral from "../../barra-lateral/BarraLateral";
 import Footer from "../../Footer";
 import "./minhaLoja.css";
-import axios, { AxiosHeaders } from "axios";
-// import { ubuntuIp } from "../../../../propriedades";
+import axios from "axios";
+import { ubuntuIp } from "../../../propriedades";
 import { useNavigate } from "react-router-dom";
-
+import { propiedadesDoTema } from "../../../utils/tema";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState, useEffect } from "react";
 import {
-  Box,
   TextField,
-  FormControlLabel,
-  Checkbox,
-  Grid,
   Stack,
   ThemeProvider,
   Typography,
   createTheme,
   Button,
-  ButtonGroup,
-  Dialog,
-  DialogTitle,
-  DialogContent,
   DialogActions,
 } from "@mui/material";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import { ClockPicker } from "@mui/lab";
+import { parseISO, format } from "date-fns";
 
 function MinhaLoja() {
   const navigate = useNavigate();
-  const [nomeProduto, setNomeProduto] = useState("");
-  const [precoProduto, setPrecoProduto] = useState("");
+  const token = localStorage.getItem("token");
+  const [nome, setNome] = useState("");
+  const [precoMinimo, setPrecoMinimo] = useState("");
   const [tempoDePreparo, setTempoDePreparo] = useState("");
   const [calorias, setCalorias] = useState("");
-  const [disponivel, setDisponivel] = useState(true);
-  const [contemGluten, setContemGluten] = useState(false);
-  const [vegetariano, setVegetariano] = useState(false);
-  const [vegano, setVegano] = useState(false);
+  const [valorMinimo, setValorMinimo] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [endereco, setEndereco] = useState("");
+  const [cep, setCep] = useState("");
+  const [inicioExpediente, inicioExpedienteSetter] = useState(null);
+  const [fimExpediente] = useState(false);
   const [descricao, setDescricao] = useState("");
-  const [previewImage, setPreviewImage] = useState(null);
-  const setImagem = (e) => {
-    setPreviewImage(URL.createObjectURL(e.target.files[0]));
-  };
-  const enviarProduto = async () => {};
+  const [imagem, setPreviewImage] = useState(null);
+  const tema = createTheme(propiedadesDoTema);
 
+  const id = localStorage.getItem("estabelecimentoId");
+  const enviarFormulario = async () => {
+    let data = new Date(inicioExpediente)
+    let localTimeString= "".concat(data.getHours()).concat(":").concat(data.getMinutes());
+
+    console.log(localTimeString)
+    
+    console.log()
+       let fimE;
+    const resposta = await axios.put(
+      ubuntuIp.toString() + "/estabelecimento/telas/minhaloja",
+      {
+        idDeEstabelecimento: id,
+        nome: nome,
+        image: imagem,
+        descricao: descricao,
+        endereco: endereco,
+        telefone: telefone,
+        cep: cep,
+        valorMinimo: valorMinimo,
+        inicioExpediente: inicioExpediente,
+        fimExpediente: fimExpediente
+      },
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+  };
+
+  const handleInicioExpedienteChange = (newTime) => {
+    console.log(newTime);// inicioExpedienteSetter(newTime);
+  };
+
+  const setInicioExpedienteInicial = (e) => {
+    {
+      console.log(e)
+      let horas = e.split(":");
+      const dateTime = new Date(1111, 11, 11, horas[0], horas[1], horas[2]);
+
+      inicioExpedienteSetter(dateTime);
+
+      // const parsedDate = parseISO(javaLocalDate);
+    }
+  };
+
+  useEffect(() => {
+    obterTela();
+  }, []);
+
+  const obterTela = async () => {
+    const resposta = await axios.get(
+      ubuntuIp.toString() + "/estabelecimento/telas/minhaloja",
+      {
+        headers: {
+          Authorization: token,
+        },
+      }
+    );
+
+    setNome(resposta.data.nome);
+    setValorMinimo(resposta.data.valorMinimo);
+    setEndereco(resposta.data.endereco);
+    setTelefone(resposta.data.telefone);
+    handleInicioExpedienteChange(resposta.data.inicioExpediente);
+    //1: transformar data do tempo LocalTime
+    // setFimExpediente(resposta.data.fimExpediente);
+    setInicioExpedienteInicial(resposta.data.fimExpediente);
+    setCep(resposta.data.cep);
+    setDescricao(resposta.data.descricao);
+  };
   return (
-    <div>
+    <ThemeProvider theme={tema}>
       <HeaderEstabelecimento logo={true} />
       <div className="homeEstabelecimento">
         <BarraLateral />
-          <Stack direction={"column"} alignItems={"center"}>
-          <Box>
-            
-          </Box>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                enviarProduto();
-              }}
-            >
-              <Stack  fullWidth direction={"column"}>
-                <TextField
-                  fullWidth
-                  type="file"
-                  variant="outlined"
-                  margin="normal"
-                  name="imagem"
-                  accept="image/*"
+        <Stack direction={"column"} alignItems={"center"}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              enviarFormulario();
+            }}
+          >
+            <Stack fullWidth direction={"column"}>
+              <TextField
+                fullWidth
+                type="file"
+                variant="outlined"
+                margin="normal"
+                name="imagem"
+                accept="image/*"
+                // onChange={(e) => {
+                //   setImagem(e);
+                // }}
+              />
+              <TextField
+                label="Nome do estabeleciento"
+                variant="outlined"
+                margin="normal"
+                name="nome"
+                value={nome}
+                onChange={(e) => {
+                  setNome(e.target.value);
+                }}
+              />
+              <TextField
+                label="Valor mínimo por pedido"
+                variant="outlined"
+                type="number"
+                width="50%"
+                margin="normal"
+                name="valorMinimo"
+                value={valorMinimo}
+                onChange={(e) => {
+                  setValorMinimo(e.target.value);
+                }}
+              />
+              <TextField
+                label="Telefone p/ contato"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                name="telefone"
+                value={telefone}
+                onChange={(e) => {
+                  setTelefone(e.target.value);
+                }}
+              />
+              <TextField
+                label="Endereco"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                name="endereco"
+                value={endereco}
+                onChange={(e) => {
+                  setEndereco(e.target.value);
+                }}
+              />
+              <TextField
+                label="Cep"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                name="cep"
+                value={cep}
+                onChange={(e) => {
+                  setCep(e.target.value);
+                }}
+              />
+              <TextField
+                label="Descrição"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                name="descricao"
+                value={descricao}
+                onChange={(e) => {
+                  setDescricao(e.target.value);
+                }}
+              />
+              <Stack direction={"row"}></Stack>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <TimePicker
+                  value={inicioExpediente}
+                  label="Inicio de Expediente"
                   onChange={(e) => {
-                    setImagem(e);
+                    console.log(e)
+                    handleInicioExpedienteChange(e);
                   }}
                 />
-                <TextField
-                  label="Nome"
-                  variant="outlined"
-                 
-                  margin="normal"
-                  name="nome"
-                  value={nomeProduto}
-                  onChange={(e) => {
-                    setNomeProduto(e.target.value);
-                  }}
-                />
-                <TextField
-                  label="Preço"
-                  variant="outlined"
-                  type="number"
-                  width="50%"
-                  margin="normal"
-                  name="preco"
-                  value={precoProduto}
-                  onChange={(e) => {
-                    setPrecoProduto(e.target.value);
-                  }}
-                />
-                <TextField
-                  label="Tempo de Preparo"
-                  variant="outlined"
-                  fullWidth
-                  margin="normal"
-                  name="tempoDePreparo"
-                  value={tempoDePreparo}
-                  onChange={(e) => {
-                    setTempoDePreparo(e.target.value);
-                  }}
-                />
-                <TextField
-                  label="Calorias"
-                  variant="outlined"
-                  fullWidth
-                  margin="normal"
-                  name="calorias"
-                  value={calorias}
-                  onChange={(e) => {
-                    setCalorias(e.target.value);
-                  }}
-                />
-                <TextField
-                  label="Descrição"
-                  variant="outlined"
-                  fullWidth
-                  margin="normal"
-                  name="descricao"
-                  value={descricao}
-                  onChange={(e) => {
-                    setDescricao(e.target.value);
-                  }}
-                />
-                <Grid container>
-                  <Grid item>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          name="contemGluten"
-                          checked={contemGluten}
-                          onChange={(e) => {
-                            setContemGluten(e.target.checked);
-                          }}
-                        />
-                      }
-                      label={
-                        <span style={{ color: "black" }}>Contém Glúten</span>
-                      }
-                    />
-                  </Grid>
-                  <Grid item>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          name="vegetariano"
-                          checked={vegetariano}
-                          onChange={(e) => {
-                            setVegetariano(e.target.checked);
-                          }}
-                        />
-                      }
-                      label={
-                        <span style={{ color: "black" }}>Vegetariano</span>
-                      }
-                    />
-                  </Grid>
-                  <Grid item>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          name="vegano"
-                          checked={vegano}
-                          onChange={(e) => setVegano(e.target.checked)}
-                        />
-                      }
-                      label={<span style={{ color: "black" }}>Vegano</span>}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          name="disponivel"
-                          checked={disponivel}
-                          onChange={(e) => {
-                            setDisponivel(e.target.checked);
-                          }}
-                        />
-                      }
-                      label={<span style={{ color: "black" }}>Disponível</span>}
-                    />
-                  </Grid>
-                </Grid>
-              </Stack>
-              <DialogActions>
-                <Button
-                  onClick={() => {
-                    navigate("/estabelecimentos/cardapio");
-                  }}
-                  color="primary"
-                >
-                  <Typography textTransform={"none"}>Cancelar</Typography>
-                </Button>
-                <Button type="submit" variant="contained" color="primary">
-                  <Typography textTransform={"none"}>Enviar</Typography>
-                </Button>
-              </DialogActions>
-            </form>
-          </Stack>
-          <Typography color={"black"}></Typography>
-       
+
+                <TimePicker value={fimExpediente} label="Fim de Expediente" />
+              </LocalizationProvider>
+            </Stack>
+
+            <DialogActions>
+              <Button
+                onClick={() => {
+                  enviarFormulario();
+                  navigate("/estabelecimentos/minhaloja");
+                }}
+                color="primary"
+              >
+                <Typography textTransform={"none"}>Cancelar</Typography>
+              </Button>
+              <Button type="submit" variant="contained" color="primary">
+                <Typography textTransform={"none"}>Enviar</Typography>
+              </Button>
+            </DialogActions>
+          </form>
+        </Stack>
+        <Typography color={"black"}></Typography>
       </div>
 
       <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
 
