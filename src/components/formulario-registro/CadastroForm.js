@@ -98,7 +98,7 @@ function CadastroForm() {
           },
         }
       );
-
+        navigate()
     } catch (error) {
       console.error(error);
     }

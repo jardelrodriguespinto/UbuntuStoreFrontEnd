@@ -13,7 +13,7 @@ function HomeEstabelecimento() {
 
   const tema = createTheme(propiedadesDoTema);
   console.log()
-
+  localStorage.getItem()
   return (
     <ThemeProvider theme = {tema}>
       <HeaderEstabelecimento logo={true} tema={tema} />

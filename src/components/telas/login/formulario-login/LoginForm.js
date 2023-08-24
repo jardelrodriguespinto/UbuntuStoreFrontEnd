@@ -28,7 +28,8 @@ function LoginForm() {
       console.log(" resposta: " + response.data.estabelecimentoId);
       console.log(
         localStorage.setItem("token", "Bearer " + response.data.token)
-      );
+        );
+      localStorage.setItem("primeiroAcesso",response.data.primeiroAcesso)
       console.log(
         localStorage.setItem(
           "estabelecimentoId",
