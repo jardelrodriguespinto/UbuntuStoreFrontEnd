@@ -22,12 +22,7 @@ import {
   DialogTitle,
   DialogContent,
 } from "@mui/material";
-import { DesktopTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { TimePicker } from "@mui/x-date-pickers/TimePicker";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import { ClockPicker } from "@mui/lab";
-import { parseISO, format } from "date-fns";
-import { response } from "express";
+import { LocalizationProvider } from "@mui/x-date-pickers";
 
 function MinhaLoja() {
   const navigate = useNavigate();
@@ -106,7 +101,10 @@ function MinhaLoja() {
     );
     if(resposta.status == 200){
         setHoraInicioExpedienteInicial(horaInicioExpediente)
-        setMinutosInicioExpedienteInicial(horaInicioExpediente)
+        setMinutosInicioExpedienteInicial(minutosInicioExpediente)
+        setHoraFimExpedienteInicial(horaFimExpediente)
+        setMinutosFimExpedienteInicial(minutosFimExpediente)
+        handleClose()
     }
   };
   
@@ -137,11 +135,8 @@ function MinhaLoja() {
     setValorMinimo(resposta.data.valorMinimo);
     setEndereco(resposta.data.endereco);
     setTelefone(resposta.data.telefone);
-    // handleInicioExpedienteChange(resposta.data.inicioExpediente);
-    // 1: transformar data do tempo LocalTime
-    // setFimExpediente(resposta.data.fimExpediente);
-    // setInicioExpediente(resposta.data.fimExpediente);
-    console.log(resposta.data.inicioExpediente)
+
+   
     let inicioExpedienteString = resposta.data.inicioExpediente;
     setHoraInicioExpedienteInicial(resposta.data.inicioExpediente.split(":")[0]);
     setHoraInicioExpediente(resposta.data.inicioExpediente.split(":")[0]);

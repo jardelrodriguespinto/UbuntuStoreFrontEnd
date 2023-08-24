@@ -2,21 +2,30 @@ import react, { useState } from "react";
 import "./esqueciasenha.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {
+  TextField,
+  Typography,
+  Stack,
+  createTheme,
+  Button,
+  Box,
+  ThemeProvider,
+} from "@mui/material";
+import { propiedadesDoTema } from "../../../../utils/tema";
 
 function EsqueciminhaSenha() {
   let [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
+  const tema= createTheme()
   const navegar = useNavigate();
 
   const [responseState, setResponseState] = useState(null); // Novo estado para armazenar a resposta do Axios
 
-  const enviar = () => {};
   const esqueciMinhaSenha = async () => {
     try {
-      setStep(2);
-      const axiosInstance = axios.create({});
+      const axiosInstance = axios.create({propiedadesDoTema});
       const response = await axiosInstance.post(
-        "http://localhost:7200/api/v1/aut/esqueciasenha",
+        "http://localhost:7200/api/v1/aut/esqueciminhasenha",
         {
           email: email,
         },
@@ -26,6 +35,7 @@ function EsqueciminhaSenha() {
           },
         }
       );
+      // setStep(2);
 
       console.log(response.data.mensagem);
     } catch (error) {
@@ -33,9 +43,9 @@ function EsqueciminhaSenha() {
     }
   };
   return (
-    <>
+    <ThemeProvider theme={tema}>
       {
-        <div className="tela-formulario">
+        <Box className="tela-formulario">
           {step === 1 && (
             <div>
               <form>
@@ -44,7 +54,7 @@ function EsqueciminhaSenha() {
                   confirmação para seu email. Por favor, digite seu email no
                   campo abaixo
                 </p>
-                <label for="email"></label>
+                <label for="email" />
                 <input
                   name="email"
                   value={email}
@@ -52,31 +62,48 @@ function EsqueciminhaSenha() {
                     setEmail(e.target.value);
                   }}
                 ></input>
-                <button
-                  className="botao-login"
-                  onClick={() => {
-                    esqueciMinhaSenha();
-                  }}
-                >
-                  Enviar
-                </button>
+                <Stack direction={"row"}>
+                  <Button
+                    variant="contained"
+                    onClick={() => {
+                      navegar("/login");
+                    }}
+                  >
+                    <Typography>Voltar</Typography>
+                  </Button>
+                  <Button
+                    variant="contained"
+                    className="botao-login"
+                    onClick={() => {
+                      esqueciMinhaSenha();
+                    }}
+                  >
+                    Enviar
+                  </Button>
+                </Stack>
               </form>
             </div>
           )}
 
           {step === 2 && (
-            <div>
+            <Stack direction={"row"}>
               <p className="descricao">
-                Email de confirmação foi enviado para **********@gmail.com
+                Email de confirmação foi enviado para *********
+                {email.split("@")[1]}
               </p>
-              <button className="botao-login" onClick={() =>{
-                navegar("/login")
-              }}>Voltar</button>
-            </div>
+              <button
+                className="botao-login"
+                onClick={() => {
+                  navegar("/login");
+                }}
+              >
+                Voltar
+              </button>
+            </Stack>
           )}
-        </div>
+        </Box>
       }
-    </>
+    </ThemeProvider>
   );
 }
 
